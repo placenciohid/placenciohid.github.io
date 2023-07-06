@@ -33,9 +33,6 @@ nav-menu: true
 					<h3>Experience in the Mining Industry</h3>
 				</header>
 				<p>As an Industrial Civil Engineer, I have gained valuable experience in the mining industry, managing projects and utilizing analytical techniques to optimize operations. My role as an Agile Delivery Practitioner allowed me to successfully lead projects, such as the "Asset Health - Escondida" for BHP, with significant budgets and tangible returns on investment.</p>
-				<ul class="actions">
-					<li><a href="generic.html" class="button">Learn more</a></li>
-				</ul>
 			</div>
 		</div>
 	</section>
@@ -49,15 +46,12 @@ nav-menu: true
 					<h3>Driving Transformational Change</h3>
 				</header>
 				<p>Through my roles in Enterprise Improvement, Training & Capabilities, and Digital Factory at BHP, I have played a crucial role in driving transformative change within the organization. Close collaboration with cross-functional teams and external consulting partners has been instrumental in forming teams that are capable of identifying the underlying causes of business challenges, securing funding, and successfully executing strategic technological investments.</p>
-				<ul class="actions">
-					<li><a href="generic.html" class="button">Learn more</a></li>
-				</ul>
 			</div>
 		</div>
 	</section>
 	<section>
 		<a href="generic.html" class="image">
-			<img src="{% link assets/images/pic15.jpg %}" alt="" data-position="25% 25%" width="576" height="409"/>
+			<img src="{% link assets/images/pic15.jpg %}" alt="" data-position="25% 25%" width="576" height="609"/>
 		</a>
 		<div class="content">
 			<div class="inner">
@@ -66,9 +60,6 @@ nav-menu: true
 				</header>
 				<p>I hold a dual Bachelor of Science degree in Industrial Civil Engineering and Engineering Sciences from the University of La Serena in Chile. Additionally, during my undergrad I participated in the University of Wisconsin-Madison Visiting International Student Program, expanding my global perspective and enriching my education.
 				Currently, I am excited to announce that I have graduated from the Master of Science in Business Analytics program at the University of Wisconsin-Madison. I have acquired advanced knowledge and practical experience in utilizing data science and analytics to drive insights and make informed business decisions.</p>
-				<ul class="actions">
-					<li><a href="generic.html" class="button">Learn more</a></li>
-				</ul>
 			</div>
 		</div>
 	</section>
