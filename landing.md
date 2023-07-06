@@ -1,13 +1,13 @@
 ---
 title: About Me
 layout: landing
-description: 'Passionate about leveraging data science and machine learning to drive innovation and solve complex business problems.'
+description: 'Passionate about leveraging data science and machine learning to drive innovation and solve complex business problems.'	 	
 image: assets/images/pic12.jpg
 nav-menu: true
 ---
 
 <!-- Main -->
-<div id="main">
+<div id="main"> <style> .description { font-size: 20px; /* or any other value */ } </style> <p class=“description”>Passionate about leveraging data science and machine learning to drive innovation and solve complex business problems.</p>
 
 <!-- One -->
 <section id="one">
@@ -78,7 +78,7 @@ nav-menu: true
 		<br><br>
 		Thank you for visiting my website, where you can explore more about my professional journey, projects, and technical skills. If you have any inquiries or opportunities for collaboration, please don't hesitate to reach out. I am excited to connect with you!.</p>
 		<ul class="actions">
-			<li><a href="generic.html" class="button next">Get Started</a></li>
+			<li><a href="generic.html" class="button next">CHECK MY RESUME</a></li>
 		</ul>
 	</div>
 </section>
