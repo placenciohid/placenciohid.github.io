@@ -25,14 +25,14 @@ nav-menu: true
 <section id="two" class="spotlights">
 	<section>
 		<a href="generic.html" class="image">
-			<img src="{% link assets/images/pic13.jpg %}" alt="" data-position="center center" style="width: 300px; height: 200px;"/>
+			<img src="{% link assets/images/pic13.jpg %}" alt="" data-position="center center" width="576" height="409"/>
 		</a>
 		<div class="content">
 			<div class="inner">
 				<header class="major">
 					<h3>Experience in the Mining Industry</h3>
 				</header>
-				<p>As an Industrial Civil Engineer, I have gained valuable experience in the mining industry, managing projects and utilizing analytical techniques to optimize operations. My role as an Agile Delivery Practitioner allowed me to successfully lead projects, such as the "Asset Health - Escondida" for BHP, with significant budgets and tangible returns on investment.<p>
+				<p>As an Industrial Civil Engineer, I have gained valuable experience in the mining industry, managing projects and utilizing analytical techniques to optimize operations. My role as an Agile Delivery Practitioner allowed me to successfully lead projects, such as the "Asset Health - Escondida" for BHP, with significant budgets and tangible returns on investment.</div>
 				<ul class="actions">
 					<li><a href="generic.html" class="button">Learn more</a></li>
 				</ul>
@@ -41,14 +41,14 @@ nav-menu: true
 	</section>
 	<section>
 		<a href="generic.html" class="image">
-			<img src="{% link assets/images/pic14.jpg %}" alt="" data-position="top center" style="width: 300px; height: 200px;"/>
+			<img src="{% link assets/images/pic14.jpg %}" alt="" data-position="top center" width="576" height="409"/>
 		</a>
 		<div class="content">
 			<div class="inner">
 				<header class="major">
 					<h3>Driving Transformational Change</h3>
 				</header>
-				<p>Through my roles in Enterprise Improvement, Training & Capabilities, and Digital Factory at BHP, I have played a crucial role in driving transformative change within the organization. Close collaboration with cross-functional teams and external consulting partners has been instrumental in forming teams that are capable of identifying the underlying causes of business challenges, securing funding, and successfully executing strategic technological investments.</p>
+				<p>Through my roles in Enterprise Improvement, Training & Capabilities, and Digital Factory at BHP, I have played a crucial role in driving transformative change within the organization. Close collaboration with cross-functional teams and external consulting partners has been instrumental in forming teams that are capable of identifying the underlying causes of business challenges, securing funding, and successfully executing strategic technological investments.</div>
 				<ul class="actions">
 					<li><a href="generic.html" class="button">Learn more</a></li>
 				</ul>
@@ -57,7 +57,7 @@ nav-menu: true
 	</section>
 	<section>
 		<a href="generic.html" class="image">
-			<img src="{% link assets/images/pic15.jpg %}" alt="" data-position="25% 25%" style="width: 300px; height: 200px;"/>
+			<img src="{% link assets/images/pic15.jpg %}" alt="" data-position="25% 25%" width="576" height="409"/>
 		</a>
 		<div class="content">
 			<div class="inner">
