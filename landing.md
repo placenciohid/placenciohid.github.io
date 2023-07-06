@@ -7,7 +7,7 @@ nav-menu: true
 ---
 
 <!-- Main -->
-<div id="main"> <style> .description { font-size: 20px; /* or any other value */ } </style> <p class=“description”>Passionate about leveraging data science and machine learning to drive innovation and solve complex business problems.</p>
+<div id="main">
 
 <!-- One -->
 <section id="one">
