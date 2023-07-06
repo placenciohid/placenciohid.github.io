@@ -15,7 +15,7 @@ nav-menu: true
 		<header class="major">
 			<h2>Introduction and Background</h2>
 		</header>
-		<p>Welcome to my website! I'm Dario Placencio, an Industrial Civil Engineer from Chile with a Master of Science in Business Analytics from the University of Wisconsin-Madison. I bring over five years of experience in the mining industry, along with strong analytical skills, project management expertise, and agile coaching abilities. 
+		<p>Welcome to my website! I'm Darío Placencio, an Industrial Civil Engineer from Chile with a Master of Science in Business Analytics from the University of Wisconsin-Madison. I bring over five years of experience in the mining industry, along with strong analytical skills, project management expertise, and agile coaching abilities. 
 		<br><br>
 		During my professional journey, I have witnessed the transformative impact of leveraging data science and analytics to address business challenges and drive continuous improvement. My passion for data-driven approaches has led me to pursue graduate studies in this field, where I further developed my skills and contributed to solving complex business problems.</p>
 	</div>
