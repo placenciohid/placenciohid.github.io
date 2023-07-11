@@ -59,16 +59,16 @@ nav-menu: true
     </div>
 </div>
 <style>
-    .row {
+    .table-section {
         display: flex;
         justify-content: center;
     }
 
-    .col-6 {
-        margin: 10px;
+    .table-section .col-6 {
+        margin: 20px;
     }
 </style>
-<div class="row">
+<div class="table-section">
     <div class="col-6 col-12-small">
         <h3>Technical Skills</h3>
         <div class="table-wrapper">
@@ -89,7 +89,7 @@ nav-menu: true
                         <tr>
                             <td>R</td>
                         </tr>
-                    </tbody>
+                    </tbody>    <!-- Table contents here -->
                 </table>
             </div>
         </div>
@@ -126,7 +126,7 @@ nav-menu: true
                         <tr>
                             <td>Dbt</td>
                         </tr>
-                    </tbody>
+                    </tbody>    <!-- Table contents here -->
                 </table>
             </div>
         </div>
