@@ -8,4 +8,4 @@ author: null
 show_tile: false
 ---
 
-Test Test Test
+Analytically-driven professional with a background in industrial civil engineering, agile management, and a passion for leveraging data science to solve complex business challenges.
