@@ -6,6 +6,12 @@ image: assets/images/pic12.jpg
 nav-menu: true
 ---
 
+<style>
+    #one .inner {
+        text-align: justify;
+    }
+</style>
+
 <!-- Main -->
 <div id="main">
 

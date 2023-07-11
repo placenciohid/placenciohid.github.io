@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Resume
-description: Lorem ipsum dolor est
+description: 
 image: assets/images/pic16.jpg
 nav-menu: true
 ---
@@ -20,8 +20,8 @@ nav-menu: true
     }
 </style>
 <div class="centered">
-    <h2 id="content">Industrial Civil Engineer | Data Science | Machine Learning Engineering | Agile</h2>
-    <h3>Contact: (608) 800-7317 | Email: placenciohid@wisc.edu | LinkedIn: linkedin.com/in/darioplacencio</h3>
+    <h2 id="content">Data Science | Machine Learning Engineering | Agile Management</h2>
+    <h3>Contact: (608) 800-7317 | Email: Placenciohid@wisc.edu | <a href="linkedin.com/in/darioplacencio">LinkedIn</a></h3>
 </div>
 <div class="row">
     <div class="col-6 col-12-small">
@@ -39,8 +39,7 @@ nav-menu: true
             <li><b>Master of Science in Business Analytics Candidate, University of Wisconsin-Madison, Wisconsin School of Business, Madison, WI (2022-2023)</b></li>
             <li><b>Bachelor of Science in Industrial Civil Engineering, University of La Serena, ULS Engineering School, La Serena, Chile (2010-2016)</b></li>
              <ul>
-                <li>University of Wisconsin-Madison Visiting International Student Program (2014-2015)</li>
-            </ul>
+                <li>University of Wisconsin-Madison Visiting International Student Program (2014-2015)</li></ul>
             <li><b>Bachelor of Science in Engineering Sciences, University of La Serena, ULS Engineering School, La Serena, Chile (2010-2014)</b></li> 
         </ul>
     </div>
@@ -60,22 +59,58 @@ nav-menu: true
 <div class="row">    
     <div class="col-6 col-12-small">
         <h3>Technical Skills</h3>
-            <h4><b>Programming Languages:</b></h4>
-                <ul>
-                    <li>Advanced Python</li>
-                    <li>Advanced SQL</li>
-                    <li>R</li>
-                </ul>
-            <h4><b>Tools:</b></h4>
-                <ul>
-                    <li>Advanced Excel (Pivot Tables, Solver)</li>
-                    <li>Tableau (Dashboard, Stories)</li>
-                    <li>SnowFlake</li>
-                    <li>AWS (S3, SageMaker, Redshift)</li>
-                    <li>Google Cloud (Bigquery)</li>
-                    <li>FiveTrain</li>
-                    <li>Dbt</li>
-                </ul>
+        <div class="table-wrapper">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Programming Languages</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Advanced Python</td>
+                        </tr>
+                        <tr>
+                            <td>Advanced SQL</td>
+                        </tr>
+                        <tr>
+                            <td>R</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tools</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Advanced Excel (Pivot Tables, Solver)</td>
+                        </tr>
+                        <tr>
+                            <td>Tableau (Dashboard, Stories)</td>
+                        </tr>
+                        <tr>
+                            <td>SnowFlake</td>
+                        </tr>
+                        <tr>
+                            <td>AWS (S3, SageMaker, Redshift)</td>
+                        </tr>
+                        <tr>
+                            <td>Google Cloud (Bigquery)</td>
+                        </tr>
+                        <tr>
+                            <td>FiveTrain</td>
+                        </tr>
+                        <tr>
+                            <td>Dbt</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
@@ -99,8 +134,10 @@ nav-menu: true
 <div class="row">
     <div class="col-6 col-12-small">
         <h3>Published Work</h3>
+        <div class="box">
         <ul>
             <li><a href="https://content.iospress.com/articles/work/wor205049"><b>Augmented Reality for Virtual Training in the Construction Industry</b></a></li>
             <li><a href="https://doi.org/10.1016/j.jbusres.2017.12.011"><b>A Bibliometric Analysis of Creativity in the Field of Business</b></a></li>
         </ul>
+        </div>
     </div>
