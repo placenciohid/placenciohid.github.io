@@ -14,8 +14,15 @@ nav-menu: true
 		</header>
 
 <!-- Content -->
-<h2 id="content">Industrial Civil Engineer | Data Science | Machine Learning Engineering | Agile Management</h2>
-<h3>Contact: (608) 800-7317 | Email: placenciohid@wisc.edu | LinkedIn: linkedin.com/in/darioplacencio</h3>       
+<style>
+    .centered {
+        text-align: center;
+    }
+</style>
+<div class="centered">
+    <h2 id="content">Industrial Civil Engineer | Data Science | Machine Learning Engineering | Agile</h2>
+    <h3>Contact: (608) 800-7317 | Email: placenciohid@wisc.edu | LinkedIn: linkedin.com/in/darioplacencio</h3>
+</div>
 <div class="row">
     <div class="col-6 col-12-small">
         <h3>Summary</h3>
@@ -28,37 +35,38 @@ nav-menu: true
     <div class="col-6 col-12-small">
         <h3>Education</h3>
         <ul>
-            <li>Machine Learning & Signal Processing Masters Candidate, University of Wisconsin Madison, College of Enginerring, Madison, WI (2023-2024)</li>
-            <li>Master of Science in Business Analytics Candidate, University of Wisconsin-Madison, Wisconsin School of Business, Madison, WI (2022-2023)</li>
-            <li>Bachelor of Science in Industrial Civil Engineering, University of La Serena, ULS Engineering School, La Serena, Chile (2010-2016)</li>
+            <li><b>Machine Learning & Signal Processing Masters Candidate, University of Wisconsin Madison, College of Enginerring, Madison, WI (2023-2024)</b></li>
+            <li><b>Master of Science in Business Analytics Candidate, University of Wisconsin-Madison, Wisconsin School of Business, Madison, WI (2022-2023)</b></li>
+            <li><b>Bachelor of Science in Industrial Civil Engineering, University of La Serena, ULS Engineering School, La Serena, Chile (2010-2016)</b></li>
+             <ul>
                 <li>University of Wisconsin-Madison Visiting International Student Program (2014-2015)</li>
-            <li>Bachelor of Science in Engineering Sciences, University of La Serena, ULS Engineering School, La Serena, Chile (2010-2014)</li> 
+            </ul>
+            <li><b>Bachelor of Science in Engineering Sciences, University of La Serena, ULS Engineering School, La Serena, Chile (2010-2014)</b></li> 
         </ul>
     </div>
 </div>
 <div class="row">
     <div class="col-6 col-12-small">
         <h3>Professional Experience</h3>
+        <h4><b>BHP, Santiago, Chile, 2017 - 2022</b></h4>
         <ul>
-            <li>Agile Delivery Practitioner (Scrum Master), Technology Digital Factory, BHP, Santiago, Chile (04/2021 – 07/2022)</li>
-            <li>Specialist Improvement, Enterprise Improvement, BHP, Santiago, Chile (09/2019 – 03/2021)</li>
-            <li>Training Specialist, Global Training & Resourcing, BHP, Santiago, Chile (04/2019 – 08/2019)</li>
-            <li>HR & Training Administrator, Global Asset Services, BHP, Santiago, Chile (01/2017 – 03/2019)</li>
+            <li>Agile Delivery Practitioner (Scrum Master), Technology Digital Factory(04/2021 – 07/2022)</li>
+            <li>Specialist Improvement, Enterprise Improvement (09/2019 – 03/2021)</li>
+            <li>Training Specialist, Global Training & Resourcing (04/2019 – 08/2019)</li>
+            <li>HR & Training Administrator, Global Asset Services (01/2017 – 03/2019)</li>
         </ul>
     </div>
+</div>
+<div class="row">    
     <div class="col-6 col-12-small">
         <h3>Technical Skills</h3>
-        <div class="column-container">
-            <div class="column">
-                <h4>Programming Languages:</h4>
+            <h4><b>Programming Languages:</b></h4>
                 <ul>
                     <li>Advanced Python</li>
                     <li>Advanced SQL</li>
                     <li>R</li>
                 </ul>
-            </div>
-            <div class="column">
-                <h4>Tools:</h4>
+            <h4><b>Tools:</b></h4>
                 <ul>
                     <li>Advanced Excel (Pivot Tables, Solver)</li>
                     <li>Tableau (Dashboard, Stories)</li>
@@ -76,8 +84,8 @@ nav-menu: true
     <div class="col-6 col-12-small">
         <h3>Certifications</h3>
         <ul>
-            <li>MIT Professional Education: Post Graduate Diploma in Leadership and Innovation (2019)</li>
-            <li>Pontifical Catholic University of Chile Engineering Department: Post Graduate Diploma in Strategic Decision Making (2013)</li>
+            <li><b>MIT Professional Education</b>: Post Graduate Diploma in Leadership and Innovation (2019)</li>
+            <li><b>Pontifical Catholic University of Chile Engineering Department</b>: Post Graduate Diploma in Strategic Decision Making (2013)</li>
         </ul>
     </div>
     <div class="col-6 col-12-small">
@@ -92,7 +100,7 @@ nav-menu: true
     <div class="col-6 col-12-small">
         <h3>Published Work</h3>
         <ul>
-            <li><a href="https://content.iospress.com/articles/work/wor205049">Augmented Reality for Virtual Training in the Construction Industry</a></li>
-            <li><a href="https://doi.org/10.1016/j.jbusres.2017.12.011">A Bibliometric Analysis of Creativity in the Field of Business</a></li>
+            <li><a href="https://content.iospress.com/articles/work/wor205049"><b>Augmented Reality for Virtual Training in the Construction Industry</b></a></li>
+            <li><a href="https://doi.org/10.1016/j.jbusres.2017.12.011"><b>A Bibliometric Analysis of Creativity in the Field of Business</b></a></li>
         </ul>
     </div>
