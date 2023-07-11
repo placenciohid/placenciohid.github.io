@@ -67,6 +67,10 @@ nav-menu: true
     .table-section .col-6 {
         margin: 20px;
     }
+
+    .table-section .col-6 h3 {
+        text-align: center;
+    }
 </style>
 <div class="table-section">
     <div class="col-6 col-12-small">
