@@ -67,7 +67,7 @@ nav-menu: true
 <!----tablea--->
 <div class="row">
 <h3>Technical Skills</h3>
-    <div class="6u 12u$(small)">
+    <div class="4u 12u$(medium)">
         <div class="table-wrapper">
             <table>
                 <thead>
@@ -89,7 +89,7 @@ nav-menu: true
             </table>
         </div>
     </div>
-    <div class="6u 12u$(small)">
+    <div class="4u 12u$(medium)">
         <div class="table-wrapper">
             <table>
                 <thead>
