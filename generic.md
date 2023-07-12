@@ -34,15 +34,15 @@ nav-menu: true
     </div>
     <div class="col-6 col-12-small">
         <h3>Education</h3>
+        <ul style="display: flex;">
+        <li><b>Machine Learning & Signal Processing Masters Candidate, University of Wisconsin Madison, College of Engineering, Madison, WI (2023-2024)</b></li>
+        <li><b>Master of Science in Business Analytics Candidate, University of Wisconsin-Madison, Wisconsin School of Business, Madison, WI (2022-2023)</b></li>
+        <li><b>Bachelor of Science in Industrial Civil Engineering, University of La Serena, ULS Engineering School, La Serena, Chile (2010-2016)</b>
         <ul>
-            <li><b>Machine Learning & Signal Processing Masters Candidate, University of Wisconsin Madison, College of Engineering, Madison, WI (2023-2024)</b></li>
-            <li><b>Master of Science in Business Analytics Candidate, University of Wisconsin-Madison, Wisconsin School of Business, Madison, WI (2022-2023)</b></li>
-            <li><b>Bachelor of Science in Industrial Civil Engineering, University of La Serena, ULS Engineering School, La Serena, Chile (2010-2016)</b>
-                <ul>
-                    <li>University of Wisconsin-Madison Visiting International Student Program (2014-2015)</li>
-                </ul>
-            </li>
-            <li><b>Bachelor of Science in Engineering Sciences, University of La Serena, ULS Engineering School, La Serena, Chile (2010-2014)</b></li>
+            <li>University of Wisconsin-Madison Visiting International Student Program (2014-2015)</li>
+        </ul>
+        </li>
+        <li><b>Bachelor of Science in Engineering Sciences, University of La Serena, ULS Engineering School, La Serena, Chile (2010-2014)</b></li>
         </ul>
     </div>
 </div>
