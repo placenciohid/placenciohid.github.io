@@ -67,6 +67,7 @@ nav-menu: true
 <!----tablea--->
 <div class="row">
 <h3>Technical Skills</h3>
+<p><br><br></p>
     <div class="4u 12u$(medium)">
         <div class="table-wrapper">
             <table>
