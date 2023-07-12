@@ -84,7 +84,7 @@ nav-menu: true
 		<br><br>
 		Thank you for visiting my website, where you can explore more about my professional journey, projects, and technical skills. If you have any inquiries or opportunities for collaboration, please don't hesitate to reach out. I am excited to connect with you!.</p>
 		<ul class="actions">
-			<li><a href="generic.html" class="button next">CHECK MY RESUME</a></li>
+			<li><a href="resume.html" class="button next">CHECK MY RESUME</a></li>
 		</ul>
 	</div>
 </section>
