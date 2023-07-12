@@ -11,11 +11,11 @@ image: assets/images/pic17.jpg
 <h3>Clustering</h3>
 
 <p>Clustering, a technique widely employed in experimental design, involves grouping experimental units or subjects into homogeneous subsets based on specific attributes. The objective of clustering is to create internally similar and externally dissimilar groups, enhancing the efficiency and accuracy of experiments. By clustering similar units together, researchers can reduce variability within each group, leading to more precise comparisons and analysis of treatment effects. In essence, clustering aids in creating a balanced and representative sample, yielding insightful conclusions from experimental studies.
-<br>
+<br><br>
 To demonstrate the application of clustering, let's consider a hypothetical randomized controlled trial (RCT) conducted on 200 stores within a company. These stores were randomly assigned to treatment and control groups to evaluate the impact of in-store advertisements on sales. Data was collected from the first 1,000 customers who visited the stores after the experiment's launch, recording the amount they purchased.
-<br>
+<br><br>
 To analyze the average treatment effect (ATE) on sales using the aggregated store-level data, we can calculate the ATE and its confidence interval (CI) to gauge the impact of in-store advertisements on sales.
-<br>
+<br><br>
 To delve deeper into the analysis, and check the methodology and results, please visit the accompanying <a href="https://github.com/placenciohid/Resume/blob/main/Clustering%20and%20Non-Compliance.ipynb"><b>Jupiter notebook</b></a>.</p>
 
 <h3>Non-Compliance</h3>
