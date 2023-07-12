@@ -65,15 +65,18 @@ nav-menu: true
     </div>
 </div>
 <style>
+<style>
     .custom-tables-section {
         display: flex;
         justify-content: space-between;
+        align-items: flex-start;
         gap: 40px;
     }
     .custom-table-wrapper {
         margin-bottom: 20px;
     }
 </style>
+
 <div class="custom-tables-section">
     <div class="custom-table-wrapper">
         <h3>Technical Skills</h3>
