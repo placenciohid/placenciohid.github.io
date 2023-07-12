@@ -48,9 +48,6 @@ nav-menu: true
     </div>
 </div>
 <style>
-    .education-list {
-        display: flex;
-    }
     #nested-list {
         margin: 0;
     }
