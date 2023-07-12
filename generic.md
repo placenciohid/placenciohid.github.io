@@ -66,55 +66,54 @@ nav-menu: true
 </div>
 <!----tables--->
 <div class="row">
-<h3 id="content">Technical Skills</h3>
-<p><br><br></p>
-    <div class="4u 12u$(medium)">
-        <div class="table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Programming Languages</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Advanced Python</td>
-                    </tr>
-                    <tr>
-                        <td>Advanced SQL</td>
-                    </tr>
-                    <tr>
-                        <td>R</td>
-                    </tr> 
-                </tbody>
-            </table>
-        </div>
+<h3>Technical Skills</h3>
+</div>
+<div class="4u 12u$(medium)">
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Programming Languages</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Advanced Python</td>
+                </tr>
+                <tr>
+                    <td>Advanced SQL</td>
+                </tr>
+                <tr>
+                    <td>R</td>
+                </tr> 
+            </tbody>
+        </table>
     </div>
-    <div class="4u 12u$(medium)">
-        <div class="table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Tools</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                    <tbody>
-                    <tr>
-                        <td>Tableau (Dashboard, Stories)</td>
-                        <td>SnowFlake</td>
-                    </tr>
-                    <tr>
-                        <td>AWS (S3, SageMaker, Redshift)</td>
-                        <td>Google Cloud (Bigquery)</td>
-                    </tr>
-                    <tr>
-                        <td>FiveTrain</td>
-                        <td>Dbt</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+</div>
+<div class="4u 12u$(medium)">
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Tools</th>
+                    <th></th>
+                </tr>
+            </thead>
+                <tbody>
+                <tr>
+                    <td>Tableau (Dashboard, Stories)</td>
+                    <td>SnowFlake</td>
+                </tr>
+                <tr>
+                    <td>AWS (S3, SageMaker, Redshift)</td>
+                    <td>Google Cloud (Bigquery)</td>
+                </tr>
+                <tr>
+                    <td>FiveTrain</td>
+                    <td>Dbt</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
 <div class="row">
