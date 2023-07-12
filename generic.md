@@ -40,8 +40,7 @@ nav-menu: true
             <li><b>Bachelor of Science in Industrial Civil Engineering, University of La Serena, ULS Engineering School, La Serena, Chile (2010-2016)</b>
                 <ul>
                     <li>University of Wisconsin-Madison Visiting International Student Program (2014-2015)</li>
-                </ul>
-            </li>
+                </ul></li>
             <li><b>Bachelor of Science in Engineering Sciences, University of La Serena, ULS Engineering School, La Serena, Chile (2010-2014)</b></li>
         </ul>
     </div>
