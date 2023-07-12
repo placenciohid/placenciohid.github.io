@@ -32,19 +32,29 @@ nav-menu: true
         <br><br>
         With a personal commitment to collaboration, I thrive in team environments that foster the development of meaningful, lasting working relationships. I am excited to bring this dedication to any organization I am a part of, and to help drive innovation and success through data-driven approaches.</blockquote>
     </div>
-    <div class="col-6 col-12-small">
+</div>
+<div class="col-6 col-12-small">
         <h3>Education</h3>
-        <ul>
+        <ul class="education-list">
             <li><b>Machine Learning & Signal Processing Masters Candidate, University of Wisconsin Madison, College of Engineering, Madison, WI (2023-2024)</b></li>
             <li><b>Master of Science in Business Analytics Candidate, University of Wisconsin-Madison, Wisconsin School of Business, Madison, WI (2022-2023)</b></li>
             <li><b>Bachelor of Science in Industrial Civil Engineering, University of La Serena, ULS Engineering School, La Serena, Chile (2010-2016)</b>
-                <ul>
+                <ul id="nested-list">
                     <li>University of Wisconsin-Madison Visiting International Student Program (2014-2015)</li>
-                </ul></li>
+                </ul>
+            </li>
             <li><b>Bachelor of Science in Engineering Sciences, University of La Serena, ULS Engineering School, La Serena, Chile (2010-2014)</b></li>
         </ul>
     </div>
 </div>
+<style>
+    .education-list {
+        display: flex;
+    }
+    #nested-list {
+        margin: 0;
+    }
+</style>
 <div class="row">
     <div class="col-6 col-12-small">
         <h3>Professional Experience</h3>
