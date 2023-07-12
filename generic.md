@@ -58,10 +58,10 @@ nav-menu: true
         </ul>
     </div>
 </div>
-<div class="table-section">
-    <div class="col-6 col-12-small">
-        <h3>Technical Skills</h3>
-        <div class="table-wrapper">
+<div class="col-6 col-12-small">
+    <h3>Technical Skills</h3>
+        <div class="table-section">
+            <div class="table-wrapper">
             <div class="table-container">
                 <table>
                     <thead>
@@ -85,7 +85,6 @@ nav-menu: true
         </div>
     </div>
     <div class="col-6 col-12-small">
-        <h3>Tools</h3>
         <div class="table-wrapper">
             <div class="table-container">
                 <table>
