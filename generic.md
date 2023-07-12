@@ -69,7 +69,7 @@ nav-menu: true
 <h3>Technical Skills</h3>
 </div>
 <div class="row">
-    <div class="4u 12u$(medium)">
+    <div class="6u 12u$(small)">
         <div class="table-wrapper">
             <table>
                 <thead>
@@ -91,12 +91,13 @@ nav-menu: true
             </table>
         </div>
     </div>
-    <div class="4u 12u$(medium)">
+    <div class="6u 12u$(small)">
         <div class="table-wrapper">
             <table>
                 <thead>
                     <tr>
                         <th>Tools</th>
+                        <th></th>
                         <th></th>
                     </tr>
                 </thead>
@@ -104,12 +105,10 @@ nav-menu: true
                     <tr>
                         <td>Tableau (Dashboard, Stories)</td>
                         <td>SnowFlake</td>
-                    </tr>
-                    <tr>
                         <td>AWS (S3, SageMaker, Redshift)</td>
-                        <td>Google Cloud (Bigquery)</td>
                     </tr>
                     <tr>
+                        <td>Google Cloud (Bigquery)</td>
                         <td>FiveTrain</td>
                         <td>Dbt</td>
                     </tr>
