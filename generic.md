@@ -70,7 +70,7 @@ nav-menu: true
         <div class="table-section">
             <div class="table-wrapper">
             <div class="table-container">
-                <table>
+                <table style="display: inline-table; margin-right: 20px;"> <!-- added display and margin properties -->
                     <thead>
                         <tr>
                             <th>Programming Languages</th>
@@ -94,7 +94,7 @@ nav-menu: true
     <div class="col-6 col-12-small">
         <div class="table-wrapper">
             <div class="table-container">
-                <table>
+                <table style="display: inline-table; margin-left: 20px;"> <!-- added display and margin properties -->
                     <thead>
                         <tr>
                             <th>Tools</th>
