@@ -98,17 +98,18 @@ nav-menu: true
                     <tr>
                         <th>Tools</th>
                         <th></th>
-                        <th></th>
                     </tr>
                 </thead>
                     <tbody>
                     <tr>
                         <td>Tableau (Dashboard, Stories)</td>
                         <td>SnowFlake</td>
-                        <td>AWS (S3, SageMaker, Redshift)</td>
                     </tr>
                     <tr>
+                        <td>AWS (S3, SageMaker, Redshift)</td>
                         <td>Google Cloud (Bigquery)</td>
+                    </tr>
+                    <tr>
                         <td>FiveTrain</td>
                         <td>Dbt</td>
                     </tr>
