@@ -2,7 +2,7 @@
 title: About Me
 layout: landing
 description: 'Passionate about leveraging data science and machine learning to drive innovation and solve complex business problems.'	 	
-image: assets/images/pic12.jpg
+image: assets/images/banner.jpg
 nav-menu: true
 ---
 
