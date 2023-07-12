@@ -58,20 +58,12 @@ nav-menu: true
         </ul>
     </div>
 </div>
-
 <style>
     .table-section {
         display: flex;
         justify-content: center;
         gap: 40px;
     }
-
-    .col-6 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
     .col-6 h3 {
         text-align: left;
     }
@@ -141,7 +133,6 @@ nav-menu: true
         </div>
     </div>
 </div>
-
 <div class="row">
     <div class="col-6 col-12-small">
         <h3>Certifications</h3>
