@@ -64,12 +64,21 @@ nav-menu: true
         </ul>
     </div>
 </div>
-<div class="row">
-    <div class="col-6 col-12-small">
-    <h3>Technical Skills</h3>
-        <div class="table-section">
-            <div class="table-wrapper">
-            <div class="table-container">
+<style>
+    .custom-tables-section {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+    }
+    .custom-table-wrapper {
+        margin-bottom: 20px;
+    }
+</style>
+<div class="custom-tables-section">
+    <div class="custom-table-wrapper">
+        <h3>Technical Skills</h3>
+        <div class="custom-table-section">
+            <div class="custom-table-wrapper">
                 <table>
                     <thead>
                         <tr>
@@ -85,47 +94,43 @@ nav-menu: true
                         </tr>
                         <tr>
                             <td>R</td>
-                        </tr> 
+                        </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-    <div class="col-6 col-12-small">
-        <div class="table-wrapper">
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Tools</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Advanced Excel (Pivot Tables, Solver)</td>
-                        </tr>
-                        <tr>
-                            <td>Tableau (Dashboard, Stories)</td>
-                        </tr>
-                        <tr>
-                            <td>SnowFlake</td>
-                        </tr>
-                        <tr>
-                            <td>AWS (S3, SageMaker, Redshift)</td>
-                        </tr>
-                        <tr>
-                            <td>Google Cloud (Bigquery)</td>
-                        </tr>
-                        <tr>
-                            <td>FiveTrain</td>
-                        </tr>
-                        <tr>
-                            <td>Dbt</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+    <div class="custom-table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Tools</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Advanced Excel (Pivot Tables, Solver)</td>
+                </tr>
+                <tr>
+                    <td>Tableau (Dashboard, Stories)</td>
+                </tr>
+                <tr>
+                    <td>SnowFlake</td>
+                </tr>
+                <tr>
+                    <td>AWS (S3, SageMaker, Redshift)</td>
+                </tr>
+                <tr>
+                    <td>Google Cloud (Bigquery)</td>
+                </tr>
+                <tr>
+                    <td>FiveTrain</td>
+                </tr>
+                <tr>
+                    <td>Dbt</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
 <div class="row">
