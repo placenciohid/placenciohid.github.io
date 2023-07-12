@@ -58,20 +58,25 @@ nav-menu: true
         </ul>
     </div>
 </div>
+
 <style>
     .table-section {
         display: flex;
         justify-content: center;
+        gap: 40px;
     }
 
-    .table-section .col-6 {
-        margin: 20px;
+    .col-6 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .table-section .col-6 h3 {
+    .col-6 h3 {
         text-align: left;
     }
 </style>
+
 <div class="table-section">
     <div class="col-6 col-12-small">
         <h3>Technical Skills</h3>
@@ -92,14 +97,14 @@ nav-menu: true
                         </tr>
                         <tr>
                             <td>R</td>
-                        </tr>
-                    </tbody>    <!-- Table contents here -->
+                        </tr> 
+                    </tbody>
                 </table>
             </div>
         </div>
     </div>
     <div class="col-6 col-12-small">
-        <h3>&nbsp;</h3>
+        <h3>Tools</h3>
         <div class="table-wrapper">
             <div class="table-container">
                 <table>
@@ -130,12 +135,13 @@ nav-menu: true
                         <tr>
                             <td>Dbt</td>
                         </tr>
-                    </tbody>    <!-- Table contents here -->
+                    </tbody>
                 </table>
             </div>
         </div>
     </div>
 </div>
+
 <div class="row">
     <div class="col-6 col-12-small">
         <h3>Certifications</h3>
