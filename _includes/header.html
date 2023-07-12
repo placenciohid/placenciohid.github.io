@@ -14,12 +14,12 @@
 	<ul class="links">
         {% for page in site.pages %}
 		    {% if page.layout == "home" %}
-		        <li><a href="{{ "" | absolute_url }}/">{{ page.title }}</a></li>
+		        <li><a href="{{ "" | absolute_url }}/"><button class="button special fit">{{ page.title }}</button></a></li>
 	    	{% endif %}
 		{% endfor %}
 		{% for page in site.html_pages %}
 		    {% if page.layout != "home" and page.nav-menu == true %}
-		        <li><a href="{{ page.url | absolute_url }}">{{ page.title }}</a></li>
+		        <li><a href="{{ page.url | absolute_url }}"><button class="button special fit">{{ page.title }}</button></a></li>
 		    {% endif %}
 		{% endfor %}
 	</ul>
