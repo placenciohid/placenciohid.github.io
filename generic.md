@@ -65,8 +65,8 @@ nav-menu: true
     </div>
 </div>
 <!----tablea--->
-<h3 id="content">Technical Skills</h3>
 <div class="row">
+<h3>Technical Skills</h3>
     <div class="6u 12u$(small)">
         <div class="table-wrapper">
             <table>
@@ -95,28 +95,20 @@ nav-menu: true
                 <thead>
                     <tr>
                         <th>Tools</th>
+                        <th></th>
                     </tr>
                 </thead>
                     <tbody>
                     <tr>
-                        <td>Advanced Excel (Pivot Tables, Solver)</td>
-                    </tr>
-                    <tr>
                         <td>Tableau (Dashboard, Stories)</td>
-                    </tr>
-                    <tr>
                         <td>SnowFlake</td>
                     </tr>
                     <tr>
                         <td>AWS (S3, SageMaker, Redshift)</td>
-                    </tr>
-                    <tr>
                         <td>Google Cloud (Bigquery)</td>
                     </tr>
                     <tr>
                         <td>FiveTrain</td>
-                    </tr>
-                    <tr>
                         <td>Dbt</td>
                     </tr>
                 </tbody>
