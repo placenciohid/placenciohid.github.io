@@ -58,7 +58,8 @@ nav-menu: true
         </ul>
     </div>
 </div>
-<div class="col-6 col-12-small">
+<div class="row">
+    <div class="col-6 col-12-small">
     <h3>Technical Skills</h3>
         <div class="table-section">
             <div class="table-wrapper">
