@@ -58,17 +58,6 @@ nav-menu: true
         </ul>
     </div>
 </div>
-<style>
-    .table-section {
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-    }
-    .col-6 h3 {
-        text-align: left;
-    }
-</style>
-
 <div class="table-section">
     <div class="col-6 col-12-small">
         <h3>Technical Skills</h3>
