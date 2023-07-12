@@ -64,76 +64,68 @@ nav-menu: true
         </ul>
     </div>
 </div>
-<style>
-    .custom-tables-section {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 40px;
-    }
-    .custom-table-wrapper {
-        margin-bottom: 20px;
-    }
-    .custom-heading-wrapper {
-        margin-bottom: 20px;
-    }
-</style>
-
-<div class="custom-tables-section">
-    <div class="custom-heading-wrapper">
-        <h3>Technical Skills</h3>
+<div class="row">
+    <div class="col-6 col-12-small">
+    <h3>Technical Skills</h3>
+        <div class="table-section">
+            <div class="table-wrapper">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Programming Languages</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Advanced Python</td>
+                        </tr>
+                        <tr>
+                            <td>Advanced SQL</td>
+                        </tr>
+                        <tr>
+                            <td>R</td>
+                        </tr> 
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-    <div class="custom-table-wrapper">
-        <table>
-            <thead>
-                <tr>
-                    <th>Programming Languages</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Advanced Python</td>
-                </tr>
-                <tr>
-                    <td>Advanced SQL</td>
-                </tr>
-                <tr>
-                    <td>R</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="custom-table-wrapper">
-        <table>
-            <thead>
-                <tr>
-                    <th>Tools</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Advanced Excel (Pivot Tables, Solver)</td>
-                </tr>
-                <tr>
-                    <td>Tableau (Dashboard, Stories)</td>
-                </tr>
-                <tr>
-                    <td>SnowFlake</td>
-                </tr>
-                <tr>
-                    <td>AWS (S3, SageMaker, Redshift)</td>
-                </tr>
-                <tr>
-                    <td>Google Cloud (Bigquery)</td>
-                </tr>
-                <tr>
-                    <td>FiveTrain</td>
-                </tr>
-                <tr>
-                    <td>Dbt</td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="col-6 col-12-small">
+        <div class="table-wrapper">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tools</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Advanced Excel (Pivot Tables, Solver)</td>
+                        </tr>
+                        <tr>
+                            <td>Tableau (Dashboard, Stories)</td>
+                        </tr>
+                        <tr>
+                            <td>SnowFlake</td>
+                        </tr>
+                        <tr>
+                            <td>AWS (S3, SageMaker, Redshift)</td>
+                        </tr>
+                        <tr>
+                            <td>Google Cloud (Bigquery)</td>
+                        </tr>
+                        <tr>
+                            <td>FiveTrain</td>
+                        </tr>
+                        <tr>
+                            <td>Dbt</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
 <div class="row">
