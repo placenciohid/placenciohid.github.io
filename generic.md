@@ -74,32 +74,34 @@ nav-menu: true
     .custom-table-wrapper {
         margin-bottom: 20px;
     }
+    .custom-heading-wrapper {
+        margin-bottom: 20px;
+    }
 </style>
+
 <div class="custom-tables-section">
-    <div class="custom-table-wrapper">
+    <div class="custom-heading-wrapper">
         <h3>Technical Skills</h3>
-        <div class="custom-table-section">
-            <div class="custom-table-wrapper">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Programming Languages</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Advanced Python</td>
-                        </tr>
-                        <tr>
-                            <td>Advanced SQL</td>
-                        </tr>
-                        <tr>
-                            <td>R</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+    </div>
+    <div class="custom-table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Programming Languages</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Advanced Python</td>
+                </tr>
+                <tr>
+                    <td>Advanced SQL</td>
+                </tr>
+                <tr>
+                    <td>R</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
     <div class="custom-table-wrapper">
         <table>
