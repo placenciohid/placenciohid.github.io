@@ -14,7 +14,7 @@ To delve deeper into the analysis, and check the methodology and results, please
 
 We begin by thoroughly analyzing a dataset consisting of red variants of the Portuguese "Vinho Verde" wine. The dataset includes attributes such as fixed acidity, volatile acidity, citric acid, residual sugar, chlorides, free sulfur dioxide, total sulfur dioxide, density, pH, sulphates, alcohol, and the quality rating based on sensory data. We delve into the dataset structure, identify missing or erroneous data, and perform necessary data cleaning steps to ensure reliable analysis.
 
-</h3>Building the Neural Network Model</h3>
+<h3>Building the Neural Network Model</h3>
 
 To predict the wine quality, we employ a neural network approach. We construct a three-layer neural network model, comprising an input layer, a hidden layer, and an output layer. The model takes the physicochemical attributes as input and outputs a prediction of wine quality. The model is trained using the Adam optimizer and binary cross-entropy loss function.
 
