@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Unsupervised Learning for Wine Data Analysis
-description: Lorem etiam nullam
+description:
 image: assets/images/pic20.jpg
 ---
 
