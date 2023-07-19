@@ -7,11 +7,11 @@ image: assets/images/pic22.jpg
 
 User reviews on the Google Play Store offer valuable feedback for application developers, providing insights that drive app improvements and enhance user satisfaction. In this project, we embark on a data-driven journey to explore the fascinating world of topic modeling, sentiment analysis, and rating prediction using user feedback from the Google Play Store. The aim is to uncover the most common themes, sentiments, and preferences within the vast volume of unstructured user feedback.
 
+To delve deeper into the analysis, and check the methodology and results, please visit the accompanying <a href="https://github.com/placenciohid/Resume/blob/main/Google%20Play%20Store%20Review%20-%20%20Text%20Analytics.ipynb"><b>Jupiter notebook</b></a>.
+
 <h3>Objectives</h3>
 
 The objectives are to first, generate topic models and gain insights into common themes expressed in user reviews, and second, to build a rating prediction model based on the review text to assess overall user sentiment. Achieving these goals will empower developers to make data-driven decisions, enhancing their applications and better catering to user needs.
-
-To delve deeper into the analysis, and check the methodology and results, please visit the accompanying <a href="https://github.com/placenciohid/Resume/blob/main/Google%20Play%20Store%20Review%20-%20%20Text%20Analytics.ipynb"><b>Jupiter notebook</b></a>.
 
 <h3>Data Cleaning and Preprocessing</h3>
 
