@@ -11,6 +11,8 @@ User reviews on the Google Play Store offer valuable feedback for application de
 
 The objectives are to first, generate topic models and gain insights into common themes expressed in user reviews, and second, to build a rating prediction model based on the review text to assess overall user sentiment. Achieving these goals will empower developers to make data-driven decisions, enhancing their applications and better catering to user needs.
 
+To delve deeper into the analysis, and check the methodology and results, please visit the accompanying <a href="https://github.com/placenciohid/Resume/blob/main/Google%20Play%20Store%20Review%20-%20%20Text%20Analytics.ipynb"><b>Jupiter notebook</b></a>.
+
 <h3>Data Cleaning and Preprocessing</h3>
 
 Before delving into topic modeling, I performed necessary data cleaning and preprocessing on the dataset. This involves handling missing data, dropping irrelevant columns, and transforming the text through tokenization, lemmatization, and stop word removal. The resulting clean and processed reviews serve as the foundation for my analysis.
