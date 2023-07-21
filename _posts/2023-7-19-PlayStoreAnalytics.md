@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Uncovering Google Play Store Reviews - A Data-Driven Analysis
+title: Uncovering Play Store Reviews - A Data-Driven Analysis
 description:
 image: assets/images/pic22.jpg
 ---
