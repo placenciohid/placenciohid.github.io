@@ -1,7 +1,7 @@
 ---
 title: About Me
 layout: landing
-description: 'Passionate about leveraging data science and machine learning to drive innovation and solve complex business problems.'	 	
+description: 'Driven to unlock the power of machine learning and data science to drive innovation and tackle complex business challenges.'	 	
 image: assets/images/banner.jpg
 nav-menu: true
 ---
@@ -21,9 +21,9 @@ nav-menu: true
 		<header class="major">
 			<h2>Introduction and Background</h2>
 		</header>
-		<p>Welcome to my website! I'm Darío Placencio, an Industrial Civil Engineer from Chile with a Master of Science in Business Analytics from the University of Wisconsin-Madison. I bring over five years of experience in the mining industry, along with strong analytical skills, project management expertise, and agile coaching abilities. 
+		<p>Welcome to my website! I'm Darío Placencio, an Industrial Civil Engineer from Chile with a passion for harnessing data science and machine learning to drive business innovation. I hold two Master's degrees from the University of Wisconsin-Madison: one in Business Analytics and another in Machine Learning & Signal Processing (c). With over five years of industry experience, I bring a unique blend of technical expertise, analytical skills, project management know-how, and agile coaching abilities.
 		<br><br>
-		During my professional journey, I have witnessed the transformative impact of leveraging data science and analytics to address business challenges and drive continuous improvement. My passion for data-driven approaches has led me to pursue graduate studies in this field, where I further developed my skills and contributed to solving complex business problems.</p>
+		Throughout my career, I've seen firsthand the transformative power of machine learning and data science in tackling business challenges and driving continuous improvement. This experience sparked my pursuit of graduate studies in the field, where I further honed my skills and contributed to solving complex business problems. I'm excited to leverage my expertise to drive impact and innovation in the industry.</p>
 	</div>
 </section>
 
@@ -31,14 +31,18 @@ nav-menu: true
 <section id="two" class="spotlights">
 	<section>
 		<a href="generic.html" class="image">
-			<img src="{% link assets/images/pic13.jpg %}" alt="" data-position="center center" width="576" height="609"/>
+			<img src="{% link assets/images/pic13.jpg %}" alt="" data-position="center center" width="400" height="609"/>
 		</a>
 		<div class="content">
 			<div class="inner">
 				<header class="major">
-					<h3>Experience in the Mining Industry</h3>
+					<h3>Transforming the Mining Industry with Data Science</h3>
 				</header>
-				<p>As an Industrial Civil Engineer, I have gained valuable experience in the mining industry, managing projects and utilizing analytical techniques to optimize operations. My role as an Agile Delivery Practitioner allowed me to successfully lead projects, such as the "Asset Health - Escondida" for BHP, with significant budgets and tangible returns on investment.</p>
+				<p>With over 5 years of experience in the mining industry, I've leveraged my skills in data science, machine learning, and project management to drive innovation and optimize operations. As a Data Scientist, I've worked with top mining companies, including Rio Tinto and BHP, to deliver high-impact projects.</p>
+				<br><br>
+				<p>At Rio Tinto, I developed machine learning models to predict blocked orders, applying deep learning model such as Generalized Extre Value Models and Graphical Neural Networks. I also built data pipelines using PySpark Apache and created a comprehensive database of air pollution permits conditions using OCR and large language models.</p>
+				<br><br>
+				<p>As an Agile Delivery Practitioner at BHP, I successfully led projects like "Asset Health - Escondida", delivering significant ROI and improving asset reliability. My expertise in predictive modeling, data pipelines, and agile methodologies enables me to tackle complex challenges and unlock business value.</p>
 			</div>
 		</div>
 	</section>
