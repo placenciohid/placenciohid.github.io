@@ -8,4 +8,4 @@ author: null
 show_tile: false
 ---
 
-Analytically-driven professional with a background in industrial civil engineering, agile management, and a passion for leveraging data science to solve complex business challenges.
+Results-driven professional with expertise in machine learning, business analytics, and engineering. I help organizations drive innovation and growth by leveraging data science to solve complex business challenges and uncover new opportunities.
