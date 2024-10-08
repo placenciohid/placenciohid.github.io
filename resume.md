@@ -20,23 +20,23 @@ nav-menu: true
     }
 </style>
 <div class="centered">
-    <h2 id="content">Data Science | Machine Learning Engineering | Agile Management</h2>
+    <h2 id="content">Data Science | Machine Learning Engineering | Project Management</h2>
     <h3>Contact: (608) 800-7317 | <a href="mailto:Darioplacenciohidalgo@gmail.com">Darioplacenciohidalgo@gmail.com</a> | <a href="linkedin.com/in/darioplacencio">LinkedIn</a></h3>
 </div>
 <div class="row">
     <div class="col-6 col-12-small">
         <h3>Summary</h3>
-        <blockquote>As an Industrial Civil Engineer from Chile with legal authorization to work in the US through CPT/OPT, I bring over five years of experience in the mining industry, along with strong analytical skills, project management experience, and agile coaching skills.
-        <br><br>     
-        My professional journey has led me to realize the transformative impact of leveraging data science and analytics to drive continuous improvement and root cause analysis of business challenges. This realization has inspired me to pursue graduate studies in this field, as I am keen on developing my skills and contributing to solving complex business problems. 
-        <br><br>
-        With a personal commitment to collaboration, I thrive in team environments that foster the development of meaningful, lasting working relationships. I am excited to bring this dedication to any organization I am a part of, and to help drive innovation and success through data-driven approaches.</blockquote>
+        <blockquote style="margin-bottom: 15px;">
+            <p style="margin-bottom: 15px;">As an Industrial Civil Engineer from Chile with legal authorization to work in the US through OPT, I bring over five years of work experience, along with strong analytical skills, project management experience, and agile coaching skills.</p>
+            <p style="margin-bottom: 15px;">My professional journey has led me to develop a passion for harnessing the power of data science and analytics to drive business growth and improvement. With a strong foundation in engineering and a drive to stay at the forefront of industry trends, I have pursued advanced studies in machine learning and business analytics to further enhance my skills and expertise.</p>
+            <p>With a personal commitment to collaboration, I thrive in team environments that foster the development of meaningful, lasting working relationships. I am excited to bring this dedication to any organization I am a part of, and to help drive innovation and success through data-driven approaches.</p>
+        </blockquote>
     </div>
 </div>
 <div class="col-6 col-12-small">
         <h3>Education</h3>
         <ul class="education-list">
-            <li><b>Machine Learning & Signal Processing Masters Candidate, University of Wisconsin Madison, College of Engineering, Madison, WI (2023-2024)</b></li>
+            <li><b>Machine Learning & Signal Processing Masters, University of Wisconsin Madison, College of Engineering, Madison, WI (2023-2024)</b></li>
             <li><b>Master of Science in Business Analytics Candidate, University of Wisconsin-Madison, Wisconsin School of Business, Madison, WI (2022-2023)</b></li>
             <li><b>Bachelor of Science in Industrial Civil Engineering, University of La Serena, ULS Engineering School, La Serena, Chile (2010-2016)</b>
                 <ul id="nested-list">
@@ -55,9 +55,13 @@ nav-menu: true
 <div class="row">
     <div class="col-6 col-12-small">
         <h3>Professional Experience</h3>
+        <h4><b>Rio Tinto, Boron - California, United States, 2024</b></h4>
+        <ul>
+            <li>Data Science Intern, Operational Excellence (05/2024 – 08/2024)</li>
+        </ul>
         <h4><b>BHP, Santiago, Chile, 2017 - 2022</b></h4>
         <ul>
-            <li>Agile Delivery Practitioner (Scrum Master), Technology Digital Factory(04/2021 – 07/2022)</li>
+            <li>Agile Delivery Practitioner (Scrum Master), Technology Digital Factory (04/2021 – 07/2022)</li>
             <li>Specialist Improvement, Enterprise Improvement (09/2019 – 03/2021)</li>
             <li>Training Specialist, Global Training & Resourcing (04/2019 – 08/2019)</li>
             <li>HR & Training Administrator, Global Asset Services (01/2017 – 03/2019)</li>
@@ -79,13 +83,13 @@ nav-menu: true
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Advanced Python</td>
+                        <td>Python, Pytorch, Tensorflow</td>
                     </tr>
                     <tr>
-                        <td>Advanced SQL</td>
+                        <td>SQL, Pyspark</td>
                     </tr>
                     <tr>
-                        <td>R</td>
+                        <td>Julia, R</td>
                     </tr> 
                 </tbody>
             </table>
@@ -102,16 +106,16 @@ nav-menu: true
                 </thead>
                     <tbody>
                     <tr>
-                        <td>Tableau (Dashboard, Stories)</td>
+                        <td>Tableau </td>
                         <td>SnowFlake</td>
                     </tr>
                     <tr>
                         <td>AWS (S3, SageMaker, Redshift)</td>
-                        <td>Google Cloud (Bigquery)</td>
+                        <td>Google Cloud (Bigquery, Compute Engine)</td>
                     </tr>
                     <tr>
-                        <td>FiveTrain</td>
-                        <td>Dbt</td>
+                        <td>Docker</td>
+                        <td>Palantir - Foundry</td>
                     </tr>
                 </tbody>
             </table>
