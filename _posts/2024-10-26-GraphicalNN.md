@@ -124,11 +124,10 @@ image: assets/images/pic24.jpg
     <div class="col-12">
         <h3>8. Conclusion and Future Work</h3>
         <p>The integration of GNN-INCM with HSKDM presents a powerful approach for event prediction in datasets plagued by class imbalance. By transforming tabular data into a graph structure, the potential of GNNs is unlocked to capture complex relational patterns. The ensemble and knowledge distillation strategies further bolster the model's robustness and generalizability.</p>
-        <p><b>Future Directions</b>:</p>
+        <p><b>Possible Additional Improvements</b>:</p>
         <ul>
             <li><b>Hyperparameter Optimization</b>: Leveraging tools like Optuna for automated hyperparameter tuning could yield performance improvements.</li>
             <li><b>Feature Selection</b>: Exploring feature importance to streamline the model and reduce computational load.</li>
-            <li><b>Real-Time Implementation</b>: Adapting the model for real-time event prediction scenarios.</li>
             <li><b>Exploration of Other GNN Architectures</b>: Testing additional GNN variants or hybrid models to further enhance performance.</li>
         </ul>
     </div>
