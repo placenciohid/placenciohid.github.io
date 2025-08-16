@@ -1,92 +1,166 @@
 ---
-title: About Me
-layout: landing
-description: 'Driven to unlock the power of machine learning and data science to drive innovation and tackle complex business challenges.'	 	
-image: assets/images/banner.jpg
+layout: post
+title: Resume
+description: 
+image: assets/images/pic16.jpg
 nav-menu: true
 ---
 
-<style>
-    #one .inner {
-        text-align: justify;
-    }
-</style>
-
-<!-- Main -->
-<div id="main">
-
 <!-- One -->
 <section id="one">
-	<div class="inner">
-		<header class="major">
-			<h2>Introduction and Background</h2>
-		</header>
-		<p>Welcome to my website! I'm Darío Placencio, an Industrial Civil Engineer from Chile with a passion for harnessing data science and machine learning to drive business innovation. I hold two Master's degrees from the University of Wisconsin-Madison: one in Business Analytics and another in Machine Learning & Signal Processing. With over five years of industry experience, I bring a unique blend of technical expertise, analytical skills, project management know-how, and agile coaching abilities.
-		<br><br>
-		Throughout my career, I've seen firsthand the transformative power of machine learning and data science in tackling business challenges and driving continuous improvement. This experience sparked my pursuit of graduate studies in the field, where I further honed my skills and contributed to solving complex business problems. I'm excited to leverage my expertise to drive impact and innovation in the industry.</p>
-	</div>
-</section>
+    <div class="inner">
+       <header class="major centered">
+          <h1>DARÍO PLACENCIO</h1>
+       </header>
 
-<!-- Two -->
-<section id="two" class="spotlights">
-	<section>
-		<a href="generic.html" class="image">
-			<img src="{% link assets/images/pic13.jpg %}" alt="" data-position="center center" width="400" height="700"/>
-		</a>
-		<div class="content">
-			<div class="inner">
-				<header class="major">
-					<h3>Transforming the Mining Industry with Data Science</h3>
-				</header>
-				<p>With over 5 years of experience in the mining industry, I've leveraged my skills in data science, machine learning, and project management to drive innovation and optimize operations. As a Data Scientist, I've worked with top mining companies, including Rio Tinto and BHP, to deliver high-impact projects.</p>
-				<p>At Rio Tinto, I developed machine learning models to predict blocked orders, applying deep learning model such as Generalized Extre Value Models and Graphical Neural Networks. I also built data pipelines using PySpark Apache and created a comprehensive database of air pollution permits conditions using OCR and large language models.</p>
-				<p>As an Agile Delivery Practitioner at BHP, I successfully led projects like "Asset Health - Escondida", delivering significant ROI and improving asset reliability. My expertise in predictive modeling, data pipelines, and agile methodologies enables me to tackle complex challenges and unlock business value.</p>
-			</div>
-		</div>
-	</section>
-	<section>
-		<a href="generic.html" class="image">
-			<img src="{% link assets/images/pic14.jpg %}" alt="" data-position="top center" width="576" height="409"/>
-		</a>
-		<div class="content">
-			<div class="inner">
-				<header class="major">
-					<h3>Delivering Business Impact through Strategic Improvement</h3>
-				</header>
-				<p>Throughout my tenure at BHP, I've driven business transformation by identifying areas for improvement and implementing strategic solutions. By collaborating with cross-functional teams and external partners, I've successfully secured funding for high-impact projects, improved operational efficiency, and delivered tangible business results.</p>
-			</div>
-		</div>
-	</section>
-	<section>
-		<a href="generic.html" class="image">
-			<img src="{% link assets/images/pic15.jpg %}" alt="" data-position="25% 25%" width="400" height="700"/>
-		</a>
-		<div class="content">
-			<div class="inner">
-				<header class="major">
-					<h3>Education and Academic Achievements</h3>
-				</header>
-				<p>I hold a dual Bachelor of Science degree in Industrial Civil Engineering and Engineering Sciences from the University of La Serena in Chile, where I developed a strong foundation in engineering principles and problem-solving. My academic experience was further enriched by participating in the University of Wisconsin-Madison Visiting International Student Program, which broadened my global perspective and fostered cultural exchange.</p>
-				<p>I have also earned a Master of Science in Business Analytics from the University of Wisconsin-Madison, where I gained expertise in data visualization, data management, and the core concepts of data science. This program provided me with a solid understanding of how to extract insights from data and communicate complex ideas effectively.</p>
-				<p>In addition, I hold a Master of Science in Machine Learning and Signal Processing from the same institution, which has given me a comprehensive understanding of the theoretical foundations of machine learning, as well as practical skills in computer vision, deep learning, and neural networks. This program has enabled me to develop and implement advanced machine learning models and algorithms to solve complex problems.</p>
-			</div>
-		</div>
-	</section>
-</section>
+<!-- Content -->
+<style>
+    .centered {
+        text-align: center;
+    }
+    .education-list li, .experience-list li {
+        margin-bottom: 1em;
+    }
+    .experience-list ul {
+        margin-top: 0.5em;
+        margin-left: 1.5em;
+    }
+    .experience-list ul li {
+        margin-bottom: 0.5em;
+    }
+    .commentary {
+        font-style: italic;
+        color: #888;
+        margin-top: 1em;
+        margin-bottom: 2em;
+    }
+    .keyword-list {
+        font-size: 0.9em;
+        color: #555;
+        margin-top: 0.5em;
+    }
+</style>
+<div class="centered">
+    <h3>(608) 800-7317 | <a href="mailto:placenciohid@wisc.edu">placenciohid@wisc.edu</a> | <a href="https://linkedin.com/in/darioplacencio" target="_blank">LinkedIn</a> | <a href="https://placenciohid.github.io" target="_blank">GitHub</a></h3>
+</div>
 
-<!-- Three -->
-<section id="three">
-	<div class="inner">
-		<header class="major">
-			<h2>Unlocking Future Opportunities</h2>
-		</header>
-		<p style="margin-bottom: 15px;">As a dedicated professional with a passion for machine learning and data science, I'm excited to drive innovation and success in a dynamic organization. With a strong foundation in engineering and a dual expertise in business analytics and machine learning, I'm poised to tackle complex challenges and deliver high-impact results.</p>
-		<p style="margin-bottom: 15px;">I thrive in collaborative environments where creativity, expertise, and passion come together to solve complex problems. My expertise in machine learning, data science, and engineering enables me to develop innovative solutions that drive business growth and success.</p>
-		<p>I'd love to explore how my skills and experience can contribute to your organization's success. Take a closer look at my portfolio, and let's start a conversation about how we can drive innovation together.</p>
-		<ul class="actions">
-			<li><a href="resume.html" class="button next">CHECK MY RESUME</a></li>
-		</ul>
-	</div>
-</section>
+<div class="row">
+    <div class="col-12">
+        <h3>Summary</h3>
+        <blockquote>
+            <p>Data Scientist with 6 years of experience delivering machine learning solutions for top-tier mining companies. I specialize in developing and deploying AI models and robust data pipelines using Python, SQL, and PySpark within the Palantir Foundry platform. Combining deep technical expertise with a proven background in agile project management, I am focused on leveraging data to solve complex industrial challenges and drive business value.</p>
+        </blockquote>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <h3>Professional Experience</h3>
+        <div class="experience-list">
+            <h4><b>Rio Tinto, California, United States</b></h4>
+            <ul>
+                <li>
+                    <b>Graduate Data Scientist, Operational Excellence</b> (Feb 2025 – Present)
+                    <ul>
+                        <li>Engineered an intelligent document processing system by implementing a Vision LLM for high-fidelity OCR and leveraging Retrieval-Augmented Generation (RAG) to create a searchable, context-aware knowledge base from complex technical documentation that fed a Large Language Model for the processing team day-to-day operations.</li>
+                        <li>Provided autonomous, end-to-end data engineering for both batch and prediction systems, leveraging PySpark to build and scale pipelines for processing massive, terabyte-scale datasets.</li>
+                    </ul>
+                </li>
+                <li>
+                    <b>Data Scientist Intern, Operational Excellence</b> (May 2024 – Aug 2024)
+                    <ul>
+                        <li>Developed and deployed models for the live prediction of business outcomes, utilizing advanced architectures like Deep MLPs and Graph Neural Networks (GNNs) levering the computational power of CUDA on the Palantir Foundry platform.</li>
+                    </ul>
+                </li>
+            </ul>
+            <h4><b>BHP, Santiago, Chile</b></h4>
+            <ul>
+                <li>
+                    <b>Agile Delivery Practitioner, Technology Digital Factory</b> (Apr 2021 – Jul 2022)
+                    <ul>
+                        <li>Drove the agile execution of the $2.5M 'Asset Health – Escondida' project, guiding the team through the implementation of a time-to-failure predictive model to deliver a solution valued at $30M in Net Present Value.</li>
+                        <li>Partnered directly with the analytics team to architect and build a suite of time-to-failure predictive models for critical mining truck components, driving the initiative for proactive maintenance.</li>
+                    </ul>
+                </li>
+                 <li>
+                    <b>Specialist Improvement, Enterprise Improvement</b> (Sep 2019 – Mar 2021)
+                    <ul>
+                        <li>Drove a key transformational change initiative by identifying the root causes of systemic payroll issues, securing $5MM+ for technology upgrades after presenting a successful Opportunity Assessment to the Global Project Prioritization Board.</li>
+                    </ul>
+                </li>
+                <li><b>HR Training Specialist, Global Training & Resourcing</b> (Apr 2019 – Aug 2019)</li>
+                <li><b>HR & Training Administrator, Global Asset Services</b> (Jan 2017 – Feb 2019)</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <h3>Education</h3>
+        <ul class="education-list">
+            <li><b>Master of Science in Machine Learning & Signal Processing, University of Wisconsin-Madison</b> (2023-2024) | GPA: 3.7/4.0</li>
+            <li><b>Master of Science in Business Analytics, University of Wisconsin-Madison</b> (2022-2023) | GPA: 3.8/4.0</li>
+            <li><b>Bachelor of Science in Industrial Civil Engineering & Engineering Sciences, University of La Serena, Chile</b> (2010-2016) | GPA: 3.3/4.0</li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+<h3>Technical Skills</h3>
+</div>
+<div class="row">
+    <div class="6u 12u$(small)">
+        <div class="table-wrapper">
+            <table>
+                <thead><tr><th>Programming Languages</th></tr></thead>
+                <tbody>
+                    <tr><td>Python, SQL, PySpark, Julia, R</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="6u$ 12u$(small)">
+        <div class="table-wrapper">
+            <table>
+                <thead><tr><th>Tools & Platforms</th></tr></thead>
+                <tbody>
+                    <tr><td>TensorFlow, PyTorch, Scikit-Learn</td></tr>
+                    <tr><td>Snowflake, AWS (S3, SageMaker, Redshift)</td></tr>
+                    <tr><td>Google Cloud (BigQuery), Palantir Foundry</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-6 col-12-small">
+        <h3>Awards & Leadership</h3>
+        <ul>
+            <li>Neale Silva Scholarship, University of Wisconsin</li>
+            <li>MIT Professional Education: Post Graduate Diploma in Leadership and Innovation</li>
+            <li>UW-Madison Visiting International Student Program 2014 – 2015</li>
+        </ul>
+    </div>
+    <div class="col-6 col-12-small">
+        <h3>Languages</h3>
+        <ul>
+            <li>Spanish (Native)</li>
+            <li>English (Fluent)</li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <h3>Publications</h3>
+        <ul>
+            <li><a href="https://content.iospress.com/articles/work/wor205049" target="_blank">Augmented Reality for Virtual Training in the Construction Industry.</a> <em>Work, 71(1), 165-175.</em></li>
+            <li><a href="https://doi.org/10.1016/j.jbusres.2017.12.011" target="_blank">A Bibliometric Analysis of Creativity in the Field of Business Economics.</a> <em>Journal of Business Research, 85, 1-9.</em></li>
+        </ul>
+    </div>
+</div>
 
 </div>
+</section>

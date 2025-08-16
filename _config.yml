@@ -6,10 +6,10 @@ description: Welcome to my digital portfolio of my work in the fields of Machine
 baseurl: "/blog" # the subpath of your site, e.g. /blog
 url: https://placenciohid.github.io # the base hostname & protocol for your site
 author:
-street_address: 908 Eagle Heights Drive
-city: Madison
-state: WI
-zip_code: 53705
+street_address:
+city: Lancaster
+state: CA
+zip_code: 93534
 country: United States of America
 phone: (608) 800-7317
 
