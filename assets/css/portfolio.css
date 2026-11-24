@@ -1,0 +1,41 @@
+/* Refinements to Forty; the original theme and palette are retained. */
+:root { color-scheme: dark; }
+html { scroll-behavior: smooth; }
+body { font-size: 17px; }
+p { max-width: 76ch; }
+a:focus-visible, button:focus-visible { outline: 3px solid #9bf1ff; outline-offset: 5px; }
+.skip-link { position: fixed; top: -80px; left: 1rem; z-index: 10002; background: #fff; color: #242943; padding: .6rem 1rem; }
+.skip-link:focus { top: 1rem; }
+#banner.major { min-height: 30em; height: auto; padding: 8em 0 5em; }
+#banner .inner { max-width: 76em; }
+#banner h1 { max-width: 21ch; font-size: clamp(2rem, 4.2vw, 3.7rem); line-height: 1.15; }
+#banner .content p { text-transform: none !important; font-size: 1.05rem; font-weight: 400; letter-spacing: .02em; max-width: 45ch; }
+.eyebrow { font-size: .76rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #c3e8ef; margin-bottom: 1em; }
+.section-intro .inner { padding-top: 2.8em; padding-bottom: 1.5em; }
+.section-intro h2 { margin-bottom: .35em; }
+.section-intro p:last-child { margin-bottom: 0; }
+.tiles article { min-height: 18em; height: auto; }
+.tiles article header.major { padding: 2em 0; }
+.tiles article header.major p { text-transform: none; letter-spacing: .02em; font-size: 1rem; font-weight: 400; max-width: 40ch; }
+.tiles article h3 { font-size: 1.65rem; line-height: 1.25; }
+.tiles article:before { opacity: .93; }
+#main .inner h2 { margin-top: 1.3em; }
+#main .inner h3 { margin-bottom: .2em; }
+.role-meta { color: #c0c6db; font-size: .95em; margin-bottom: .6em; }
+.project-list { list-style: none; padding-left: 0; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.4em; }
+.project-list li { border: 1px solid rgba(212,212,255,.18); padding: 1.4em; }
+.project-list p { margin-bottom: .7em; }
+.contact-simple { display: grid !important; grid-template-columns: 1.2fr 1fr; }
+.contact-simple > section { width: auto !important; padding: 2.8em 2em !important; }
+.contact-details { border-left: 1px solid rgba(212,212,255,.1); }
+@media screen and (max-width:736px) {
+  body { font-size: 16px; }
+  #banner.major { padding: 7em 0 3em; min-height: 25em; }
+  #banner .content { display: block; }
+  #banner .actions { margin-top: 1.5em; }
+  .project-list, .contact-simple { grid-template-columns: 1fr; }
+  .contact-details { border-left: 0; }
+  .tiles article { min-height: 16em; }
+  .section-intro .inner { padding-top: 2em; }
+}
+@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *, *:before, *:after { animation:none !important; transition:none !important; } }

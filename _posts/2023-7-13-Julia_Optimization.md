@@ -5,6 +5,8 @@ description:
 image: assets/images/pic19.jpg
 ---
 
+> **Original project article.** The historical implementation and results below are preserved. For a runnable synthetic companion and current limitations, see [the maintained project overview](/projects/optimization.html).
+
 <!-- Content -->
 Optimization is a powerful tool that allows us to solve a variety of complex problems, ranging from resource allocation to combinatorial puzzles. In this article, we explore two interesting applications of optimization using Julia and the JuMP library:
 
@@ -71,4 +73,4 @@ Using Julia and the JuMP library, we were able to solve both puzzles by defining
 
 The Sudoku and Grandmother Puzzle solvers illustrate the versatility and power of constraint programming in handling real-world problems. By defining relationships and dependencies mathematically, we can explore the solution space systematically and achieve optimal or feasible configurations quickly.
 
-For a more detailed exploration of these puzzles and the code, check out the complete <a href="https://github.com/placenciohid/Resume/blob/e417cfd06f91fbb970e640462c0319219ef94920/Julia%20Optimization%20-%20Sudoki%20and%20Brain%20Puzzle.ipynb"><b>Jupyter notebook</b></a> on GitHub.
+For a more detailed exploration of these puzzles and the code, check out the complete <a href="https://github.com/placenciohid/Resume/blob/main/projects/optimization/legacy/Julia%20Optimization%20-%20Sudoki%20and%20Brain%20Puzzle.ipynb"><b>Jupyter notebook</b></a> on GitHub.

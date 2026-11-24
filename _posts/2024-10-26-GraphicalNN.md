@@ -1,18 +1,19 @@
 ---
-
 layout: post  
 title: Implementing a Graph Neural Network for Imbalanced Event Prediction
 description:  
 image: assets/images/pic24.jpg  
 
----  
+---
+
+> **Original project article.** The historical implementation and results below are preserved. For a runnable synthetic companion and current limitations, see [the maintained project overview](/projects/event-prediction.html).
 
 <!-- Content -->
 <div class="row">
     <div class="col-12">
         <h3>Overview</h3>
         <p>In the landscape of machine learning, the ability to predict critical events within datasets is not just advantageous—it's transformative. In this project, I delve into the implementation of a sophisticated model that combines a <b>Graph Neural Network-based Imbalanced Node Classification Model (GNN-INCM)</b> with a <b>Hard Sample-based Knowledge Distillation Method (HSKDM)</b>. Tailored for event data classification, this model excels in handling imbalanced class distributions by converting traditional tabular data into a graph structure, thus harnessing the relational nuances inherent in the data.</p>
-        <p>To explore the complete methodology and delve into the detailed code implementation, please visit the accompanying <a href="https://github.com/placenciohid/Resume/blob/c0f227928c6062ab7c87691dbe841b8eebd985ec/GNN-INCM_with_HSKDM.py"><b>Python script</b></a>.</p>
+        <p>To explore the complete methodology and delve into the detailed code implementation, please visit the accompanying <a href="https://github.com/placenciohid/Resume/blob/main/projects/event-prediction/legacy/GNN-INCM_with_HSKDM.py"><b>Python script</b></a>.</p>
     </div>
 </div>
 

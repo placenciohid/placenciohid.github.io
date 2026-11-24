@@ -4,12 +4,14 @@ title: Advanced Data Pipeline for Target Event Prediction Models
 description:
 image: assets/images/pic23.jpg  
 
----  
+---
+
+> **Original project article.** The historical implementation and results below are preserved. For a runnable synthetic companion and current limitations, see [the maintained project overview](/projects/event-prediction.html).
 
 <!-- Content -->  
 In the realm of operational efficiency, understanding and predicting key events in a dataset can be a game-changer. In this post, we explore the development of a robust data pipeline tailored for preparing datasets used in predictive models aimed at event detection. This guide outlines the intricate steps involved, from data cleaning to feature engineering, ensuring a comprehensive foundation for model development.
 
-To explore the complete methodology and the detailed code implementation, please visit the accompanying <a href="https://github.com/placenciohid/Resume/blob/c0dc780310c6bd22ec55cbfea843eda426c4d0b9/Data_PipeLine_for_Event_Prediction.py"><b>Python script</b></a>.
+To explore the complete methodology and the detailed code implementation, please visit the accompanying <a href="https://github.com/placenciohid/Resume/blob/main/projects/event-prediction/legacy/Data_PipeLine_for_Event_Prediction.py"><b>Python script</b></a>.
 
 <h4>1. Removing Null Columns</h4>
 
@@ -52,4 +54,4 @@ To ensure the integrity of our pipeline, we compute match percentages between di
 
 In the final step, we prepare the data specifically for predicting target events. We create the target variable, apply consistent preprocessing techniques, and split the data into training and validation sets. This ensures that the dataset is tailored for the specific requirements of the model, facilitating accurate and reliable predictions.
 
-By following this advanced pipeline, we set the stage for effective predictive modeling. Each step is meticulously designed to transform raw data into a refined dataset, ready for sophisticated analysis and forecasting. For a deeper dive into the code and methodology, check out the full <a href="https://github.com/placenciohid/Resume/blob/c0dc780310c6bd22ec55cbfea843eda426c4d0b9/Data_PipeLine_for_Event_Prediction.py"><b>Python script</b></a>.
+By following this advanced pipeline, we set the stage for effective predictive modeling. Each step is meticulously designed to transform raw data into a refined dataset, ready for sophisticated analysis and forecasting. For a deeper dive into the code and methodology, check out the full <a href="https://github.com/placenciohid/Resume/blob/main/projects/event-prediction/legacy/Data_PipeLine_for_Event_Prediction.py"><b>Python script</b></a>.

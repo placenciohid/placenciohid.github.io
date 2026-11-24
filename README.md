@@ -1,66 +1,26 @@
-# Forty - Jekyll Theme
+# Darío Placencio — portfolio website
 
-A Jekyll version of the "Forty" theme by [HTML5 UP](https://html5up.net/).  
+**Live:** https://placenciohid.github.io/  
+**Code showcase:** https://github.com/placenciohid/Resume
 
-![Forty Theme](assets/images/forty.jpg "Forty Theme")
+Professional experience in operational excellence, data science, and automation, plus selected technical projects. This is a GitHub Pages site using Jekyll and the Forty theme; the original article URLs are preserved.
 
-# How to Use
+## Develop
 
-For those unfamiliar with how Jekyll works, check out [jekyllrb.com](https://jekyllrb.com/) for all the details, 
-or read up on just the basics of [front matter](https://jekyllrb.com/docs/frontmatter/), [writing posts](https://jekyllrb.com/docs/posts/), 
-and [creating pages](https://jekyllrb.com/docs/pages/).
+Use Ruby 3.1 and Bundler. Run `bundle install`, then `bundle exec jekyll serve --baseurl ""`. To validate the production output, run `bundle exec jekyll build --baseurl ""` followed by `python scripts/check_site.py` (Python 3.10+).
 
-Simply fork this repository and start editing the `_config.yml` file!
+## Update content
 
-> NOTE: GitHub Actions is required to deploy to GitHub Pages because GitHub [refuses to update their version of Jekyll](https://github.com/github/pages-gem/issues/651).
+- Homepage selections: `_data/featured.yml`.
+- Experience: `_includes/bio.md` (shared by About and Resume).
+- Professional summaries: `work/`; runnable project introductions: `projects/`.
+- Original articles: `_posts/`. Retain filenames and dates to preserve URLs.
+- Contact and social links: `_config.yml`. Site is hosted at the root, so `baseurl` is empty.
 
-# Added Features
+`jekyll.yml` builds pull requests and pushes, checks internal links, and publishes only pushes to `master`. No deployment credentials are needed for pull-request builds. Merge the companion showcase changes before publishing updated code links. Roll back through a normal revert commit if needed.
 
-* **[Formspree.io](https://formspree.io/) contact form integration** - just add your email to the `_config.yml` and it works!
-* Use `_config.yml` to **set whether the homepage tiles should pull pages or posts**, as well as how many to display.
-* Add your **social profiles** easily in `_config.yml`. Only social profiles buttons you enter in `config.yml` show up on the site footer!
-* Set **featured images** in front matter.
+Professional summaries exclude employer datasets, code, and internal screenshots. Technical examples and limitations are documented in the code repository.
 
-# Credits
+## Credits
 
-Original README from HTML5 UP:
-
-```
-Forty by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-
-
-This is Forty, my latest and greatest addition to HTML5 UP and, per its incredibly
-creative name, my 40th (woohoo)! It's built around a grid of "image tiles" that are
-set up to smoothly transition to secondary landing pages (for which a separate page
-template is provided), and includes a number of neat effects (check out the menu!),
-extra features, and all the usual stuff you'd expect. Hope you dig it!
-
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
-
-(* = not included)
-
-AJ
-aj@lkn.io | @ajlkn
-
-
-Credits:
-
-	Demo Images:
-		Unsplash (unsplash.com)
-
-	Icons:
-		Font Awesome (fortawesome.github.com/Font-Awesome)
-
-	Other:
-		jQuery (jquery.com)
-		html5shiv.js (@afarkas @jdalton @jon_neal @rem)
-		background-size polyfill (github.com/louisremi)
-		Misc. Sass functions (@HugoGiraudel)
-		Respond.js (j.mp/respondjs)
-		Skel (skel.io)
-```
-
-Repository [Jekyll logo](https://github.com/jekyll/brand) icon licensed under a [Creative Commons Attribution 4.0 International License](http://choosealicense.com/licenses/cc-by-4.0/).
+Design: [Forty by HTML5 UP](https://html5up.net/forty), Jekyll port by [Andrew Banchich](https://github.com/andrewbanchich/forty-jekyll-theme). Retain attribution and the original license files. No new license is asserted for third-party content.

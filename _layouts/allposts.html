@@ -1,41 +1,10 @@
 <!DOCTYPE html>
-<!--
-    Forty by HTML5 UP
-    html5up.net | @ajlkn
-    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-  -->
-<html>
-
-  {% include head.html %}
-
-  <body>
-
-    {% include header.html %} 
-    
-    
-    <!-- Main -->
-    <div id="main" class="alt">
-
-      <!-- One -->
-      <section id="one">
-	<div class="inner">
-          {% for post in site.posts %}
-	  {% if post.title != 404 %}
-	  <header class="major">
-	    <h1>{{ post.title }}</h1>
-	  </header>
-	  {% if post.image %}<span class="image main"><img src="{{ site.baseurl }}/{{ post.image }}" alt="" /></span>{% endif %}
-	  {% if post.date %}<p>{{ post.date }}</p>{% endif %}
-	  <p>{{ post.content }}</p>
-	  {% endif %}
-          {% endfor %}
-	</div>
-      </section>
-
-    </div>
-
-    {% include footer.html %}
-
-  </body>
-
-</html>
+<!-- Forty by HTML5 UP | html5up.net | CCA 3.0 -->
+<html lang="en">{% include head.html %}<body>{% include header.html %}
+<main id="main" class="alt"><section><div class="inner">
+<header class="major"><h1>{{ page.title }}</h1></header>
+<h2>Professional work</h2><ul class="project-list">{% for item in site.data.featured.professional %}<li><h3><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h3><p>{{ item.description }}</p></li>{% endfor %}</ul>
+<h2>Runnable technical examples</h2><ul class="project-list">{% for item in site.data.featured.technical %}<li><h3><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h3><p>{{ item.description }}</p></li>{% endfor %}</ul>
+<h2>Earlier articles & experiments</h2><p>Original coursework, research implementations, and personal projects. These articles retain their original dates and results; see each project’s code documentation for current reproducibility.</p>
+<ul>{% for post in site.posts %}<li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> <span class="role-meta">· {{ post.date | date: '%b %Y' }}</span></li>{% endfor %}</ul>
+</div></section></main>{% include footer.html %}</body></html>

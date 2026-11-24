@@ -1,12 +1,5 @@
 ---
 layout: allposts
-title: All posts
-landing-title: 'All posts'
-nav-menu: true
-description: null
-image: null
-author: null
-show_tile: false
+title: All projects
+description: Professional work summaries, runnable demonstrations, and earlier technical articles.
 ---
-
-<h1>All posts</h1>
