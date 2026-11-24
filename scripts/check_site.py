@@ -37,7 +37,7 @@ for p in ROOT.rglob('*.html'):
             errors.append(f'{p}: missing topic artwork')
 if errors: print('\n'.join(errors)); sys.exit(1)
 home=(ROOT/'index.html').read_text(encoding='utf-8')
-for required in ['hero-grid','proof-grid','case-grid','21%','300K+','$746K','Experience &amp; education']:
+for required in ['hero-grid','proof-grid','case-grid','21%','300K+','$746K','/aboutme.html']:
     if required not in home: errors.append(f'Homepage missing professional presentation element: {required}')
 for name in ['forecasting','knowledge-search','commercial-reporting']:
     html=(ROOT/'work'/f'{name}.html').read_text(encoding='utf-8')
