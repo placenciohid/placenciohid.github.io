@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: profile
 title: Experience & education
 description: Darío Placencio’s experience, education, and publications.
 ---

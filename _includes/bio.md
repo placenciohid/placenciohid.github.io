@@ -12,7 +12,7 @@ My work includes cash forecasting, collections reporting, reconciliation, and au
 **Graduate Data Scientist, Borates Digital**  
 February 2025–June 2026 · Boron, California
 
-I worked on production forecasting, optimization, and AI document search. I rebuilt a legacy Excel optimization model in Python, developed a year-ahead production forecasting pipeline, and helped deliver search across more than 300,000 documents, adopted by four teams.
+I worked on production forecasting, optimization, and AI document search. I rebuilt a legacy Excel optimization model in Python, identifying $746K in confirmed savings; developed a year-ahead production forecast with 21% lower error against the prior baseline; and engineered search across more than 300,000 documents, adopted by four teams.
 
 **Data Scientist Intern**  
 May–August 2024
@@ -29,7 +29,7 @@ I led agile delivery of the Asset Health–Escondida initiative with more than 1
 **Specialist Improvement, Enterprise Improvement**  
 September 2019–March 2021
 
-I investigated systemic payroll issues across the Americas, using root-cause analysis and process mapping to develop an investment case for technology improvements.
+I investigated systemic payroll issues across the Americas, using root-cause analysis and process mapping to build an investment case that secured $5M+ for technology upgrades.
 
 **HR Training Specialist**  
 April–August 2019

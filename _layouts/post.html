@@ -18,9 +18,11 @@
 
 <!-- One -->
 <section id="one">
-	<div class="inner">
+	<div class="inner article-inner">
 		<header class="major">
+			<p class="eyebrow">{% if page.case_study %}Professional case study{% elsif page.project_id %}Technical project{% endif %}</p>
 			<h1>{{ page.title }}</h1>
+			{% if page.summary %}<p class="page-synopsis">{{ page.summary }}</p>{% endif %}
 		</header>
 		{% if page.project_id %}{% include project-evidence.html %}{% elsif page.image %}<span class="image main"><img src="{{ page.image | relative_url }}" alt="" /></span>{% endif %}
 		{{ content }}
