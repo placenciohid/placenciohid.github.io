@@ -5,10 +5,12 @@ description:
 image: assets/images/pic18.jpg
 ---
 
+> **Original project article.** The historical implementation and results below are preserved. For a runnable synthetic companion and current limitations, see [the maintained project overview](/projects/ml-from-scratch.html).
+
 <!-- Content -->
 Implementing machine learning models from scratch is a challenging but rewarding endeavor. This project demonstrates the process of building three foundational ML models: Decision Trees, k-Nearest Neighbors (kNN), and Logistic Regression, using only NumPy and raw Python functions. By understanding the core concepts and manually coding these algorithms, we gain insight into their mechanics, strengths, and limitations. The models are evaluated using synthetic datasets, spam detection data, and visualized to showcase their decision-making process.
 
-For a detailed exploration of the methodology and results, please visit the accompanying <a href="https://github.com/placenciohid/Resume/blob/e9eb9d1c9b14ff9e6f96128bf6783785336ef2a6/Building%20Machine%20Learning%20Models%20from%20Scratch%20-%20Decision%20Trees%2C%20kNN%2C%20and%20Logistic%20Regression.ipynb"><b>Jupyter notebook</b></a>.
+For a detailed exploration of the methodology and results, please visit the accompanying <a href="https://github.com/placenciohid/Resume/blob/main/projects/ml-from-scratch/legacy/Building%20Machine%20Learning%20Models%20from%20Scratch%20-%20Decision%20Trees%2C%20kNN%2C%20and%20Logistic%20Regression.ipynb"><b>Jupyter notebook</b></a>.
 
 <h3>Understanding the Problem</h3>
 

@@ -7,7 +7,7 @@ image: assets/images/pic20.jpg
 
 Unsupervised learning techniques, such as clustering and Principal Component Analysis (PCA), offer powerful tools for extracting insights from unlabeled data. In this article, we explore how these techniques can be applied to analyze a wine dataset, uncover hidden patterns, and gain a deeper understanding of the data's underlying structure.
 
-To delve deeper into the analysis, and check the methodology and results, please visit the accompanying <a href="https://github.com/placenciohid/Resume/blob/main/Unsupervised%20Learning%20-%20Wine%20Quality.ipynb"><b>Jupiter notebook</b></a>.
+To delve deeper into the analysis, and check the methodology and results, please visit the accompanying <a href="https://github.com/placenciohid/Resume/blob/main/archive/notebooks/Unsupervised%20Learning%20-%20Wine%20Quality.ipynb"><b>Jupyter notebook</b></a>.
 
 <h3>Clustering</h3>
 

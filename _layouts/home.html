@@ -1,55 +1,25 @@
 <!DOCTYPE html>
-<!--
-	Forty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-
+<!-- Forty by HTML5 UP | html5up.net | CCA 3.0 -->
+<html lang="en">
 {% include head.html %}
-
 <body>
-
-    {% include header.html %}
-
-    <!-- Banner -->
-    <section id="banner" class="major">
-        <div class="inner">
-            <header class="major">
-                <h1>{{ page.landing-title }}</h1>
-            </header>
-            <div class="content">
-                <p style="text-transform: uppercase;">{{ site.description }}</p>
-                <ul class="actions">
-                    <li><a href="#one" class="button next scrolly">Get Started</a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Main -->
-    <div id="main">
-
-        <!-- One -->
-        {% include tiles.html %}
-
-        <!-- Two -->
-        <section id="two">
-            <div class="inner">
-                <header class="major">
-                    <h2>Get to know me</h2>
-                </header>
-                <p>{{ content }}</p>
-                <ul class="actions">
-                    <li><a href="aboutme.html" class="button next">About Me</a></li>
-                </ul>
-            </div>
-        </section>
-
+{% include header.html %}
+<section id="banner" class="major">
+  <div class="inner">
+    <p class="eyebrow">Darío Placencio · Chicago</p>
+    <header class="major"><h1>{{ page.landing-title }}</h1></header>
+    <div class="content">
+      <p>{{ site.description }}</p>
+      <ul class="actions"><li><a href="#main" class="button next scrolly">Explore my work</a></li></ul>
     </div>
-
-    {% include footer.html %}
-
-</body>
-
-</html>
+  </div>
+</section>
+<main id="main">
+  <section class="section-intro"><div class="inner"><p class="eyebrow">Professional experience</p><h2>Work in practice</h2><p>Selected work across operations, commercial services, and data science.</p></div></section>
+  {% assign tiles = site.data.featured.professional %}{% include featured-tiles.html %}
+  <section class="section-intro"><div class="inner"><p class="eyebrow">Public code & experiments</p><h2>Technical projects</h2><p>Small runnable examples, with the original research and coursework alongside them.</p></div></section>
+  {% assign tiles = site.data.featured.technical %}{% include featured-tiles.html %}
+  <section id="two"><div class="inner"><header class="major"><h2>About me</h2></header>{{ content }}<ul class="actions"><li><a href="{{ '/aboutme.html' | relative_url }}" class="button next">Experience & education</a></li><li><a href="{{ '/all_posts.html' | relative_url }}" class="button">All projects</a></li></ul></div></section>
+</main>
+{% include footer.html %}
+</body></html>

@@ -1,5 +1,4 @@
 ---
-
 layout: post
 title: Predicting Imbalanced Events with GEV-NN
 description:
@@ -7,13 +6,15 @@ image: assets/images/pic25.jpg
 
 ---
 
+> **Original project article.** The historical implementation and results below are preserved. For a runnable synthetic companion and current limitations, see [the maintained project overview](/projects/event-prediction.html).
+
 <!-- Content -->
 <div class="row">
     <div class="col-12">
         <h3>Overview</h3>
         <p>Predicting rare events within imbalanced datasets is a significant challenge in machine learning. Whether it's fraud detection, medical diagnosis, or risk assessment, the minority class—the events of greatest interest—is often overshadowed by a vast majority of non-events. Traditional models tend to be biased towards the majority, leading to poor performance in detecting these critical occurrences.</p>
         <p>In this project, I implement the <b>Generalized Extreme Value Neural Network (GEV-NN)</b> to address this issue. By leveraging the unique properties of the Generalized Extreme Value distribution and combining it with an autoencoder for feature extraction, the model enhances its ability to predict minority class events effectively.</p>
-        <p>To delve deeper into the methodology and view the detailed code implementation, please visit the accompanying <a href="https://github.com/placenciohid/Resume/blob/c0f227928c6062ab7c87691dbe841b8eebd985ec/GEV-NN-Model.py"><b>Python script</b></a>.</p>
+        <p>To delve deeper into the methodology and view the detailed code implementation, please visit the accompanying <a href="https://github.com/placenciohid/Resume/blob/main/projects/event-prediction/legacy/GEV-NN-Model.py"><b>Python script</b></a>.</p>
     </div>
 </div>
 

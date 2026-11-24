@@ -1,46 +1,28 @@
-# site settings
 title: R∃SOLVE
 subtitle: by Darío Placencio
 email: darioplacenciohidalgo@gmail.com
-description: Welcome to my digital portfolio of my work in the fields of Machine Learning and Data Science
-baseurl: "/blog" # the subpath of your site, e.g. /blog
-url: https://placenciohid.github.io # the base hostname & protocol for your site
-author:
-street_address:
-city: Lancaster
-state: CA
-zip_code: 93534
-country: United States of America
+description: Operational excellence, data science, and automation across mining and commercial services.
+baseurl: ""
+url: https://placenciohid.github.io
+author: Darío Placencio
+city: Chicago
+state: Illinois
+country: United States
 phone: (608) 800-7317
-
-# homepage tiles
-tiles-source: posts # accepts "posts" or "pages"
-tiles-count: 10
-
-# social settings (key must match name of font awesome icon)
-# see https://fontawesome.com/icons?d=gallery&p=2&s=brands
-# Icons are not shown if value is empty
-# You need to restart jekyll for changes to have an effect
 socials:
   GitHub: https://github.com/placenciohid/Resume
-  GitLab:
-  Google-Plus: 
-  Instagram:
-  LinkedIn: https://www.linkedin.com/in/darioplacencio
-  Twitter: 
-  Facebook:
-  Slack:
-
-# build settings
+  LinkedIn: https://www.linkedin.com/in/darioplacencio/
 markdown: kramdown
-
 sass:
   style: compressed
-
 exclude:
-- "*.gemspec"
-- LICENSE.md
-- CONTRIBUTING.md
-- README.md 
-- elements.md
-    
+  - "*.gemspec"
+  - LICENSE.md
+  - CONTRIBUTING.md
+  - README.md
+  - elements.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - scripts
+  - bundle
