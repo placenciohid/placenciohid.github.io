@@ -20,17 +20,15 @@ The resulting forecast reduced error by **21% against the prior baseline**. The 
 
 ### Why the method mattered
 
-A year-ahead forecast must cover both the expected outcome and its uncertainty. Quantile forecasts give planners a range to consider, while a baseline comparison tests whether the added model complexity improves the forecast. My contribution connected the data pipeline, model, and evaluation rather than treating prediction as a standalone notebook.
+A year-ahead forecast must cover both the expected outcome and its uncertainty. Quantile forecasts give planners a range to consider, while a baseline comparison tests whether the added model complexity improves the forecast. My contribution connected the data pipeline, model, and evaluation.
 
 ## Planning optimization
 
 I rebuilt the annual EBITDA optimization model from a legacy Excel workbook as a Python linear program in Palantir Foundry. This made the model’s objective and constraints inspectable in code and supported repeatable planning analysis. The work identified **$746K in confirmed savings**.
 
-The savings figure is a result identified through the planning model. The forecast-error comparison and optimization result come from separate pieces of work; they are not added together as a combined benefit.
-
 ## Cash-receivables forecasting
 
-In Commercial Services, I developed a seven-day cash-receivables forecasting proof of concept and evaluated it in a four-week trial. The trial achieved **77% weekly accuracy** and provided a basis for the team to continue the work. This was a completed trial, rather than a claim that a production cash-forecast system had been deployed.
+In Commercial Services, I developed a seven-day cash-receivables forecasting proof of concept and evaluated it in a four-week trial. The trial achieved **77% weekly accuracy** and provided a basis for the team to continue the work. The trial is complete; its findings supported further evaluation by the team.
 
 ## Explore the implementation
 
