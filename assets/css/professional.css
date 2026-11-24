@@ -3,6 +3,10 @@
 body { font-size:17px; line-height:1.8; }
 body p { max-width:76ch; }
 #header { border-bottom:1px solid var(--line); }
+/* Keep the first impression visible while the original theme initializes. */
+body.is-loading #header { opacity:1; animation:none; }
+body.is-loading #banner > .inner { opacity:1; transform:none; filter:none; }
+#banner.professional-hero:after { transition:none; }
 #header nav { display:flex; gap:1.5rem; align-items:center; }
 #header nav .desktop-link { font-size:.73rem; letter-spacing:.12em; }
 #banner.professional-hero { min-height:0; padding:7.8rem 0 4.5rem; height:auto; }

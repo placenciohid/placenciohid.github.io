@@ -21,6 +21,12 @@ Use Ruby 3.1 and Bundler. Run `bundle install`, then `bundle exec jekyll serve -
 
 Professional summaries exclude employer datasets, code, and internal screenshots. Technical examples and limitations are documented in the code repository.
 
+## Professional presentation and figures
+
+The homepage leads with professional case studies, followed by technical implementations and publications. Full technical walkthroughs remain in accessible, expandable sections on the professional case-study pages. Every project retains a direct link to its evidence in the Resume repository.
+
+The production-error graphic represents the author-supplied 21% improvement as an index: prior baseline 100, forecast model 79. It does not invent a raw production series. The document-search graphic shows collection scale and four adopting teams, not user counts or financial value. The backtest chart inside the technical walkthrough is explicitly synthetic and is calculated from the saved companion results. SVG source is editable under `assets/images/topics/`.
+
 ## Credits
 
 Design: [Forty by HTML5 UP](https://html5up.net/forty), Jekyll port by [Andrew Banchich](https://github.com/andrewbanchich/forty-jekyll-theme). Retain attribution and the original license files. No new license is asserted for third-party content.
