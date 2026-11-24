@@ -4,111 +4,159 @@
     "image": "/assets/images/topics/forecast-results.svg",
     "type": "Professional case study · Public code companion",
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/forecasting",
-    "image_alt": "Reported production forecast error comparison: baseline index 100, model 79."
+    "image_alt": "Reported production forecast error comparison: baseline index 100, model 79.",
+    "photo": "/assets/images/photos/factory.jpg",
+    "photo_alt": "Cargo conveyors and machinery inside a working factory.",
+    "photo_credit": "Hyundai Motor Group"
   },
   "knowledge-search": {
     "path": "projects/knowledge-search",
     "image": "/assets/images/topics/search-scale.svg",
     "type": "Professional case study · Public code companion",
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/knowledge-search",
-    "image_alt": "More than 300,000 documents made searchable across four adopting teams."
+    "image_alt": "More than 300,000 documents made searchable across four adopting teams.",
+    "photo": "/assets/images/photos/library.jpg",
+    "photo_alt": "Rows of books in a library collection.",
+    "photo_credit": "Jamie Taylor"
   },
   "commercial-reporting": {
     "path": "projects/commercial-reporting",
     "image": "/assets/images/topics/collections-flow.svg",
     "type": "Professional case study · Public code companion",
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/commercial-reporting",
-    "image_alt": "Hourly source-to-review collections reporting workflow."
+    "image_alt": "Hourly source-to-review collections reporting workflow.",
+    "photo": "/assets/images/photos/port.jpg",
+    "photo_alt": "Shipping containers and cranes at a commercial port.",
+    "photo_credit": "Haris Illahi"
   },
   "event-prediction": {
     "path": "projects/event-prediction",
     "image": "/assets/images/topics/event-prediction.svg",
     "type": "Runnable reference + original research scripts",
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/event-prediction",
-    "image_alt": "Technical diagram illustrating event prediction"
+    "image_alt": "Technical diagram illustrating event prediction",
+    "photo": "/assets/images/photos/servers.jpg",
+    "photo_alt": "Racks of equipment in a server room.",
+    "photo_credit": "Kevin Ache"
   },
   "optimization": {
     "path": "projects/optimization",
     "image": "/assets/images/topics/optimization.svg",
     "type": "Runnable reference + original notebooks",
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/optimization",
-    "image_alt": "Technical diagram illustrating optimization"
+    "image_alt": "Technical diagram illustrating optimization",
+    "photo": "/assets/images/photos/warehouse.jpg",
+    "photo_alt": "Long aisles of shelves and stock inside a warehouse.",
+    "photo_credit": "Russ Murray"
   },
   "ml-from-scratch": {
     "path": "projects/ml-from-scratch",
     "image": "/assets/images/topics/ml-from-scratch.svg",
     "type": "Runnable reference + original notebook",
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/ml-from-scratch",
-    "image_alt": "Technical diagram illustrating ml from scratch"
+    "image_alt": "Technical diagram illustrating ml from scratch",
+    "photo": "/assets/images/photos/circuits.jpg",
+    "photo_alt": "Gold connections on a dark blue printed circuit board.",
+    "photo_credit": "Vishnu Mohanan"
   },
   "gev-nn": {
     "path": "projects/event-prediction/legacy/GEV-NN-Model.py",
     "image": "/assets/images/topics/event-prediction.svg",
     "type": "Original research implementation",
     "github": "https://github.com/placenciohid/Resume/blob/main/projects/event-prediction/legacy/GEV-NN-Model.py",
-    "image_alt": "Technical diagram illustrating gev nn"
+    "image_alt": "Technical diagram illustrating gev nn",
+    "photo": "/assets/images/photos/servers.jpg",
+    "photo_alt": "Racks of equipment in a server room.",
+    "photo_credit": "Kevin Ache"
   },
   "gnn": {
     "path": "projects/event-prediction/legacy/GNN-INCM_with_HSKDM.py",
     "image": "/assets/images/topics/event-prediction.svg",
     "type": "Original research implementation",
     "github": "https://github.com/placenciohid/Resume/blob/main/projects/event-prediction/legacy/GNN-INCM_with_HSKDM.py",
-    "image_alt": "Technical diagram illustrating gnn"
+    "image_alt": "Technical diagram illustrating gnn",
+    "photo": "/assets/images/photos/circuits.jpg",
+    "photo_alt": "Gold connections on a dark blue printed circuit board.",
+    "photo_credit": "Vishnu Mohanan"
   },
   "event-pipeline": {
     "path": "projects/event-prediction",
     "image": "/assets/images/topics/event-prediction.svg",
     "type": "Original Spark script + repaired Python reference",
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/event-prediction",
-    "image_alt": "Technical diagram illustrating event pipeline"
+    "image_alt": "Technical diagram illustrating event pipeline",
+    "photo": "/assets/images/photos/servers.jpg",
+    "photo_alt": "Racks of equipment in a server room.",
+    "photo_credit": "Kevin Ache"
   },
   "scratch-article": {
     "path": "projects/ml-from-scratch",
     "image": "/assets/images/topics/ml-from-scratch.svg",
     "type": "Original notebook + runnable reference",
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/ml-from-scratch",
-    "image_alt": "Technical diagram illustrating scratch article"
+    "image_alt": "Technical diagram illustrating scratch article",
+    "photo": "/assets/images/photos/circuits.jpg",
+    "photo_alt": "Gold connections on a dark blue printed circuit board.",
+    "photo_credit": "Vishnu Mohanan"
   },
   "julia-article": {
     "path": "projects/optimization",
     "image": "/assets/images/topics/optimization.svg",
     "type": "Original Julia notebook + scheduling companion",
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/optimization",
-    "image_alt": "Technical diagram illustrating julia article"
+    "image_alt": "Technical diagram illustrating julia article",
+    "photo": "/assets/images/photos/warehouse.jpg",
+    "photo_alt": "Long aisles of shelves and stock inside a warehouse.",
+    "photo_credit": "Russ Murray"
   },
   "play-store": {
     "path": "projects/play-store-reviews",
     "image": "/assets/images/topics/text-analytics.svg",
     "type": "Original notebook and technical notes",
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/play-store-reviews",
-    "image_alt": "Technical diagram illustrating play store"
+    "image_alt": "Technical diagram illustrating play store",
+    "photo": "/assets/images/photos/phone.jpg",
+    "photo_alt": "A hand holding a smartphone.",
+    "photo_credit": "Jakub Żerdzicki"
   },
   "wine": {
     "path": "projects/wine-clustering",
     "image": "/assets/images/topics/clustering.svg",
     "type": "Original notebook and technical notes",
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/wine-clustering",
-    "image_alt": "Technical diagram illustrating wine"
+    "image_alt": "Technical diagram illustrating wine",
+    "photo": "/assets/images/photos/wine.jpg",
+    "photo_alt": "Wine bottles stored on a rack.",
+    "photo_credit": "Klara Kulikova"
   },
   "spaceship": {
     "path": "projects/spaceship-titanic",
     "image": "/assets/images/topics/kaggle.svg",
     "type": "Original notebooks and technical notes",
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/spaceship-titanic",
-    "image_alt": "Technical diagram illustrating spaceship"
+    "image_alt": "Technical diagram illustrating spaceship",
+    "photo": "/assets/images/photos/stars.jpg",
+    "photo_alt": "Stars across the night sky.",
+    "photo_credit": "Tiago Ferreira"
   },
   "clustering": {
     "path": "projects/clustering-noncompliance",
     "image": "/assets/images/topics/clustering.svg",
     "type": "Original notebook and technical notes",
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/clustering-noncompliance",
-    "image_alt": "Technical diagram illustrating clustering"
+    "image_alt": "Technical diagram illustrating clustering",
+    "photo": "/assets/images/photos/factory.jpg",
+    "photo_alt": "Cargo conveyors and machinery inside a working factory.",
+    "photo_credit": "Hyundai Motor Group"
   },
   "dynamic-zoom": {
     "path": "projects/dynamic-zoom",
     "image": "/assets/images/topics/dynamic-zoom.svg",
     "type": "Contribution notes + upstream implementation",
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/dynamic-zoom",
-    "image_alt": "Technical diagram illustrating dynamic zoom"
+    "image_alt": "Technical diagram illustrating dynamic zoom",
+    "photo": "/assets/images/photos/circuits.jpg",
+    "photo_alt": "Gold connections on a dark blue printed circuit board.",
+    "photo_credit": "Vishnu Mohanan"
   }
 }

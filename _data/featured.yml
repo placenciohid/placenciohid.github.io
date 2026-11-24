@@ -4,35 +4,35 @@ professional:
     description: Production forecasting, a Python planning solver, and a cash-receivables trial.
     result: "21% lower forecast error · $746K confirmed savings identified"
     url: /work/forecasting.html
-    image: /assets/images/topics/forecast-results.svg
-    alt: Production forecast error indexed at 100 for the baseline and 79 for the model.
+    image: /assets/images/photos/factory.jpg
+    alt: Cargo conveyors and machinery inside a working factory.
   - title: AI search for technical knowledge
     category: Applied AI · Data engineering
     description: Extracting, indexing, and retrieving information from a large technical document collection.
     result: "300,000+ documents · Four teams adopted the platform"
     url: /work/knowledge-search.html
-    image: /assets/images/topics/search-scale.svg
-    alt: A document collection feeding a search platform used by four teams.
+    image: /assets/images/photos/library.jpg
+    alt: Rows of books in a library collection.
   - title: Collections reporting & reconciliation
     category: Commercial Services · Automation
     description: A shared view of overdue accounts, payment exceptions, and follow-up priorities.
     result: "Live collections dashboard · Hourly aging feed"
     url: /work/commercial-reporting.html
-    image: /assets/images/topics/collections-flow.svg
-    alt: Invoice data flows through aging and reconciliation into a review queue.
+    image: /assets/images/photos/port.jpg
+    alt: Shipping containers and cranes at a commercial port.
 technical:
   - title: Event prediction
     category: Data engineering · Machine learning
     description: As-of features, future-event labels, and a temporal split that keeps the future out of training.
     url: /projects/event-prediction.html
-    image: /assets/images/topics/event-prediction-tile.svg
+    image: /assets/images/photos/servers.jpg
   - title: Optimization
     category: Mathematical modeling
     description: Capacity constraints, objective design, and a reproducible scheduling comparison.
     url: /projects/optimization.html
-    image: /assets/images/topics/optimization-tile.svg
+    image: /assets/images/photos/warehouse.jpg
   - title: Machine learning from scratch
     category: Algorithms · Evaluation
     description: kNN, logistic regression, and a decision stump evaluated on the same held-out data.
     url: /projects/ml-from-scratch.html
-    image: /assets/images/topics/ml-from-scratch-tile.svg
+    image: /assets/images/photos/circuits.jpg

@@ -1,5 +1,5 @@
 {% assign evidence = site.data.projects[page.project_id] %}
 {% if evidence %}
 <aside class="project-evidence" aria-label="Project source and evidence"><p class="eyebrow">{{ evidence.type }}</p><a href="{{ evidence.github }}" class="button icon fa-github">Project code & notes</a></aside>
-{% unless page.case_study %}<figure class="project-diagram"><img src="{{ evidence.image | relative_url }}" alt="{{ evidence.image_alt }}" /><figcaption>Technical illustration · source and method described below</figcaption></figure>{% endunless %}
+<figure class="project-photo"><img src="{{ evidence.photo | relative_url }}" alt="{{ evidence.photo_alt }}" /><figcaption>Photo: {{ evidence.photo_credit }} / Unsplash · <a href="{{ '/photo-credits.html' | relative_url }}">Photography credits</a></figcaption></figure>
 {% endif %}
