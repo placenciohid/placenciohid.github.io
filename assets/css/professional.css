@@ -2,6 +2,7 @@
 :root { --ink:#242943; --panel:#2b314e; --muted:#c0c9dc; --accent:#9bf1ff; --line:rgba(212,212,255,.16); }
 body { font-size:17px; line-height:1.8; }
 body p { max-width:76ch; }
+:target { scroll-margin-top:5rem; }
 #header { border-bottom:1px solid var(--line); }
 /* Keep the first impression visible while the original theme initializes. */
 body.is-loading #header { opacity:1; animation:none; }
