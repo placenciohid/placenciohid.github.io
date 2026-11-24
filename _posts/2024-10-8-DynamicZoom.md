@@ -1,9 +1,10 @@
 ---
 
+project_id: dynamic-zoom
 layout: post  
 title: Dynamic Zoom - Real-time Video Resolution Enhancement  
 description:  
-image: assets/images/dynamic_zoom.jpg  
+image: /assets/images/topics/dynamic-zoom.svg
 
 ---  
 

@@ -1,13 +1,14 @@
 ---
+project_id: spaceship
 layout: post
 title: Optimizing Predictive Performance for a Kaggle Competition
 description:
-image: assets/images/pic21.jpg
+image: /assets/images/topics/kaggle.svg
 ---
 
 In the ever-evolving world of data science and machine learning, competitions provide an exciting opportunity to showcase skills and knowledge. Recently, I participated in a Titanic Survival Prediction competition, aiming to develop a robust model that accurately predicts the survival outcome of passengers aboard the ill-fated **Spaceship Titanic**. This article chronicles my journey and the steps I took to optimize the predictive performance of my submission.
 
-To delve deeper into the analysis and explore the complete methodology and results, please visit the accompanying <a href="https://github.com/placenciohid/Resume/blob/main/archive/notebooks/Spaceship%20Titanic%20-%20Kaggle.ipynb"><b>Jupyter notebook</b></a>.
+To delve deeper into the analysis and explore the complete methodology and results, please visit the accompanying <a href="https://github.com/placenciohid/Resume/blob/main/projects/spaceship-titanic/legacy/Spaceship%20Titanic%20-%20Kaggle.ipynb"><b>Jupyter notebook</b></a>.
 
 <h4>Exploratory Data Analysis (EDA)</h4>
 

@@ -1,13 +1,14 @@
 ---
+project_id: play-store
 layout: post
 title: Uncovering Play Store Reviews - A Data Driven Analysis
 description:
-image: assets/images/pic22.jpg
+image: /assets/images/topics/text-analytics.svg
 ---
 
 User reviews on the Google Play Store offer valuable feedback for application developers, providing insights that drive app improvements and enhance user satisfaction. In this project, we embark on a data-driven journey to explore the fascinating world of topic modeling, sentiment analysis, and rating prediction using user feedback from the Google Play Store. The aim is to uncover the most common themes, sentiments, and preferences within the vast volume of unstructured user feedback.
 
-To delve deeper into the analysis, and check the methodology and results, please visit the accompanying <a href="https://github.com/placenciohid/Resume/blob/main/archive/notebooks/Google%20Play%20Store%20Review%20-%20%20Text%20Analytics.ipynb"><b>Jupyter notebook</b></a>.
+To delve deeper into the analysis, and check the methodology and results, please visit the accompanying <a href="https://github.com/placenciohid/Resume/blob/main/projects/play-store-reviews/legacy/Google%20Play%20Store%20Review%20-%20%20Text%20Analytics.ipynb"><b>Jupyter notebook</b></a>.
 
 <h3>Objectives</h3>
 

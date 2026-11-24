@@ -2,25 +2,25 @@ professional:
   - title: Forecasting & optimization
     description: Production planning, cash forecasting, and allocation decisions.
     url: /work/forecasting.html
-    image: /assets/images/pic16.jpg
+    image: /assets/images/topics/forecasting.svg
   - title: Finding information with AI
     description: Making a large technical document collection searchable.
     url: /work/knowledge-search.html
-    image: /assets/images/pic17.jpg
+    image: /assets/images/topics/knowledge-search.svg
   - title: Collections & reporting
     description: Bringing overdue balances and follow-up priorities into view.
     url: /work/commercial-reporting.html
-    image: /assets/images/pic18.jpg
+    image: /assets/images/topics/commercial-reporting.svg
 technical:
   - title: Event prediction
     description: From change history to prediction data, without looking ahead.
     url: /projects/event-prediction.html
-    image: /assets/images/pic22.jpg
+    image: /assets/images/topics/event-prediction.svg
   - title: Optimization
     description: A small, reproducible scheduling problem with limited capacity.
     url: /projects/optimization.html
-    image: /assets/images/pic13.jpg
+    image: /assets/images/topics/optimization.svg
   - title: Machine learning from scratch
     description: Three classifiers, a held-out dataset, and the code behind them.
     url: /projects/ml-from-scratch.html
-    image: /assets/images/pic15.jpg
+    image: /assets/images/topics/ml-from-scratch.svg

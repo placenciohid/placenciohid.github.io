@@ -1,8 +1,9 @@
 ---
+project_id: gnn
 layout: post  
 title: Implementing a Graph Neural Network for Imbalanced Event Prediction
 description:  
-image: assets/images/pic24.jpg  
+image: /assets/images/topics/event-prediction.svg
 
 ---
 

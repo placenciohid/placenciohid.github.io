@@ -39,3 +39,16 @@ a:focus-visible, button:focus-visible { outline: 3px solid #9bf1ff; outline-offs
   .section-intro .inner { padding-top: 2em; }
 }
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *, *:before, *:after { animation:none !important; transition:none !important; } }
+
+/* Topic-specific illustrations and technical project evidence. */
+.tiles article:before { opacity: .72; }
+.tiles article .image img { object-fit: cover; }
+.project-evidence { margin: 0 0 1.6em; border-left: 3px solid #66ead0; padding: .3em 0 .3em 1.2em; }
+.project-evidence .eyebrow { margin: 0 0 .7em; }
+.project-diagram { margin: 1.6em 0 2.5em; max-width: 70em; }
+.project-diagram img { display: block; width: 100%; border: 1px solid rgba(212,212,255,.15); border-radius: 5px; }
+.project-diagram figcaption { margin-top: .6em; font-size: .85em; color: #b1bdd3; }
+pre { max-width: 100%; overflow-x: auto; }
+pre code { line-height: 1.6; font-size: .86em; }
+#main .inner > table { display: block; overflow-x: auto; }
+@media screen and (max-width:736px) { .project-evidence .button { white-space: normal; height: auto; line-height: 1.8; padding: .8em 1em; } }
