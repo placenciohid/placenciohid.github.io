@@ -9,7 +9,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid #9bf1ff; outline-offs
 #banner.major { min-height: 30em; height: auto; padding: 8em 0 5em; }
 #banner .inner { max-width: 76em; }
 #banner h1 { max-width: 21ch; font-size: clamp(2rem, 4.2vw, 3.7rem); line-height: 1.15; }
-#banner .content p { text-transform: none !important; font-size: 1.05rem; font-weight: 400; letter-spacing: .02em; max-width: 45ch; }
+#banner > .inner .content p { text-transform: none; font-size: 1.05rem; font-weight: 400; letter-spacing: .02em; max-width: 45ch; }
 .eyebrow { font-size: .76rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #c3e8ef; margin-bottom: 1em; }
 .section-intro .inner { padding-top: 2.8em; padding-bottom: 1.5em; }
 .section-intro h2 { margin-bottom: .35em; }
