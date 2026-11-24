@@ -1,0 +1,47 @@
+{
+  "factory": {
+    "photographer": "Hyundai Motor Group",
+    "source": "https://unsplash.com/photos/a-factory-filled-with-lots-of-machines-and-boxes-h2rWePLKxvs",
+    "license": "https://unsplash.com/license"
+  },
+  "library": {
+    "photographer": "Jamie Taylor",
+    "source": "https://unsplash.com/photos/books-organized-in-a-shelf--9C3TMXwQjQ",
+    "license": "https://unsplash.com/license"
+  },
+  "port": {
+    "photographer": "Haris Illahi",
+    "source": "https://unsplash.com/photos/shipping-containers-stacked-at-a-busy-port-with-cranes-Beg5nxwR9tA",
+    "license": "https://unsplash.com/license"
+  },
+  "servers": {
+    "photographer": "Kevin Ache",
+    "source": "https://unsplash.com/photos/a-rack-of-servers-in-a-server-room-2JJ3wBHu4_0",
+    "license": "https://unsplash.com/license"
+  },
+  "warehouse": {
+    "photographer": "Russ Murray",
+    "source": "https://unsplash.com/photos/a-warehouse-is-filled-with-shelves-and-boxes-M7G_m5XJ-go",
+    "license": "https://unsplash.com/license"
+  },
+  "circuits": {
+    "photographer": "Vishnu Mohanan",
+    "source": "https://unsplash.com/photos/close-up-of-dark-blue-circuit-board-pfR18JNEMv8",
+    "license": "https://unsplash.com/license"
+  },
+  "wine": {
+    "photographer": "Klara Kulikova",
+    "source": "https://unsplash.com/photos/wine-bottles-on-rack-CPMZguYURMw",
+    "license": "https://unsplash.com/license"
+  },
+  "phone": {
+    "photographer": "Jakub Żerdzicki",
+    "source": "https://unsplash.com/photos/a-person-holding-a-cell-phone-in-their-hand-Xb1myRNASiM",
+    "license": "https://unsplash.com/license"
+  },
+  "stars": {
+    "photographer": "Tiago Ferreira",
+    "source": "https://unsplash.com/photos/a-night-sky-filled-with-lots-of-stars-Yw35FMpMAtE",
+    "license": "https://unsplash.com/license"
+  }
+}

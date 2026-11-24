@@ -151,7 +151,7 @@
 
 					// Set position.
 						if (x = $img.data('position'))
-							$image.css('background-position', x);
+							$this.css('background-position', x);
 
 					// Hide original.
 						$image.hide();
@@ -159,7 +159,7 @@
 				// Link.
 					if ($link.length > 0) {
 
-						$x = $link.clone()
+						var $x = $link.clone()
 							.text('')
 							.addClass('primary')
 							.appendTo($this);
@@ -170,6 +170,8 @@
 
 						$link.on('click', function(event) {
 
+							if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey)
+								return;
 							var href = $link.attr('href');
 
 							// Prevent default.
@@ -188,7 +190,7 @@
 									else
 										location.href = href;
 
-								}, 500);
+								}, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 500);
 
 						});
 

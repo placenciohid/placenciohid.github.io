@@ -2,11 +2,11 @@
   <section><h2>Contact</h2><p>For roles and projects in operational excellence, analytics, and automation.</p><a class="button" href="mailto:{{ site.email }}">Email me</a></section>
   <section class="contact-details"><h3>Darío Placencio</h3><p>{{ site.city }}, {{ site.state }}<br /><a href="mailto:{{ site.email }}">{{ site.email }}</a></p><p><a href="{{ site.socials.LinkedIn }}">LinkedIn</a> &nbsp;·&nbsp; <a href="{{ site.socials.GitHub }}">GitHub portfolio</a></p></section>
 </div></section>
-<footer id="footer"><div class="inner"><ul class="copyright"><li>&copy; {{ 'now' | date: '%Y' }} Darío Placencio</li><li>Design: <a href="https://html5up.net">HTML5 UP</a> · <a href="https://github.com/andrewbanchich/forty-jekyll-theme">Forty Jekyll theme</a></li></ul></div></footer>
+<footer id="footer"><div class="inner"><ul class="copyright"><li>&copy; {{ 'now' | date: '%Y' }} Darío Placencio</li><li>Design: <a href="https://html5up.net">HTML5 UP</a> · <a href="https://github.com/andrewbanchich/forty-jekyll-theme">Forty Jekyll theme</a></li><li><a href="{{ '/photo-credits.html' | relative_url }}">Photography credits</a></li></ul></div></footer>
 </div>
 <script src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/jquery.scrolly.min.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/jquery.scrollex.min.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/skel.min.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/util.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/main.js' | relative_url }}?v={{ site.time | date:'%s' }}"></script>
