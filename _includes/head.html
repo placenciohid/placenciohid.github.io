@@ -9,7 +9,7 @@
   <meta property="og:url" content="{{ page.url | absolute_url }}" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="{{ '/assets/images/banner.jpg' | absolute_url }}" />
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
-  <link rel="stylesheet" href="{{ '/assets/css/portfolio.css' | relative_url }}" />
-  <link rel="stylesheet" href="{{ '/assets/css/professional.css' | relative_url }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%s' }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/portfolio.css' | relative_url }}?v={{ site.time | date: '%s' }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/professional.css' | relative_url }}?v={{ site.time | date: '%s' }}" />
 </head>

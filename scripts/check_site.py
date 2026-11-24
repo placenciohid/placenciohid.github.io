@@ -20,6 +20,8 @@ class Links(HTMLParser):
 if not ROOT.exists(): sys.exit('Build with Jekyll first')
 for p in ROOT.rglob('*.html'):
     Links(p).feed(p.read_text(encoding='utf-8'))
+    if not re.search(r'/assets/css/professional\.css\?v=\d+',p.read_text(encoding='utf-8')):
+        errors.append(f'{p}: missing versioned presentation stylesheet')
 # Every project must expose a direct Resume source link and topic illustration.
 registry = json.loads(Path('_data/projects.json').read_text(encoding='utf-8'))
 project_sources = list(Path('work').glob('*.md')) + list(Path('projects').glob('*.md')) + list(Path('_posts').glob('*.md'))
