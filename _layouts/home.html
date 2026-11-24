@@ -1,25 +1,18 @@
 <!DOCTYPE html>
 <!-- Forty by HTML5 UP | html5up.net | CCA 3.0 -->
-<html lang="en">
-{% include head.html %}
-<body>
-{% include header.html %}
-<section id="banner" class="major">
-  <div class="inner">
-    <p class="eyebrow">Darío Placencio · Chicago</p>
-    <header class="major"><h1>{{ page.landing-title }}</h1></header>
-    <div class="content">
-      <p>{{ site.description }}</p>
-      <ul class="actions"><li><a href="#main" class="button next scrolly">Explore my work</a></li></ul>
-    </div>
-  </div>
-</section>
+<html lang="en">{% include head.html %}<body class="portfolio-home">{% include header.html %}
+<section id="banner" class="major professional-hero"><div class="inner hero-grid">
+  <div class="hero-copy"><p class="eyebrow">Darío Placencio · Chicago</p><h1>Operational Excellence &amp; Applied Data Science</h1><p class="hero-lead">I work with operations and commercial teams to improve processes, build useful data products, and put automation into practice.</p><p class="hero-context">Rio Tinto &amp; BHP · Two master’s degrees in machine learning and business analytics.</p><div class="hero-actions"><a href="#selected-work" class="button special scrolly">Explore selected work</a><a href="{{ '/aboutme.html' | relative_url }}" class="text-link">Experience & education <span aria-hidden="true">↗</span></a></div></div>
+  <aside class="role-panel" aria-label="Current professional focus"><p class="eyebrow">Current role</p><h2>Adviser, Operational Excellence</h2><p class="role-company">Rio Tinto · Commercial Services</p><ul><li>Cash forecasting</li><li>Collections & reconciliation</li><li>Reporting & automation</li></ul><a href="{{ '/work/commercial-reporting.html' | relative_url }}">See the work <span aria-hidden="true">→</span></a></aside>
+</div></section>
 <main id="main">
-  <section class="section-intro"><div class="inner"><p class="eyebrow">Professional experience</p><h2>Work in practice</h2><p>Selected work across operations, commercial services, and data science.</p></div></section>
-  {% assign tiles = site.data.featured.professional %}{% include featured-tiles.html %}
-  <section class="section-intro"><div class="inner"><p class="eyebrow">Public code & experiments</p><h2>Technical projects</h2><p>Small runnable examples, with the original research and coursework alongside them.</p></div></section>
-  {% assign tiles = site.data.featured.technical %}{% include featured-tiles.html %}
-  <section id="two"><div class="inner"><header class="major"><h2>About me</h2></header>{{ content }}<ul class="actions"><li><a href="{{ '/aboutme.html' | relative_url }}" class="button next">Experience & education</a></li><li><a href="{{ '/all_posts.html' | relative_url }}" class="button">All projects</a></li></ul></div></section>
-</main>
-{% include footer.html %}
-</body></html>
+<section class="proof-section" aria-label="Selected professional results"><div class="inner proof-grid">
+  <a href="{{ '/work/forecasting.html' | relative_url }}"><strong>21%</strong><span>Lower production forecast error</span><small>365-day forecast · versus prior baseline</small></a>
+  <a href="{{ '/work/knowledge-search.html' | relative_url }}"><strong>300K+</strong><span>Documents made searchable</span><small>AI search adopted by four teams</small></a>
+  <a href="{{ '/work/forecasting.html#planning-optimization' | relative_url }}"><strong>$746K</strong><span>Confirmed savings identified</span><small>Annual planning optimization model</small></a>
+</div></section>
+<section id="selected-work" class="work-section"><div class="inner"><div class="section-heading"><div><p class="eyebrow">Selected professional work</p><h2>From operational problem to working solution</h2></div><p>Project context, my contribution, results, and the technical decisions behind the work.</p></div><div class="case-grid">{% for item in site.data.featured.professional %}<article class="case-card"><a class="card-visual" href="{{ item.url | relative_url }}" aria-label="Read {{ item.title }}"><img src="{{ item.image | relative_url }}" alt="{{ item.alt }}" loading="lazy" /></a><div class="card-copy"><p class="card-category">{{ item.category }}</p><h3><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h3><p>{{ item.description }}</p><p class="case-result">{{ item.result }}</p><a class="text-link" href="{{ item.url | relative_url }}">Read case study <span aria-hidden="true">→</span></a></div></article>{% endfor %}</div></div></section>
+<section class="experience-band"><div class="inner experience-grid"><div><p class="eyebrow">Operations, delivery & data</p><h2>A career across the business and the technology</h2><p>At BHP, I worked on process improvement, investment cases, and delivery of predictive-maintenance solutions. At Rio Tinto, I moved into data science and now advise Commercial Services on operational improvement.</p><a href="{{ '/aboutme.html' | relative_url }}" class="text-link">Full experience <span aria-hidden="true">→</span></a></div><div class="experience-facts"><div><strong>15+</strong><p>Specialists coordinated on a predictive-maintenance initiative</p></div><div><strong>$5M+</strong><p>Technology investment secured through a payroll improvement business case</p></div><div><strong>2 master’s</strong><p>Machine Learning & Signal Processing · Business Analytics</p></div></div></div></section>
+<section class="technical-section"><div class="inner"><div class="section-heading"><div><p class="eyebrow">Technical portfolio</p><h2>Inspect the implementation</h2></div><p>Runnable examples, original notebooks, and research implementations. Every project links to its source and notes on GitHub.</p></div><div class="technical-grid">{% for item in site.data.featured.technical %}<article><img src="{{ item.image | relative_url }}" alt="" loading="lazy" /><p class="card-category">{{ item.category }}</p><h3><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h3><p>{{ item.description }}</p><a class="text-link" href="{{ item.url | relative_url }}">Method & code <span aria-hidden="true">→</span></a></article>{% endfor %}</div><div class="section-actions"><a href="{{ '/all_posts.html' | relative_url }}" class="button">All projects</a><a href="https://github.com/placenciohid/Resume" class="text-link">Browse GitHub <span aria-hidden="true">↗</span></a></div></div></section>
+<section class="research-section"><div class="inner"><p class="eyebrow">Selected publications</p><h2>Research alongside practice</h2><div class="publication-grid"><article><p class="card-category">Work · 2022</p><h3><a href="https://doi.org/10.3233/WOR-205049">Augmented reality for virtual training in the construction industry</a></h3><p>Applied technology for training in an operational setting.</p></article><article><p class="card-category">Journal of Business Research · 2018</p><h3><a href="https://doi.org/10.1016/j.jbusres.2017.12.011">A bibliometric analysis of creativity in the field of business economics</a></h3><p>Research into how creativity is studied across business and economics.</p></article></div></div></section>
+</main>{% include footer.html %}</body></html>

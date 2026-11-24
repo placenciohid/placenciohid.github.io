@@ -1,13 +1,6 @@
-<div id="wrapper">
-<a class="skip-link" href="#main">Skip to content</a>
+<div id="wrapper"><a class="skip-link" href="#main">Skip to content</a>
 <header id="header"{% if page.layout == 'home' %} class="alt"{% endif %}>
-  <a href="{{ '/' | relative_url }}" class="logo"><strong>{{ site.title }}</strong> <span>{{ site.subtitle }}</span></a>
-  <nav aria-label="Main navigation"><a href="#menu" aria-label="Open navigation menu">Menu</a></nav>
+<a href="{{ '/' | relative_url }}" class="logo"><strong>{{ site.title }}</strong> <span>Darío Placencio</span></a>
+<nav aria-label="Main navigation"><a class="desktop-link" href="{{ '/all_posts.html' | relative_url }}">Work</a><a class="desktop-link" href="{{ '/aboutme.html' | relative_url }}">Experience</a><a class="desktop-link" href="https://github.com/placenciohid/Resume">GitHub</a><a href="#menu" aria-label="Open navigation menu">Menu</a></nav>
 </header>
-<nav id="menu" aria-label="Site menu"><ul class="links">
-  <li><a href="{{ '/' | relative_url }}">Home</a></li>
-  <li><a href="{{ '/aboutme.html' | relative_url }}">Experience & education</a></li>
-  <li><a href="{{ '/all_posts.html' | relative_url }}">All projects</a></li>
-  <li><a href="https://github.com/placenciohid/Resume">Code portfolio</a></li>
-  <li><a href="mailto:{{ site.email }}">Contact</a></li>
-</ul></nav>
+<nav id="menu" aria-label="Site menu"><ul class="links"><li><a href="{{ '/' | relative_url }}">Home</a></li><li><a href="{{ '/all_posts.html' | relative_url }}">Projects & case studies</a></li><li><a href="{{ '/aboutme.html' | relative_url }}">Experience & education</a></li><li><a href="https://github.com/placenciohid/Resume">GitHub portfolio</a></li><li><a href="mailto:{{ site.email }}">Contact</a></li></ul></nav>

@@ -1,24 +1,24 @@
 {
   "forecasting": {
     "path": "projects/forecasting",
-    "image": "/assets/images/topics/forecasting.svg",
-    "type": "Professional work + independent synthetic companion",
+    "image": "/assets/images/topics/forecast-results.svg",
+    "type": "Professional case study · Public code companion",
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/forecasting",
-    "image_alt": "Synthetic production series with historical observations and a forecast window"
+    "image_alt": "Reported production forecast error comparison: baseline index 100, model 79."
   },
   "knowledge-search": {
     "path": "projects/knowledge-search",
-    "image": "/assets/images/topics/knowledge-search.svg",
-    "type": "Professional work + independent synthetic companion",
+    "image": "/assets/images/topics/search-scale.svg",
+    "type": "Professional case study · Public code companion",
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/knowledge-search",
-    "image_alt": "Document chunking and retrieval with traceable sources"
+    "image_alt": "More than 300,000 documents made searchable across four adopting teams."
   },
   "commercial-reporting": {
     "path": "projects/commercial-reporting",
-    "image": "/assets/images/topics/commercial-reporting.svg",
-    "type": "Professional work + independent synthetic companion",
+    "image": "/assets/images/topics/collections-flow.svg",
+    "type": "Professional case study · Public code companion",
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/commercial-reporting",
-    "image_alt": "Invoice aging and whole-remittance review workflow"
+    "image_alt": "Hourly source-to-review collections reporting workflow."
   },
   "event-prediction": {
     "path": "projects/event-prediction",

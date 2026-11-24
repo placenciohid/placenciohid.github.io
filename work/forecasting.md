@@ -1,71 +1,44 @@
 ---
 project_id: forecasting
 layout: post
-title: "Forecasting & optimization"
-description: "Forecasting & optimization — selected work by Darío Placencio."
+case_study: true
+title: "Forecasting & planning decisions"
+description: "Production forecasting, a planning solver, and cash-receivables evaluation."
+summary: "Production forecasting, a planning solver, and cash-receivables evaluation."
 ---
 
 
-## The work
+{% include case-facts-forecasting.html %}
 
-Planning production and expected customer payments involves different data, but both need a consistent way to turn history into a useful forward view.
+## Production forecasting for a year-ahead view
 
-At Rio Tinto’s Borates Digital team, I developed a production forecasting pipeline covering up to 365 days and rebuilt an Excel-based annual profitability optimization model in Python. In Commercial Services, I developed a seven-day cash-receivables forecasting proof of concept and evaluated it in a four-week trial.
+At Rio Tinto’s Borates Digital team, I developed a 365-day production forecasting pipeline using a Temporal Fusion Transformer. The work covered data preparation, modeling, and evaluation, with quantile estimates to communicate uncertainty around the forecast.
 
-## My contribution
+The resulting forecast reduced error by **21% against the prior baseline**. The comparison below indexes the baseline at 100 and the model at 79; it shows the reported relative improvement without exposing the underlying production series.
 
-I worked across data preparation, modeling, evaluation, and discussions with the teams using the outputs. The production model included uncertainty estimates so the forecast could communicate a range of possible outcomes. The optimization work translated an existing planning model into an explicit mathematical formulation.
+![Reported production forecast error: baseline index 100, model 79](/assets/images/topics/forecast-results.svg)
 
-## What changed
+### Why the method mattered
 
-These projects provided repeatable ways to evaluate production and cash expectations and inspect planning decisions. The cash-forecast trial gave the team evidence to continue evaluation. A forecast is a planning tool; it is not itself a cash recovery or a financial saving.
+A year-ahead forecast must cover both the expected outcome and its uncertainty. Quantile forecasts give planners a range to consider, while a baseline comparison tests whether the added model complexity improves the forecast. My contribution connected the data pipeline, model, and evaluation.
 
-This page is a high-level account of professional work. Employer source code and internal datasets are not published here. For a runnable, synthetic example of optimization, see the [scheduling demonstration](/projects/optimization.html).
+## Planning optimization
 
+I rebuilt the annual EBITDA optimization model from a legacy Excel workbook as a Python linear program in Palantir Foundry. This made the model’s objective and constraints inspectable in code and supported repeatable planning analysis. The work identified **$746K in confirmed savings**.
 
-## Technical companion: how I would evaluate a forecast
+## Cash-receivables forecasting
 
-The public companion in [my Resume repository](https://github.com/placenciohid/Resume/tree/main/projects/forecasting) implements a complete, reproducible rolling-origin evaluation. It uses synthetic daily production, so a visitor can inspect the mechanics without needing Rio Tinto data. Its results below are separate from the professional projects described above.
+In Commercial Services, I developed a seven-day cash-receivables forecasting proof of concept and evaluated it in a four-week trial. The trial achieved **77% weekly accuracy** and provided a basis for the team to continue the work. The trial is complete; its findings supported further evaluation by the team.
 
-### Inputs and model
+## Explore the implementation
 
-The sample has 180 daily observations in arbitrary units, with a linear trend, weekday effects, and seeded noise. A seasonal-naive baseline repeats last week's daily values. The comparison estimates a linear trend and weekday residuals. Neither is the internal Temporal Fusion Transformer model.
+The GitHub companion demonstrates rolling-origin evaluation with a seasonal baseline, held-out errors, and train-only fitting. It uses generated daily production data, so it can be run independently of the professional systems above.
 
-### Evaluation design
+<details class="technical-detail" markdown="1">
+<summary>Technical walkthrough <span>Code, sample data, results & reproduction</span></summary>
 
-Start with 84 training days. Fit each model, forecast seven days, advance the origin by seven days, and fit again. Thirteen windows produce 91 held-out daily predictions. Fitting and residual ranges use only history before each origin.
+{% include technical-forecasting.md %}
 
-```python
-def backtest(rows, initial=84, horizon=7):
-    actual, seasonal, trend = [], [], []
-    folds = []
-    for origin in range(initial, len(rows)-horizon+1, horizon):
-        history, future = rows[:origin], rows[origin:origin+horizon]
-        model = fit(history)  # Every fold is fitted again, using past rows only.
-        expected = predict(model, [r['date'] for r in future])
-        actual.extend(r['value'] for r in future)
-        seasonal.extend(r['value'] for r in history[-7:])
-        trend.extend(r['forecast'] for r in expected)
-        folds.append({'trained_through': history[-1]['date'], 'predict_from': future[0]['date'],
-                      'predict_through': future[-1]['date']})
-    return {'folds': folds, 'forecasted_days': len(actual),
-            'seasonal_naive': metrics(actual, seasonal), 'trend_plus_weekday': metrics(actual, trend)}
-```
+</details>
 
-### Executed synthetic results
-
-| Model | Mean absolute error | WAPE |
-| --- | ---: | ---: |
-| Repeat previous week | 3.8145 units | 2.14% |
-| Trend + weekday | 2.179 units | 1.22% |
-
-These numbers describe an intentionally simple generated series. The generator contains trend and weekday structure, so the improvement is expected; it is not a validation of performance on mining or receivables data. Residual percentile ranges are illustrative rather than calibrated coverage guarantees.
-
-### Reproduce and inspect
-
-```bash
-python projects/forecasting/demo.py
-python -m unittest discover -s tests -v
-```
-
-[Full source](https://github.com/placenciohid/Resume/blob/main/projects/forecasting/demo.py) · [All evaluation origins and results](https://github.com/placenciohid/Resume/blob/main/projects/forecasting/results.json). Python 3.10+; no external dependencies. A production extension would address missing days, covariates, shutdowns, and performance at the planning horizon used by the business. A cash model also needs invoice-level availability dates and customer payment behavior.
+<div class="case-next"><a href="/all_posts.html">Explore all projects →</a><a href="mailto:darioplacenciohidalgo@gmail.com">Discuss my work →</a></div>

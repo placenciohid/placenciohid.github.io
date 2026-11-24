@@ -36,4 +36,17 @@ for p in ROOT.rglob('*.html'):
         if '/assets/images/topics/' not in html:
             errors.append(f'{p}: missing topic artwork')
 if errors: print('\n'.join(errors)); sys.exit(1)
+home=(ROOT/'index.html').read_text(encoding='utf-8')
+for required in ['hero-grid','proof-grid','case-grid','21%','300K+','$746K','/aboutme.html']:
+    if required not in home: errors.append(f'Homepage missing professional presentation element: {required}')
+for name in ['forecasting','knowledge-search','commercial-reporting']:
+    html=(ROOT/'work'/f'{name}.html').read_text(encoding='utf-8')
+    if 'technical-detail' not in html or '<pre' not in html or '<summary>' not in html:
+        errors.append(f'{name}: technical walkthrough did not render as expandable code')
+    if re.search(r'(?m)^```|^#{2,4} ',html):
+        errors.append(f'{name}: unrendered Markdown in case study')
+profile=(ROOT/'aboutme.html').read_text(encoding='utf-8')
+for required in ['Machine Learning','Business Analytics','Engineering Sciences','Industrial Civil Engineering','Selected publications']:
+    if required not in profile: errors.append(f'Profile missing qualification: {required}')
+if errors: print('\n'.join(errors)); sys.exit(1)
 print(f'Local targets exist; all {len(project_sources)} project sources register GitHub evidence and topic artwork.')

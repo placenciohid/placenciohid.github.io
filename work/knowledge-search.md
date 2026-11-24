@@ -1,68 +1,40 @@
 ---
 project_id: knowledge-search
 layout: post
-title: "Finding information with AI"
-description: "Finding information with AI — selected work by Darío Placencio."
+case_study: true
+title: "AI search for technical knowledge"
+description: "From document extraction to ranked, traceable search results."
+summary: "From document extraction to ranked, traceable search results."
 ---
 
 
-## The problem
+{% include case-facts-knowledge-search.html %}
 
-Technical information was spread across a large document collection. Finding the right source could involve searching and reading multiple documents manually.
+## The operational problem
 
-## My contribution
+Technical information was spread across a large collection of documents. Finding a useful answer could require locating and reading several files before the operational work could continue. Search needed to handle both document images and the terminology people used to ask questions.
 
-At Rio Tinto’s Borates Digital team, I developed an AI search pipeline covering more than **300,000 documents**. It combined text extraction from document images with keyword and semantic search, followed by reranking to improve relevance.
+## What I delivered
 
-## Adoption
+At Rio Tinto’s Borates Digital team, I engineered a document-search pipeline covering **more than 300,000 documents**. It combined text extraction using vision-language models, keyword and semantic retrieval, and reranking. **Four teams adopted the platform.**
 
-The platform was adopted by **four teams**. It gave users a shared route into the document collection and reduced the need to locate material through separate manual searches.
+![More than 300,000 documents feeding a shared search platform used by four teams](/assets/images/topics/search-scale.svg)
 
-The volume describes the collection covered by the system; it is not a count of unique users or a measured time saving. Employer documents, system access details, and source code are not included here.
+### The engineering decisions
 
+The pipeline had to make image-based content searchable as well as documents with embedded text. Retrieval combined exact vocabulary with semantic similarity; reranking then selected the most relevant passages. Preserving the document identity through extraction and indexing was essential so users could trace a result back to its source.
 
-## Technical companion: retrieval with inspectable evidence
+My work spanned the data pipeline and search workflow. The result was a shared way to find relevant technical material across the collection. Adoption across four teams demonstrates use; no unmeasured time-saving figure is attached to it here.
 
-The [public implementation](https://github.com/placenciohid/Resume/tree/main/projects/knowledge-search) demonstrates document chunking, hybrid retrieval, rank fusion, and source traceability. It uses six fictional documents and no employer systems. It starts with extracted text: OCR and a generative model are not included in this small companion.
+## Explore the implementation
 
-### Data flow and design choices
+The public companion makes the retrieval stages visible: chunking, two indexes, rank fusion, reranking, and source excerpts. Its fictional corpus and lexical vector index let anyone run and inspect the example without access to the employer system.
 
-`source documents → overlapping chunks + source IDs → two search indexes → rank fusion → reranking → evidence excerpts`
+<details class="technical-detail" markdown="1">
+<summary>Technical walkthrough <span>Code, sample data, results & reproduction</span></summary>
 
-Each chunk retains its document identifier, title, and source reference. BM25 ranks exact vocabulary, while character-trigram TF-IDF supplies a second lexical similarity ranking. Reciprocal rank fusion combines the rankings without comparing incompatible raw scores. A simple token-coverage reranker promotes chunks that cover more of the question.
+{% include technical-knowledge-search.md %}
 
-The vector index is lexical, not a semantic embedding model. A larger implementation could replace it with embeddings and use a learned reranker without changing the source metadata contract.
+</details>
 
-```python
-def search(query, corpus=None, limit=3):
-    corpus = chunks(DOCUMENTS) if corpus is None else corpus
-    if not tokens(query) or not corpus: return []
-    lexical, vector = bm25(query, corpus), vector_scores(query, corpus)
-    fused = Counter()
-    for values in (lexical, vector):
-        for rank,index in enumerate(sorted(range(len(corpus)), key=lambda i:values[i], reverse=True),1):
-            if values[index] > 0: fused[index] += 1/(60+rank)
-    candidates = []
-    for index,score in fused.items():
-        coverage = len(set(tokens(query)) & set(tokens(corpus[index]['text'])))/len(set(tokens(query)))
-        # Require lexical evidence; char overlap alone is not a reliable answer.
-        if coverage == 0: continue
-        candidates.append({**corpus[index], 'fusion_score':round(score,6),
-                           'query_coverage':round(coverage,4), 'score':score+0.1*coverage})
-    return sorted(candidates,key=lambda c:c['score'],reverse=True)[:limit]
-```
-
-### Example output
-
-For `remittance fully cleared invoice`, the first result is the fictional remittance guide. It returns the exact passage, the document ID, and the source reference `synthetic/remittance.txt`. With no lexical evidence, retrieval returns no answer rather than inventing a response.
-
-### Evaluation and limits
-
-The executed fixture finds the expected top document for all five hand-written questions. These questions were designed alongside the tiny corpus, so the result is a regression check rather than an unbiased quality benchmark. Tests also check verbatim source evidence, empty questions, and abstention when no evidence exists. This example does not measure production latency, permission enforcement, or answer quality from an LLM.
-
-```bash
-python projects/knowledge-search/demo.py
-python -m unittest discover -s tests -v
-```
-
-[Complete source and decisions](https://github.com/placenciohid/Resume/tree/main/projects/knowledge-search) · [Saved query results and evidence](https://github.com/placenciohid/Resume/blob/main/projects/knowledge-search/results.json). Python 3.10+; no packages or paid services. A production design would add OCR quality checks, document versioning, page citations, and access filtering before retrieval.
+<div class="case-next"><a href="/all_posts.html">Explore all projects →</a><a href="mailto:darioplacenciohidalgo@gmail.com">Discuss my work →</a></div>
