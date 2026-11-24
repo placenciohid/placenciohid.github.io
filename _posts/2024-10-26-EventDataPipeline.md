@@ -1,8 +1,9 @@
 ---
+project_id: event-pipeline
 layout: post
 title: Advanced Data Pipeline for Target Event Prediction Models
 description:
-image: assets/images/pic23.jpg  
+image: /assets/images/topics/event-prediction.svg
 
 ---
 

@@ -1,8 +1,9 @@
 ---
+project_id: julia-article
 layout: post
 title: Solving Complex Puzzles Using Julia Optimization Constraint Programming
 description:
-image: assets/images/pic19.jpg
+image: /assets/images/topics/optimization.svg
 ---
 
 > **Original project article.** The historical implementation and results below are preserved. For a runnable synthetic companion and current limitations, see [the maintained project overview](/projects/optimization.html).

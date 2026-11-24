@@ -1,0 +1,8 @@
+{% assign evidence = site.data.projects[page.project_id] %}
+{% if evidence %}
+<aside class="project-evidence" aria-label="Project source and evidence">
+  <p class="eyebrow">{{ evidence.type }}</p>
+  <a href="{{ evidence.github }}" class="button icon fa-github">View this project on GitHub</a>
+</aside>
+<figure class="project-diagram"><img src="{{ evidence.image | relative_url }}" alt="{{ evidence.image_alt }}" /><figcaption>Topic illustration · authored for this portfolio{% if page.project_id == 'forecasting' %} using synthetic data{% endif %}</figcaption></figure>
+{% endif %}

@@ -1,8 +1,9 @@
 ---
+project_id: scratch-article
 layout: post
 title: Building ML Models from Scratch (Decision Trees, kNN, and Logistic Regression)
 description:
-image: assets/images/pic18.jpg
+image: /assets/images/topics/ml-from-scratch.svg
 ---
 
 > **Original project article.** The historical implementation and results below are preserved. For a runnable synthetic companion and current limitations, see [the maintained project overview](/projects/ml-from-scratch.html).

@@ -1,0 +1,114 @@
+{
+  "forecasting": {
+    "path": "projects/forecasting",
+    "image": "/assets/images/topics/forecasting.svg",
+    "type": "Professional work + independent synthetic companion",
+    "github": "https://github.com/placenciohid/Resume/tree/main/projects/forecasting",
+    "image_alt": "Synthetic production series with historical observations and a forecast window"
+  },
+  "knowledge-search": {
+    "path": "projects/knowledge-search",
+    "image": "/assets/images/topics/knowledge-search.svg",
+    "type": "Professional work + independent synthetic companion",
+    "github": "https://github.com/placenciohid/Resume/tree/main/projects/knowledge-search",
+    "image_alt": "Document chunking and retrieval with traceable sources"
+  },
+  "commercial-reporting": {
+    "path": "projects/commercial-reporting",
+    "image": "/assets/images/topics/commercial-reporting.svg",
+    "type": "Professional work + independent synthetic companion",
+    "github": "https://github.com/placenciohid/Resume/tree/main/projects/commercial-reporting",
+    "image_alt": "Invoice aging and whole-remittance review workflow"
+  },
+  "event-prediction": {
+    "path": "projects/event-prediction",
+    "image": "/assets/images/topics/event-prediction.svg",
+    "type": "Runnable reference + original research scripts",
+    "github": "https://github.com/placenciohid/Resume/tree/main/projects/event-prediction",
+    "image_alt": "Technical diagram illustrating event prediction"
+  },
+  "optimization": {
+    "path": "projects/optimization",
+    "image": "/assets/images/topics/optimization.svg",
+    "type": "Runnable reference + original notebooks",
+    "github": "https://github.com/placenciohid/Resume/tree/main/projects/optimization",
+    "image_alt": "Technical diagram illustrating optimization"
+  },
+  "ml-from-scratch": {
+    "path": "projects/ml-from-scratch",
+    "image": "/assets/images/topics/ml-from-scratch.svg",
+    "type": "Runnable reference + original notebook",
+    "github": "https://github.com/placenciohid/Resume/tree/main/projects/ml-from-scratch",
+    "image_alt": "Technical diagram illustrating ml from scratch"
+  },
+  "gev-nn": {
+    "path": "projects/event-prediction/legacy/GEV-NN-Model.py",
+    "image": "/assets/images/topics/event-prediction.svg",
+    "type": "Original research implementation",
+    "github": "https://github.com/placenciohid/Resume/blob/main/projects/event-prediction/legacy/GEV-NN-Model.py",
+    "image_alt": "Technical diagram illustrating gev nn"
+  },
+  "gnn": {
+    "path": "projects/event-prediction/legacy/GNN-INCM_with_HSKDM.py",
+    "image": "/assets/images/topics/event-prediction.svg",
+    "type": "Original research implementation",
+    "github": "https://github.com/placenciohid/Resume/blob/main/projects/event-prediction/legacy/GNN-INCM_with_HSKDM.py",
+    "image_alt": "Technical diagram illustrating gnn"
+  },
+  "event-pipeline": {
+    "path": "projects/event-prediction",
+    "image": "/assets/images/topics/event-prediction.svg",
+    "type": "Original Spark script + repaired Python reference",
+    "github": "https://github.com/placenciohid/Resume/tree/main/projects/event-prediction",
+    "image_alt": "Technical diagram illustrating event pipeline"
+  },
+  "scratch-article": {
+    "path": "projects/ml-from-scratch",
+    "image": "/assets/images/topics/ml-from-scratch.svg",
+    "type": "Original notebook + runnable reference",
+    "github": "https://github.com/placenciohid/Resume/tree/main/projects/ml-from-scratch",
+    "image_alt": "Technical diagram illustrating scratch article"
+  },
+  "julia-article": {
+    "path": "projects/optimization",
+    "image": "/assets/images/topics/optimization.svg",
+    "type": "Original Julia notebook + scheduling companion",
+    "github": "https://github.com/placenciohid/Resume/tree/main/projects/optimization",
+    "image_alt": "Technical diagram illustrating julia article"
+  },
+  "play-store": {
+    "path": "projects/play-store-reviews",
+    "image": "/assets/images/topics/text-analytics.svg",
+    "type": "Original notebook and technical notes",
+    "github": "https://github.com/placenciohid/Resume/tree/main/projects/play-store-reviews",
+    "image_alt": "Technical diagram illustrating play store"
+  },
+  "wine": {
+    "path": "projects/wine-clustering",
+    "image": "/assets/images/topics/clustering.svg",
+    "type": "Original notebook and technical notes",
+    "github": "https://github.com/placenciohid/Resume/tree/main/projects/wine-clustering",
+    "image_alt": "Technical diagram illustrating wine"
+  },
+  "spaceship": {
+    "path": "projects/spaceship-titanic",
+    "image": "/assets/images/topics/kaggle.svg",
+    "type": "Original notebooks and technical notes",
+    "github": "https://github.com/placenciohid/Resume/tree/main/projects/spaceship-titanic",
+    "image_alt": "Technical diagram illustrating spaceship"
+  },
+  "clustering": {
+    "path": "projects/clustering-noncompliance",
+    "image": "/assets/images/topics/clustering.svg",
+    "type": "Original notebook and technical notes",
+    "github": "https://github.com/placenciohid/Resume/tree/main/projects/clustering-noncompliance",
+    "image_alt": "Technical diagram illustrating clustering"
+  },
+  "dynamic-zoom": {
+    "path": "projects/dynamic-zoom",
+    "image": "/assets/images/topics/dynamic-zoom.svg",
+    "type": "Contribution notes + upstream implementation",
+    "github": "https://github.com/placenciohid/Resume/tree/main/projects/dynamic-zoom",
+    "image_alt": "Technical diagram illustrating dynamic zoom"
+  }
+}

@@ -1,8 +1,9 @@
 ---
+project_id: gev-nn
 layout: post
 title: Predicting Imbalanced Events with GEV-NN
 description:
-image: assets/images/pic25.jpg
+image: /assets/images/topics/event-prediction.svg
 
 ---
 

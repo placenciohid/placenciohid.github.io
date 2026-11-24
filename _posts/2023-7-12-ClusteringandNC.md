@@ -1,8 +1,9 @@
 ---
+project_id: clustering
 layout: post
 title: Unveiling Insights from Clustering and Non-Compliance in Experimental Data
 description: 
-image: assets/images/pic17.jpg
+image: /assets/images/topics/clustering.svg
 ---
 
 <!-- Content -->
@@ -14,7 +15,7 @@ To demonstrate the application of clustering, let's consider a hypothetical rand
 
 To analyze the average treatment effect (ATE) on sales using the aggregated store-level data, we can calculate the ATE and its confidence interval (CI) to gauge the impact of in-store advertisements on sales.
 
-To delve deeper into the analysis, and check the methodology and results, please visit the accompanying <a href="https://github.com/placenciohid/Resume/blob/main/archive/notebooks/Clustering%20and%20Non-Compliance.ipynb"><b>Jupyter notebook</b></a>.
+To delve deeper into the analysis, and check the methodology and results, please visit the accompanying <a href="https://github.com/placenciohid/Resume/blob/main/projects/clustering-noncompliance/legacy/Clustering%20and%20Non-Compliance.ipynb"><b>Jupyter notebook</b></a>.
 <h3>Non-Compliance</h3>
 In experimental design, non-compliance refers to situations where participants do not adhere to the assigned treatment or fail to comply with the experimental protocol. Non-compliance can introduce bias and affect the validity of experimental results. Addressing non-compliance is crucial to obtain accurate conclusions from experimental studies. Researchers employ various strategies such as monitoring participant adherence, implementing incentives or reminders, and adopting specific analytical approaches like intention-to-treat or complier average causal effect methods.
 
@@ -25,7 +26,7 @@ To illustrate the concept of non-compliance, we consider a company's randomized 
 </ul>
 The company tracked the fraction of participants taking the quiz and the flu shot rates across the control and treatment groups. By examining the intention-to-treat (ITT) estimates and treatment-on-the-treated (TOT) effects, we gain insights into the impact of the survey on flu shot rates.
 
-To delve deeper into the analysis, and check the methodology and results, please visit the accompanying <a href="https://github.com/placenciohid/Resume/blob/main/archive/notebooks/Clustering%20and%20Non-Compliance.ipynb"><b>Jupyter notebook</b></a>.
+To delve deeper into the analysis, and check the methodology and results, please visit the accompanying <a href="https://github.com/placenciohid/Resume/blob/main/projects/clustering-noncompliance/legacy/Clustering%20and%20Non-Compliance.ipynb"><b>Jupyter notebook</b></a>.
 <h3>Conclusion</h3>
 Clustering and non-compliance play pivotal roles in analyzing experimental data. Clustering aids in identifying patterns and creating balanced samples, while non-compliance analysis helps address biases and enhance the accuracy of experimental findings. Understanding these concepts provides researchers and analysts with powerful tools to draw insightful conclusions from their data.
 
