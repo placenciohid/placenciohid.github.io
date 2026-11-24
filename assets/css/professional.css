@@ -69,7 +69,9 @@ body.is-loading #banner > .inner { opacity:1; transform:none; filter:none; }
 .page-synopsis { font-size:1.15rem; line-height:1.7; color:#c9d8e8; font-weight:400; max-width:61ch; margin:1.1rem 0 0!important; }
 .inner header.major .page-synopsis { text-transform:none; letter-spacing:0; font-weight:400; font-size:1.15rem; line-height:1.7; }
 header.major > .page-synopsis:after { display:none!important; }
-.article-inner { max-width:68rem!important; }
+.article-inner { max-width:68rem!important; overflow-wrap:anywhere; }
+.article-inner .row > * { min-width:0; }
+.article-inner pre { overflow-wrap:normal; }
 .article-inner > h2 { font-size:1.6rem; margin-top:2.5rem!important; }
 .article-inner > p { max-width:74ch; }
 .article-inner > p > img { display:block; width:100%; max-width:57rem; border-radius:7px; margin:1.8rem 0; }
