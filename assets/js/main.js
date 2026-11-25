@@ -164,7 +164,9 @@
 							.addClass('primary')
 							.appendTo($this);
 
-						$x.attr('aria-label', $link.text());
+						// The heading link is the keyboard and screen-reader target.
+						// Keep the full-tile overlay for pointer interaction only.
+						$x.attr({ 'tabindex': '-1', 'aria-hidden': 'true' });
 
 						$link = $link.add($x);
 
