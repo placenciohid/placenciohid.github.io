@@ -43,7 +43,7 @@ for required in ['hero-grid','role-description','tiles interactive-projects','Ma
     if required not in home: errors.append(f'Homepage missing professional presentation element: {required}')
 if 'class="proof-section"' in home or 'Two master' in home:
     errors.append('Homepage must explain role and degrees without a standalone KPI strip')
-if home.count('class="tile-cta"') != 6 or home.count('/assets/images/photos/') != 6:
+if home.count('class="tile-cta"') != 6 or len(re.findall(r'<img[^>]+src="/assets/images/photos/', home)) != 6:
     errors.append('Homepage must expose six photographic interactive project tiles')
 for name in ['forecasting','knowledge-search','commercial-reporting']:
     html=(ROOT/'work'/f'{name}.html').read_text(encoding='utf-8')
