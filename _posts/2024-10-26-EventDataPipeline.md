@@ -1,6 +1,7 @@
 ---
 project_id: event-pipeline
 layout: post
+canonical_url: /projects/event-prediction.html
 title: "Leakage-safe event data preparation"
 description: "Separate observed history, current state, and future outcomes before fitting a model."
 summary: "Separate observed history, current state, and future outcomes before fitting a model."

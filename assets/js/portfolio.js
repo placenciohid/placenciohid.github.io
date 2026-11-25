@@ -19,7 +19,9 @@
         menu.setAttribute('role', 'dialog'); menu.setAttribute('aria-hidden', 'false');
         menu.setAttribute('aria-modal', 'true'); toggle.setAttribute('aria-expanded', 'true');
         wrapper.inert = true; document.body.classList.add('is-menu-visible');
-        menu.querySelector('a').focus();
+        window.requestAnimationFrame(function () {
+          if (document.body.classList.contains('is-menu-visible')) menu.querySelector('a').focus();
+        });
       });
       menu.querySelector('.close').addEventListener('click', closeMenu);
       menu.addEventListener('click', function (event) { if (event.target === menu || event.target.closest('a')) closeMenu(); });

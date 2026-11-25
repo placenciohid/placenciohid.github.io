@@ -1,7 +1,7 @@
 ---
 layout: home
-title: Home
-landing-title: Operational Excellence, Data Science & Automation
+title: Data science & process improvement
+landing-title: Data science & process improvement
 description: Darío Placencio’s work in operational improvement, forecasting, analytics, and automation.
 ---
 

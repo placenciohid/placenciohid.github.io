@@ -16,7 +16,8 @@
     "image": "/assets/images/photos/mining-operations.jpg",
     "alt": "Excavators and haul trucks working at an open-pit mine.",
     "result": "21% lower forecast error against the prior baseline; $746K in savings identified by the separate planning model.",
-    "featured": true
+    "featured": true,
+    "keywords": "Python"
   },
   {
     "slug": "commercial-reporting",
@@ -34,8 +35,9 @@
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/commercial-reporting",
     "image": "/assets/images/photos/port.jpg",
     "alt": "Shipping containers and cranes at a commercial port.",
-    "result": "Delivered collections reporting and an hourly receivables-aging feed.",
-    "featured": true
+    "result": "Delivered Atlantic Aluminium’s collections reporting and reconciliation views.",
+    "featured": true,
+    "keywords": "Python"
   },
   {
     "slug": "knowledge-search",
@@ -54,7 +56,8 @@
     "image": "/assets/images/photos/library.jpg",
     "alt": "Rows of books in a library collection.",
     "result": "Search covering 300,000+ documents, adopted by four teams.",
-    "featured": true
+    "featured": true,
+    "keywords": "Python"
   },
   {
     "slug": "process-improvement",
@@ -73,7 +76,8 @@
     "image": "/assets/images/photos/mine-trucks.jpg",
     "alt": "Mining vehicles working in an open-pit quarry.",
     "result": "An opportunity assessment that secured $5M+ in technology funding.",
-    "featured": true
+    "featured": true,
+    "keywords": "Lean Root Cause Analysis Business Case Change Management"
   },
   {
     "slug": "event-prediction",
@@ -91,7 +95,8 @@
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/event-prediction",
     "image": "/assets/images/photos/mine-trucks.jpg",
     "alt": "Mining vehicles working in an open-pit quarry.",
-    "featured": true
+    "featured": true,
+    "keywords": "Python"
   },
   {
     "slug": "ml-from-scratch",
@@ -109,7 +114,8 @@
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/ml-from-scratch",
     "image": "/assets/images/photos/circuits.jpg",
     "alt": "Gold connections on a dark blue printed circuit board.",
-    "featured": true
+    "featured": true,
+    "keywords": "Python"
   },
   {
     "slug": "optimization",
@@ -126,7 +132,8 @@
     ],
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/optimization",
     "image": "/assets/images/photos/operating-room.jpg",
-    "alt": "A surgical team working in an operating room."
+    "alt": "A surgical team working in an operating room.",
+    "keywords": "Python"
   },
   {
     "slug": "play-store-reviews",
@@ -143,7 +150,8 @@
     ],
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/play-store-reviews",
     "image": "/assets/images/photos/phone.jpg",
-    "alt": "A hand holding a smartphone."
+    "alt": "A hand holding a smartphone.",
+    "keywords": "Python"
   },
   {
     "slug": "wine-neural-networks",
@@ -160,7 +168,8 @@
     ],
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/wine-neural-networks",
     "image": "/assets/images/photos/wine.jpg",
-    "alt": "Wine bottles stored on a rack."
+    "alt": "Wine bottles stored on a rack.",
+    "keywords": "Python"
   },
   {
     "slug": "wine-clustering",
@@ -177,7 +186,8 @@
     ],
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/wine-clustering",
     "image": "/assets/images/photos/wine.jpg",
-    "alt": "Wine bottles stored on a rack."
+    "alt": "Wine bottles stored on a rack.",
+    "keywords": "Python"
   },
   {
     "slug": "spaceship-titanic",
@@ -194,7 +204,8 @@
     ],
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/spaceship-titanic",
     "image": "/assets/images/photos/stars.jpg",
-    "alt": "Stars across the night sky."
+    "alt": "Stars across the night sky.",
+    "keywords": "Python"
   },
   {
     "slug": "clustering-noncompliance",
@@ -211,7 +222,8 @@
     ],
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/clustering-noncompliance",
     "image": "/assets/images/photos/retail.jpg",
-    "alt": "A supermarket aisle, the setting of the grouped-store experiment."
+    "alt": "A supermarket aisle, the setting of the grouped-store experiment.",
+    "keywords": "Python"
   },
   {
     "slug": "dynamic-zoom",
@@ -228,7 +240,8 @@
     ],
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/dynamic-zoom",
     "image": "/assets/images/photos/video-camera.jpg",
-    "alt": "A professional video camera with an attached monitor."
+    "alt": "A professional video camera with an attached monitor.",
+    "keywords": "Python"
   },
   {
     "slug": "yelp-reviews",
@@ -245,6 +258,7 @@
     ],
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/yelp-reviews",
     "image": "/assets/images/photos/retail.jpg",
-    "alt": "A retail aisle illustrating customer experience and service analysis."
+    "alt": "A retail aisle illustrating customer experience and service analysis.",
+    "keywords": "Python"
   }
 ]

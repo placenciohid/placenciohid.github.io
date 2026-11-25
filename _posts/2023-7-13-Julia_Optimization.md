@@ -1,6 +1,7 @@
 ---
 project_id: julia-article
 layout: post
+canonical_url: /projects/optimization.html
 title: "Optimization: objectives, constraints, and tradeoffs"
 description: "Capacity allocation and the link to earlier Julia and Pyomo models."
 summary: "Capacity allocation and the link to earlier Julia and Pyomo models."

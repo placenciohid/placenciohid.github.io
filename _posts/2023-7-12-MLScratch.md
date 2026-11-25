@@ -1,6 +1,7 @@
 ---
 project_id: scratch-article
 layout: post
+canonical_url: /projects/ml-from-scratch.html
 title: "Three classifiers, three decision boundaries"
 description: "Inspectable implementations, held-out predictions, and the assumptions behind each boundary."
 summary: "Inspectable implementations, held-out predictions, and the assumptions behind each boundary."

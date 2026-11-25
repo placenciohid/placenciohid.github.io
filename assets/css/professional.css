@@ -10,6 +10,7 @@ body.is-loading #header,body.is-loading #banner>.inner { opacity:1; animation:no
 #header nav .desktop-link { font-size:.76rem; letter-spacing:.07em; }
 #header nav a[aria-current] { color:var(--accent); }
 #menu .close { font:inherit; box-shadow:none; }
+#menu,#menu .inner { transition-property:opacity,transform; }
 body.is-menu-visible { overflow:hidden; }
 #banner.professional-hero { min-height:0; padding:7.4rem 0 4.2rem; height:auto; background-image:url('/assets/images/photos/copper-mine.jpg'); background-position:center 55%; }
 #banner.professional-hero:after { transition:none; background:linear-gradient(90deg,rgba(18,29,47,.94),rgba(18,29,47,.82) 55%,rgba(18,29,47,.55)); opacity:1; }
@@ -69,6 +70,7 @@ body.is-menu-visible { overflow:hidden; }
 .card-category { font-size:.73rem; color:var(--muted); letter-spacing:.05em; margin:0 0 .6rem; }
 .page-synopsis { font-size:1.12rem!important; line-height:1.75!important; color:#d0dbea; text-transform:none!important; letter-spacing:0!important; font-weight:400!important; max-width:65ch; margin:1.1rem 0 0!important; }
 header.major>.page-synopsis:after { display:none!important; }
+header.major>:first-child:after { display:none; }
 .page-sections { display:flex; gap:1.4rem; flex-wrap:wrap; margin:-.4rem 0 2rem; font-size:.9rem; }
 .profile-inner { max-width:59rem!important; overflow-wrap:anywhere; }
 .profile-inner>h2 { border-top:1px solid var(--line); padding-top:1.5rem; margin-top:2.8rem!important; }
@@ -76,9 +78,10 @@ header.major>.page-synopsis:after { display:none!important; }
 .profile-inner p { max-width:71ch; }
 .work-index { max-width:66rem!important; }
 .project-browser { margin:2rem 0 3.2rem; }
-.project-browser label { margin-bottom:.65rem; font-size:.95rem; }
-.search-row { display:flex; gap:.8rem; align-items:center; }
-.search-row input { margin:0; min-width:0; height:3rem; }
+.project-browser label { margin-bottom:.65rem; font-size:.95rem; text-transform:none; letter-spacing:0; }
+.search-row { display:flex; gap:.8rem; align-items:center; max-width:46rem; }
+.search-row input[type=search] { flex:1; width:100%; margin:0; min-width:0; height:3rem; font:inherit; line-height:1.4; border:1px solid #8f9db2; border-radius:3px; background:#1f263e; color:white; padding:.7rem .9rem; }
+.search-row input[type=search]::placeholder { color:#c0cadb; opacity:1; }
 .quiet-button { height:3rem; line-height:3rem; padding-inline:1.1rem; }
 .project-filters { display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.1rem; }
 .project-filters button { min-height:44px; height:auto; line-height:1.45; font-size:.8rem; text-transform:none; letter-spacing:0; font-weight:400; padding:.65rem 1rem; }
