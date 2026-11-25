@@ -1,43 +1,63 @@
 ---
 project_id: play-store
 layout: post
-title: Uncovering Play Store Reviews - A Data Driven Analysis
-description:
-image: /assets/images/topics/text-analytics.svg
+title: "App reviews: topics and rating prediction"
+description: "A reproducible text baseline, duplicate-aware validation, and a review of the original topic models."
+summary: "A reproducible text baseline, duplicate-aware validation, and a review of the original topic models."
 ---
 
-User reviews on the Google Play Store offer valuable feedback for application developers, providing insights that drive app improvements and enhance user satisfaction. In this project, we embark on a data-driven journey to explore the fascinating world of topic modeling, sentiment analysis, and rating prediction using user feedback from the Google Play Store. The aim is to uncover the most common themes, sentiments, and preferences within the vast volume of unstructured user feedback.
+**Use text analysis to understand recurring concerns, then test whether the language predicts a clearly defined outcome.**
 
-To delve deeper into the analysis, and check the methodology and results, please visit the accompanying <a href="https://github.com/placenciohid/Resume/blob/main/projects/play-store-reviews/legacy/Google%20Play%20Store%20Review%20-%20%20Text%20Analytics.ipynb"><b>Jupyter notebook</b></a>.
+The original project explored app-review topics with LSI, LDA, and spaCy preprocessing, followed by a BERT classification experiment. The maintained analysis adds a reproducible classical baseline and makes the evaluation boundary explicit: similar or duplicated review text should not appear on both sides of a train/test split.
 
-<h3>Objectives</h3>
+## Two questions require two kinds of evidence
 
-The objectives are to first, generate topic models and gain insights into common themes expressed in user reviews, and second, to build a rating prediction model based on the review text to assess overall user sentiment. Achieving these goals will empower developers to make data-driven decisions, enhancing their applications and better catering to user needs.
+Topic discovery asks what people discuss. Rating prediction asks whether review language predicts the selected label. A coherent topic model does not establish classification quality, and a good sentiment classifier does not automatically explain which product change to make.
 
-<h3>Data Cleaning and Preprocessing</h3>
+The [original notebook](https://github.com/placenciohid/Resume/blob/main/projects/play-store-reviews/legacy/Google%20Play%20Store%20Review%20-%20%20Text%20Analytics.ipynb) compares several topic configurations. Its saved LSI search selects three topics with coherence 0.5502; its LDA search selects thirteen with coherence 0.5191. These are historical in-corpus selection statistics. They help compare configurations within that experiment, but they do not mean that 55% or 52% of topics are “correct.” Topic names still require interpretation and source review.
 
-Before delving into topic modeling, I performed necessary data cleaning and preprocessing on the dataset. This involves handling missing data, dropping irrelevant columns, and transforming the text through tokenization, lemmatization, and stop word removal. The resulting clean and processed reviews serve as the foundation for my analysis.
+## A new reproducible classification baseline
 
-<h3>Topic Modeling</h3>
+[analyze.py](https://github.com/placenciohid/Resume/blob/main/projects/play-store-reviews/analyze.py) reads the existing review dataset and uses **1–2 star reviews as negative** and **4–5 star reviews as positive**. It excludes three-star reviews rather than silently assigning an ambiguous middle rating to a sentiment class.
 
-<h4>Topic Modeling using Latent Semantic Indexing (LSI)</h4>
+The pipeline normalizes whitespace and case for grouping, then holds out 20% of distinct text groups. Every instance of identical normalized text remains in the same partition. TF-IDF vocabulary and inverse-document frequencies are fitted on training text only, followed by logistic regression. Usernames, IDs, replies, and star ratings are not model inputs.
 
-I begin my topic modeling journey with Latent Semantic Indexing (LSI) from the gensim library. LSI is a statistical model that explores relationships between documents and the terms they contain. I iteratively optimize the number of topics by calculating coherence scores to select the model with the highest quality. The final optimal LSI model reveals three topics, primarily revolving around app functionality, task management, and calendar features.
+```python
+model = make_pipeline(
+    TfidfVectorizer(ngram_range=(1, 2), min_df=3,
+                    max_features=20000, sublinear_tf=True),
+    LogisticRegression(max_iter=1500, random_state=42)
+)
+model.fit(training_text, training_labels)
+```
 
-<h4>Topic Modeling using Latent Dirichlet Allocation (LDA)</h4>
+## Held-out result
 
-Continuing my exploration, I apply Latent Dirichlet Allocation (LDA) from the gensim library for topic modeling. LDA is a generative statistical model that assumes each document in a corpus is a mixture of topics. I optimize the number of topics using coherence scores and ultimately arrive at an LDA model with 13 topics. These topics provide insights into areas such as app features, task management, user sentiment, and app versions.
+| Measure | Reproduced result |
+| --- | --- |
+| Raw reviews | 12,495 |
+| Reviews retained after label/text filtering | 10,504 |
+| Training / held-out rows | 8,428 / 2,076 |
+| Identical text groups shared across partitions | 0 |
+| Accuracy | 85.60% |
+| F1 | 0.8614 |
+| ROC AUC | 0.9336 |
 
-<h4>Topic Modeling using LDA with Spacy</h4>
+The majority-class baseline would achieve 52.65% accuracy on this holdout. The model's 85.60% is useful evidence that the review language carries rating-related information under this protocol. The confusion matrix in [analysis-results.json](https://github.com/placenciohid/Resume/blob/main/projects/play-store-reviews/analysis-results.json) also shows the errors: 135 negative reviews predicted positive and 164 positive reviews predicted negative.
 
-For my final topic modeling approach, I leverage LDA with Spacy, harnessing the power of the Spacy NLP library and LDA algorithm. After preprocessing the text data with Spacy, I extract features and train the LDA model. The coherence score for this model is 0.47, indicating reasonable performance in identifying coherent topics. The resulting themes include app usability, calendar features, app versions, and user satisfaction.
+This is a retrospective text-group holdout, not a test on a future app release or an unseen application. Both could introduce vocabulary and rating shifts. The label is a rating-derived proxy, so it does not measure whether a product team would agree with every sentiment judgment.
 
-<h3>Rating Prediction Model</h3>
+## Why keep a classical baseline alongside BERT?
 
-In addition to topic modeling, I also delve into building a predictive model for determining review ratings based on their text using a combination of natural language processing and classification algorithms. This enables developers to gauge overall user sentiment and make data-driven decisions to enhance their applications. To achieve this, I fine-tune BERT (from Google Transformers) on a dataset of reviews and their corresponding ratings, showcasing the steps involved in training the model, such as data splitting, attention mask creation, and the training process. Sentiment analysis becomes a vital tool for developers to understand user satisfaction, identify pain points, and implement targeted enhancements. Now, with the trained model capable of predicting review ratings, developers can quickly assess incoming reviews' sentiment and take prompt action to address user concerns or appreciate positive feedback.
+The baseline is inexpensive to run, has an inspectable vocabulary, and establishes a reference before a larger model is justified. The original BERT training output contains a non-finite training loss and does not preserve a usable held-out benchmark. Its architecture and training code remain available as an experiment; the completed TF-IDF result above supplies the reproducible evaluation.
 
-<h3>Conclusion</h3>
+A stronger next experiment would split by app or time, compare a transformer against this same baseline, and inspect errors around negation, sarcasm, mixed sentiment, and short reviews. For topic analysis, I would pair a topic with representative excerpts and its prevalence by version before recommending a change.
 
-This work on topic modeling, sentiment analysis, and rating prediction on apps reviews could provide valuable insights for developers. By leveraging these powerful tools, developers can elevate their applications, improve user experiences, and stay competitive in the app market. The combination of NLP techniques and machine learning empowers developers to unlock the potential of user feedback and create impactful applications that cater to user needs.
+## Reproduce
 
+```bash
+python -m pip install -r requirements-analysis.txt
+python projects/play-store-reviews/analyze.py
+```
 
+The existing [review dataset](https://github.com/placenciohid/Resume/blob/main/data/legacy/README.md) is read locally. `--write` updates the result snapshot; the output contains aggregate metrics rather than individual review text. Dataset hash, package versions, split sizes, and target definition are recorded with the result. The [original dataset source](https://www.kaggle.com/datasets/prakharrathi25/google-play-store-reviews) is credited separately from the analysis.

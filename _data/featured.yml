@@ -4,8 +4,8 @@ professional:
     description: Production forecasting, a Python planning solver, and a cash-receivables trial.
     result: "21% lower forecast error · $746K confirmed savings identified"
     url: /work/forecasting.html
-    image: /assets/images/photos/factory.jpg
-    alt: Cargo conveyors and machinery inside a working factory.
+    image: /assets/images/photos/mining-operations.jpg
+    alt: Excavators and haul trucks working at an open-pit mine.
   - title: AI search for technical knowledge
     category: Applied AI · Data engineering
     description: Extracting, indexing, and retrieving information from a large technical document collection.
@@ -25,12 +25,12 @@ technical:
     category: Data engineering · Machine learning
     description: As-of features, future-event labels, and a temporal split that keeps the future out of training.
     url: /projects/event-prediction.html
-    image: /assets/images/photos/servers.jpg
+    image: /assets/images/photos/mine-trucks.jpg
   - title: Optimization
-    category: Mathematical modeling
-    description: Capacity constraints, objective design, and a reproducible scheduling comparison.
+    category: Operations research · Scheduling
+    description: "Eight procedures, two rooms: first-fit allocation versus the exact optimum."
     url: /projects/optimization.html
-    image: /assets/images/photos/warehouse.jpg
+    image: /assets/images/photos/operating-room.jpg
   - title: Machine learning from scratch
     category: Algorithms · Evaluation
     description: kNN, logistic regression, and a decision stump evaluated on the same held-out data.

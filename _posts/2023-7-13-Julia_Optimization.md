@@ -1,77 +1,66 @@
 ---
 project_id: julia-article
 layout: post
-title: Solving Complex Puzzles Using Julia Optimization Constraint Programming
-description:
-image: /assets/images/topics/optimization.svg
+title: "Optimization: objectives, constraints, and tradeoffs"
+description: "Capacity allocation and the link to earlier Julia and Pyomo models."
+summary: "Capacity allocation and the link to earlier Julia and Pyomo models."
 ---
 
-> **Original project article.** The historical implementation and results below are preserved. For a runnable synthetic companion and current limitations, see [the maintained project overview](/projects/optimization.html).
+**Full utilization and the best allocation are different objectives.**
 
-<!-- Content -->
-Optimization is a powerful tool that allows us to solve a variety of complex problems, ranging from resource allocation to combinatorial puzzles. In this article, we explore two interesting applications of optimization using Julia and the JuMP library:
+This project explores optimization through an operating-room scheduling notebook, Julia constraint-programming puzzles, and a portable capacity-allocation reference. It complements my professional work rebuilding a mining planning model: define the choices, objective, and constraints before asking a solver for an answer.
 
-1. **Sudoku Solver Using Integer Programming**
-2. **Grandmother Puzzle Solver Using Advanced Constraint Modeling**
+## A decision that can be inspected
 
-Both problems illustrate the power of constraint programming for handling unique logical dependencies and constraints, making them ideal showcases for learning about optimization techniques.
+The runnable example assigns eight fictional procedures to two rooms, each with four available hours. Every procedure has a duration and a dimensionless priority score. It may be deferred or assigned to one room. The objective is to maximize total selected priority while respecting each room's capacity.
 
-<h3>Why Use Optimization?</h3>
+The first-fit baseline processes the same input order and places each procedure in the first room with capacity. Exact search considers all `3^8 = 6,561` assignments. This small size makes exhaustive enumeration a useful reference against which a larger solver implementation could be checked.
 
-Optimization is the process of finding the best solution from a set of feasible solutions, typically defined by a series of constraints. In combinatorial puzzles, like Sudoku or the Grandmother Puzzle, we need to balance multiple constraints simultaneously while seeking either a feasible configuration (as in Sudoku) or a unique optimal solution (as in the Grandmother Puzzle).
+## Model formulation
 
-By modeling these puzzles using Julia and JuMP, we leverage the power of state-of-the-art solvers to explore the solution space effectively and handle complex logical relationships.
+For procedure `i` and room `r`, let `x[i,r]` be one when the procedure is selected for that room.
 
-<h3>1. Sudoku Solver Using Integer Programming</h3>
+```text
+maximize   sum(priority[i] * x[i,r])
+subject to sum(duration[i] * x[i,r]) <= room_capacity[r]   for each room
+           sum(x[i,r]) <= 1                              for each procedure
+           x[i,r] in {0,1}
+```
 
-Sudoku is a popular logic puzzle that involves filling a 9x9 grid with numbers from 1 to 9, ensuring that each row, column, and 3x3 sub-grid contains all numbers exactly once. While this puzzle is straightforward for humans to solve, it poses an interesting challenge for optimization algorithms due to the high number of possible configurations.
+No start times, clinical precedence rules, or staff constraints are represented. The graphic below displays capacity allocation; its bar order should not be interpreted as a clinically valid schedule.
 
-**Modeling the Sudoku Problem:**
+![First-fit priority versus optimal selection, and the selected room allocations](/assets/images/results/optimization-allocation.png)
 
-We can model Sudoku using binary decision variables for each cell in the grid. If we let `x[i, j, k]` represent a binary variable that is 1 when cell `(i, j)` contains the number `k`, and 0 otherwise, we can define a set of constraints:
+## Results: the bottleneck was the selection rule
 
-- **Single Number per Cell:** Each cell must contain exactly one number.
-- **Row and Column Uniqueness:** Each number must appear exactly once in every row and every column.
-- **3x3 Sub-grid Constraints:** Each sub-grid (3x3 block) must also contain every number exactly once.
+| Method | Total priority | Allocated capacity |
+| --- | ---: | --- |
+| First fit | 24 | Both rooms filled |
+| Exact allocation | 28 | Both rooms filled |
 
-In the standard Sudoku problem, we seek a feasible solution that satisfies all constraints. However, in our variation, called **Jeff-Doku**, we add an objective function to **maximize the sum of the numbers on the main diagonal** of the grid. This objective turns a simple constraint satisfaction problem into an optimization problem, allowing us to explore more sophisticated strategies.
+Both approaches use all eight hours. Exact allocation selects a more valuable combination under the stated objective, demonstrating why utilization alone cannot tell whether an allocation is good. The four-point improvement is a synthetic objective difference; interpreting it as revenue or clinical benefit would require a different, validated objective.
 
-**Results:**
+### What to inspect in the implementation
 
-Our solver successfully handles both standard Sudoku and the Jeff-Doku variant, highlighting how flexible mathematical models can be adapted for different objectives. The power of optimization lies in the ease with which we can modify constraints or add new objectives to fine-tune our solution.
+[demo.py](https://github.com/placenciohid/Resume/blob/main/projects/optimization/demo.py) separates `objective`, `solve`, and `first_fit`. The feasibility calculation is shared, keeping the comparison on the same constraints. [results.json](https://github.com/placenciohid/Resume/blob/main/projects/optimization/results.json) records the selected assignments and room loads. Tests check the known optimum and capacity feasibility.
 
-<h3>2. Grandmother Puzzle Solver Using Advanced Constraints</h3>
+Enumeration is transparent but exponential. A larger case would use mixed-integer programming or a constraint solver. For a solver-backed implementation, I would retain a small instance like this as an independent oracle, then report feasibility, objective bound, optimality gap, and termination condition for larger runs.
 
-The Grandmother Puzzle is a more complex combinatorial problem involving five grandmothers, their daughters, sons-in-law, and grandsons. The objective is to determine the family relationships based on a series of clues:
+## Earlier notebooks: what each contributes
 
-- Each grandmother has a unique daughter, son-in-law, and grandson.
-- The puzzle involves a series of interdependent rules, such as: "Maxine’s daughter is not Carla," and "Tim’s mother is Cindy, who is married to Jake."
+The [Pyomo operating-room notebook](https://github.com/placenciohid/Resume/blob/main/projects/optimization/legacy/Pyomo%20Optimization%20-%20Operating%20Room%20Schedule.ipynb) begins with a historical utilization workbook, filters procedures, and constructs assignment and occupancy constraints. The workbook is not included. Its saved outputs provide an analysis trail, but the portable example is independent of those records.
 
-**Modeling the Grandmother Puzzle:**
+The [Julia notebook](https://github.com/placenciohid/Resume/blob/main/projects/optimization/legacy/Julia%20Optimization%20-%20Sudoki%20and%20Brain%20Puzzle.ipynb) uses JuMP for Sudoku and a logic puzzle. Puzzle modeling is a useful test of constraint completeness: an omitted constraint can produce a mathematically feasible solution that violates the actual rules.
 
-We define binary variables for each possible relationship, such as `xD[g, d]`, which is 1 if grandmother `g` has daughter `d`, and 0 otherwise. Similarly, variables `xH[g, h]` and `xS[g, s]` indicate son-in-law and grandson assignments.
+The transferable skill is translating a practical problem into a model that someone else can challenge. In mining planning, a missing commercial or production constraint can matter much more than a marginally faster solve.
 
-**Key Constraints:**
+## Reproduce
 
-1. **Each Grandmother has One Daughter, One Son-in-Law, and One Grandson:**  
-   This constraint ensures that every grandmother has exactly one family configuration.
+```bash
+python projects/optimization/demo.py
+python -m unittest discover -s tests -v
+```
 
-2. **Each Role is Uniquely Assigned:**  
-   No two grandmothers can share the same daughter, son-in-law, or grandson.
+Python 3.10+, no external solver required. A useful next step would vary capacities and priorities, check whether the chosen allocation is stable, and discuss the operational cost of deferral. That turns a single optimal answer into a decision conversation.
 
-3. **Clue-Based Logical Dependencies:**  
-   We add constraints based on the provided clues, such as "Cathy is married to Joe, but their son is not Tab."
-
-**Results:**
-
-After implementing these constraints, our solver identifies the correct family relationships, demonstrating how constraint programming can navigate through intricate logical rules to find a feasible solution.
-
-<h3>Optimization with Julia and JuMP</h3>
-
-Using Julia and the JuMP library, we were able to solve both puzzles by defining the problem constraints clearly and leveraging powerful solvers to explore the solution space. The flexibility of JuMP allowed us to model a wide range of constraints efficiently, making it an ideal tool for tackling combinatorial optimization problems.
-
-<h3>Conclusion</h3>
-
-The Sudoku and Grandmother Puzzle solvers illustrate the versatility and power of constraint programming in handling real-world problems. By defining relationships and dependencies mathematically, we can explore the solution space systematically and achieve optimal or feasible configurations quickly.
-
-For a more detailed exploration of these puzzles and the code, check out the complete <a href="https://github.com/placenciohid/Resume/blob/main/projects/optimization/legacy/Julia%20Optimization%20-%20Sudoki%20and%20Brain%20Puzzle.ipynb"><b>Jupyter notebook</b></a> on GitHub.
+[Julia article](https://placenciohid.github.io/2023/07/13/Julia_Optimization.html)

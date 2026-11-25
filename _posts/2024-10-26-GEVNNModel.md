@@ -1,127 +1,27 @@
 ---
 project_id: gev-nn
 layout: post
-title: Predicting Imbalanced Events with GEV-NN
-description:
-image: /assets/images/topics/event-prediction.svg
-
+title: "Autoencoder features and a Gumbel activation"
+description: "Reading the architecture and evaluation choices behind the rare-event neural model."
+summary: "Reading the architecture and evaluation choices behind the rare-event neural model."
 ---
 
-> **Original project article.** The historical implementation and results below are preserved. For a runnable synthetic companion and current limitations, see [the maintained project overview](/projects/event-prediction.html).
+The research scripts explore representation learning and graph-based classification. Their input training files are not included. These notes explain the architecture that is actually present, identify the evaluation questions it raises, and connect it to the runnable [event-data contract](https://github.com/placenciohid/Resume/blob/main/projects/event-prediction/README.md).
 
-<!-- Content -->
-<div class="row">
-    <div class="col-12">
-        <h3>Overview</h3>
-        <p>Predicting rare events within imbalanced datasets is a significant challenge in machine learning. Whether it's fraud detection, medical diagnosis, or risk assessment, the minority class—the events of greatest interest—is often overshadowed by a vast majority of non-events. Traditional models tend to be biased towards the majority, leading to poor performance in detecting these critical occurrences.</p>
-        <p>In this project, I implement the <b>Generalized Extreme Value Neural Network (GEV-NN)</b> to address this issue. By leveraging the unique properties of the Generalized Extreme Value distribution and combining it with an autoencoder for feature extraction, the model enhances its ability to predict minority class events effectively.</p>
-        <p>To delve deeper into the methodology and view the detailed code implementation, please visit the accompanying <a href="https://github.com/placenciohid/Resume/blob/main/projects/event-prediction/legacy/GEV-NN-Model.py"><b>Python script</b></a>.</p>
-    </div>
-</div>
+## Autoencoder features and a Gumbel activation
 
-<div class="row">
-    <div class="col-12">
-        <h3>Objectives</h3>
-        <ul>
-            <li>Develop a model capable of accurately predicting rare events in an imbalanced dataset.</li>
-            <li>Implement the GEV-NN architecture to handle class imbalance.</li>
-            <li>Enhance feature extraction using an autoencoder.</li>
-            <li>Evaluate the model using appropriate metrics to assess performance on the minority class.</li>
-        </ul>
-    </div>
-</div>
+The [GEV-NN script](https://github.com/placenciohid/Resume/blob/main/projects/event-prediction/legacy/GEV-NN-Model.py) combines three representations: a softmax-weighted copy of the input, an autoencoder's compressed representation, and two reconstruction summaries. A feed-forward classifier receives their concatenation.
 
-<div class="row">
-    <div class="col-12">
-        <h3>Data Preprocessing</h3>
-        <ul>
-            <li><b>Feature Standardization</b>: All features are standardized using <code>StandardScaler</code> to ensure consistent scaling.</li>
-            <li><b>Class Weight Calculation</b>: Class weights are computed to address the imbalance between majority and minority classes, influencing the loss function during training.</li>
-        </ul>
-    </div>
-</div>
+The reconstruction summaries are mean squared reconstruction error and cosine similarity. The latter is named `cos_dist` in the script, but the formula calculates similarity, not `1 - similarity`. Preserving that distinction avoids reversing the interpretation of a diagnostic feature.
 
-<div class="row">
-    <div class="col-12">
-        <h3>Model Architecture</h3>
+```python
+euclid_dist = torch.mean((x - decoded) ** 2, dim=1, keepdim=True)
+final_input = torch.cat((euclid_dist, cos_dist, selected_input, encoded), dim=1)
+prediction = self.mlp(final_input)
+```
 
-        <h4>1. Generalized Extreme Value Activation Function</h4>
-        <p>The GEV activation function is integrated into the model to focus on extreme values, which are often associated with rare events. This function helps the network prioritize instances that are critical for minority class prediction.</p>
+The hidden layers use `exp(-exp(-x))`, a Gumbel CDF activation. The output layer uses a sigmoid. This is not a fitted generalized extreme-value distribution with a learned shape parameter. Likewise, softmax feature weights make a representation adaptive but do not establish causal feature importance or implement a full fuzzy inference system simply because of a class label.
 
-        <h4>2. Autoencoder for Feature Extraction</h4>
-        <p>An autoencoder is employed to learn compressed representations of the data:</p>
-        <ul>
-            <li><b>Encoder</b>: Reduces dimensionality by compressing input features into a lower-dimensional space.</li>
-            <li><b>Decoder</b>: Reconstructs the input data from the encoded representation, ensuring essential information is retained.</li>
-        </ul>
+The training objective adds one quarter of the autoencoder reconstruction loss to class-weighted binary cross-entropy. That encourages reconstruction and prediction jointly. An ablation would test whether the autoencoder, weighting branch, and asymmetric activation each improve performance over a smaller classifier. Their inclusion alone does not establish an advantage.
 
-        <h4>3. Self-Organizing Fuzzy Neural Network (SOFNN)</h4>
-        <p>The SOFNN dynamically assigns importance to input features:</p>
-        <ul>
-            <li>Evaluates the relevance of each feature.</li>
-            <li>Enhances the model's focus on attributes that are more indicative of the minority class.</li>
-        </ul>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-12">
-        <h3>Training Process</h3>
-        <ul>
-            <li><b>Loss Functions</b>:
-                <ul>
-                    <li><b>Mean Squared Error (MSE)</b>: Used for training the autoencoder to reconstruct inputs accurately.</li>
-                    <li><b>Weighted Binary Cross-Entropy Loss</b>: Employed for the classification task, incorporating class weights to penalize misclassification of the minority class more heavily.</li>
-                </ul>
-            </li>
-            <li><b>Optimization</b>:
-                <ul>
-                    <li><b>Adam Optimizer</b>: Efficiently updates model parameters during training.</li>
-                    <li><b>Learning Rate Scheduler</b>: Adjusts the learning rate based on validation loss to fine-tune the training process.</li>
-                    <li><b>Early Stopping</b>: Prevents overfitting by halting training when validation performance stops improving.</li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-12">
-        <h3>Evaluation Metrics</h3>
-        <p>To assess the model's performance, several metrics are utilized:</p>
-        <ul>
-            <li><b>AUC-ROC</b>: Measures the model's ability to distinguish between classes across all thresholds.</li>
-            <li><b>F1 Score</b>: Balances precision and recall, providing insight into the model's accuracy on the minority class.</li>
-            <li><b>Brier Score</b>: Evaluates the accuracy of probabilistic predictions.</li>
-            <li><b>Geometric Mean (G-Mean)</b>: Reflects the balance between sensitivity and specificity.</li>
-        </ul>
-        <p>Visualization tools like confusion matrices and ROC curves offer a clear picture of the model's performance.</p>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-12">
-        <h3>Results and Insights</h3>
-        <p>The GEV-NN model demonstrates promising results in predicting rare events:</p>
-        <ul>
-            <li><b>Improved Detection of Minority Class</b>: The model achieves higher recall for the minority class, indicating better detection of rare events.</li>
-            <li><b>Balanced Performance</b>: High G-Mean scores show that the model maintains a balance between correctly identifying both classes.</li>
-            <li><b>Robustness</b>: The integration of GEV activation and feature extraction through the autoencoder enhances the model's robustness against imbalanced data.</li>
-        </ul>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-12">
-        <h3>Conclusion</h3>
-        <p>Predicting rare events in imbalanced datasets is challenging but critical. The GEV-NN model presents a powerful approach to tackle this issue, combining advanced neural network techniques with specialized activation functions. This implementation demonstrates the potential for improved detection of rare events, which can be invaluable in various domains such as finance, healthcare, and security.</p>
-        <p>By leveraging these techniques, practitioners can develop models that are more sensitive to the minority class, leading to better decision-making and outcomes.</p>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-12">
-        <h3>Citation</h3>
-        <p>Munkhdalai, L., Munkhdalai, T., & Ryu, K. H. (2020). GEV-NN: A deep neural network architecture for class imbalance problem in binary classification. <em>Knowledge-Based Systems</em>, 194, 105534. <a href="https://doi.org/10.1016/j.knosys.2020.105534">https://doi.org/10.1016/j.knosys.2020.105534</a></p>
-    </div>
-</div>
+Before operational use, I would evaluate probabilities on forward-held-out observations, inspect calibration, and choose a decision threshold on validation data against an explicit review capacity. The rare-event precision–recall curve and the number of false alerts matter alongside ROC AUC. A reconstruction feature can detect unusual records without necessarily identifying the specific event the business cares about.

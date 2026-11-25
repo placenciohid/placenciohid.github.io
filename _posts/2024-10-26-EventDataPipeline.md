@@ -1,58 +1,67 @@
 ---
 project_id: event-pipeline
 layout: post
-title: Advanced Data Pipeline for Target Event Prediction Models
-description:
-image: /assets/images/topics/event-prediction.svg
-
+title: "Leakage-safe event data preparation"
+description: "Separate observed history, current state, and future outcomes before fitting a model."
+summary: "Separate observed history, current state, and future outcomes before fitting a model."
 ---
 
-> **Original project article.** The historical implementation and results below are preserved. For a runnable synthetic companion and current limitations, see [the maintained project overview](/projects/event-prediction.html).
+**Build a training row that represents what was knowable when a decision had to be made.**
 
-<!-- Content -->  
-In the realm of operational efficiency, understanding and predicting key events in a dataset can be a game-changer. In this post, we explore the development of a robust data pipeline tailored for preparing datasets used in predictive models aimed at event detection. This guide outlines the intricate steps involved, from data cleaning to feature engineering, ensuring a comprehensive foundation for model development.
+This project connects a PySpark event-preparation pipeline with research scripts for imbalanced classification. Its most important modeling choice happens before a neural network: separating past events, current state, and future outcomes.
 
-To explore the complete methodology and the detailed code implementation, please visit the accompanying <a href="https://github.com/placenciohid/Resume/blob/main/projects/event-prediction/legacy/Data_PipeLine_for_Event_Prediction.py"><b>Python script</b></a>.
+My earlier Rio Tinto internship included blocked-order prediction and model-data pipelines. This portfolio collects related technical work, with original research scripts and a runnable reference that makes the time logic inspectable.
 
-<h4>1. Removing Null Columns</h4>
+## The question behind a training row
 
-The first step is crucial for maintaining data quality. We systematically remove columns that contain only null values, ensuring that our subsequent processing steps work with complete and meaningful features. By doing so, we refine our dataset and focus on variables that add value to the model.
+For a record observed on date `t`, the target asks whether a new event begins in `(t, t + 7 days]`. Features describe the record at `t` and the history up to that date. A later resolution may help establish a label or outcome, but it must not be used to describe a past state before it was known.
 
-<h4>2. Extracting and Consolidating Table Structures</h4>
+| Information | Allowed in an input at date t? | Reason |
+| --- | --- | --- |
+| Starts recorded on or before t | Yes | Part of observed history |
+| Last known resolution on or before t | Yes | Helps establish current state |
+| A new start three days after t | Target only | It is the event being predicted |
+| A resolution arriving next week | No | It was not available at the decision date |
 
-To maintain consistency across different datasets, we extract and consolidate column information from multiple sources. This allows us to have a unified view of available features, making it easier to select and transform data consistently across the entire pipeline.
+In a production source, event time and data-availability time can differ. This reference assumes same-day availability; a delayed source would need a separate availability timestamp and an as-of join using that field.
 
-<h4>3. Selecting Key Features</h4>
+## Runnable implementation
 
-Data relevance is critical for building effective models. This step involves selecting columns that are most pertinent to our analysis, ensuring that we retain only the necessary features that contribute to model performance. By streamlining our datasets in this way, we reduce noise and improve computational efficiency.
+[demo.py](https://github.com/placenciohid/Resume/blob/main/projects/event-prediction/demo.py) retains the record's required fields, resolves start and resolution events on one timeline, and derives `event_count`, `last_resolve_date`, and `currently_blocked`. Future starts affect only `target_event_flag`.
 
-<h4>4. Filtering Specific Operations</h4>
+The fixture makes the distinction visible. Record A has a past start followed by a resolution, then another start after its snapshot. It is **currently unblocked with a positive future-event label**. Combining “ever blocked” and “blocked now” would lose that distinction.
 
-We filter the dataset based on specific operational codes. This helps us focus our analysis on the subset of data that aligns with the events and conditions relevant to the predictive models, ensuring that our dataset is not only clean but also highly contextual.
+```python
+past = [e for e in history if date.fromisoformat(e['date']) <= cutoff]
+future = [e for e in history
+          if cutoff < date.fromisoformat(e['date']) <= cutoff + timedelta(days=horizon)]
+```
 
-<h4>5. Building an Auxiliary Table for Target Events</h4>
+The split also rejects training rows whose outcome window reaches validation. Otherwise, even chronological snapshots can share future label information across the boundary. Scaling is fitted on training rows: the saved mean is 15 despite validation values of 100 and 200. Tests perturb validation values to verify that they cannot change the fitted transformation.
 
-An auxiliary table is constructed to identify and track key events in the dataset. By defining conditions that pinpoint event occurrences and resolutions, we create a comprehensive view of these target events. This table serves as a vital input for training models, offering insights into event frequency and timing.
+## Three original implementations, three review questions
 
-<h4>6. Creating a Detailed Dataset</h4>
+| Source | What to inspect | What needs attention before reuse |
+| --- | --- | --- |
+| [PySpark preparation](https://github.com/placenciohid/Resume/blob/main/projects/event-prediction/legacy/Data_PipeLine_for_Event_Prediction.py) | Event histories, joins, and feature construction | Required columns, as-of filtering, and the split/preprocessing order |
+| [GEV/Gumbel-activation neural model](https://github.com/placenciohid/Resume/blob/main/projects/event-prediction/legacy/GEV-NN-Model.py) | Autoencoder features and an asymmetric hidden activation | Calibration, rare-event metrics, and comparison with a simple baseline |
+| [Graph-model ensemble](https://github.com/placenciohid/Resume/blob/main/projects/event-prediction/legacy/GNN-INCM_with_HSKDM.py) | Graph construction, imbalance handling, and averaged model probabilities | Which nodes/edges may exist at inference and which labels enter resampling |
 
-We merge various datasets to create a detailed and comprehensive table that includes event flags and additional contextual information. This consolidated view allows us to capture the entire lifecycle of each record, ensuring that our models are trained with the richest possible information.
+The neural script's fixed `exp(-exp(-x))` hidden activation is a Gumbel CDF, the zero-shape limit of the generalized extreme-value family. Its final output is sigmoid. It does not estimate a free GEV shape parameter. [The architecture notes](https://github.com/placenciohid/Resume/blob/main/projects/event-prediction/model-notes.md) explain both models, the actual ensemble training loop, and the evaluation boundary.
 
-<h4>7. Preprocessing Data for Model Training</h4>
+For the graph approach, a useful review asks whether the intended setting is inductive or transductive. Connections created from future observations can make a model look stronger offline while changing the problem it will face in operation. The original scripts are retained for inspection; their input training datasets are not included, so no historical accuracy is asserted here.
 
-Effective modeling requires well-preprocessed data. We apply a series of transformations, including:
-- Encoding categorical variables into indexed and one-hot formats for compatibility with machine learning algorithms.
-- Scaling numerical features to standardize the data and ensure uniformity across different scales.
-- Dropping irrelevant columns to minimize complexity and focus on essential features.
+## Evaluate against the operational decision
 
-This preprocessing ensures that the data is optimized for model training and validation, enabling efficient and accurate predictions.
+Rare-event accuracy can be high simply by predicting that nothing happens. A stronger evaluation would compare a simple baseline, precision–recall performance, probability calibration, and recall at the number of cases a team can review. That last measure connects the model to an actual work queue.
 
-<h4>8. Validating Data Consistency Across Tables</h4>
+## Reproduce
 
-To ensure the integrity of our pipeline, we compute match percentages between different datasets. This step verifies that the various sources and tables align correctly, confirming that our consolidated dataset is both accurate and consistent.
+```bash
+python projects/event-prediction/demo.py
+python -m unittest discover -s tests -v
+```
 
-<h4>9. Preparing Data for Target Event Prediction</h4>
+Python 3.10+, standard library only. [results.json](https://github.com/placenciohid/Resume/blob/main/projects/event-prediction/results.json) contains the two training and two validation rows. This compact fixture verifies the data contract; it prepares modeling data rather than presenting four rows as a predictive benchmark.
 
-In the final step, we prepare the data specifically for predicting target events. We create the target variable, apply consistent preprocessing techniques, and split the data into training and validation sets. This ensures that the dataset is tailored for the specific requirements of the model, facilitating accurate and reliable predictions.
-
-By following this advanced pipeline, we set the stage for effective predictive modeling. Each step is meticulously designed to transform raw data into a refined dataset, ready for sophisticated analysis and forecasting. For a deeper dive into the code and methodology, check out the full <a href="https://github.com/placenciohid/Resume/blob/main/projects/event-prediction/legacy/Data_PipeLine_for_Event_Prediction.py"><b>Python script</b></a>.
+[Data preparation article](https://placenciohid.github.io/2024/10/26/EventDataPipeline.html) · [Train-only preprocessing guidance](https://scikit-learn.org/stable/common_pitfalls.html)

@@ -1,55 +1,54 @@
 ---
-
 project_id: dynamic-zoom
-layout: post  
-title: Dynamic Zoom - Real-time Video Resolution Enhancement  
-description:  
-image: /assets/images/topics/dynamic-zoom.svg
+layout: post
+title: "Dynamic Zoom: latency belongs to the pipeline"
+description: "My integration contribution and a reproducible experiment in frame freshness versus completeness."
+summary: "My integration contribution and a reproducible experiment in frame freshness versus completeness."
+---
 
----  
+**A fast model can still produce a video stream that is seconds behind the action.**
 
-<!-- Content -->  
-Dynamic Zoom is an advanced super-resolution project I had the opportunity to contribute to, focusing on real-time video resolution enhancement. My primary role was implementing the upscaling process using **Bicubic++**, a deep learning model optimized for low latency, and ensuring that the output was displayed in “real-time” alongside the original video. This experience allowed me to bridge the gap between theoretical computer vision concepts and practical implementation, significantly expanding my knowledge in video processing pipelines.
+Dynamic Zoom is a collaborative video super-resolution project. My contribution focused on model execution and displaying upscaled frames alongside the original stream, using the project's Bicubic++ path. The [upstream repository](https://github.com/Dynamic-Zoom/Dynamic-Zoom) contains the shared implementation; this portfolio adds a technical explanation and an independently runnable frame-queue experiment.
 
-For more technical details, implementation, and the complete code, explore the [GitHub Repository](https://github.com/Dynamic-Zoom/Dynamic-Zoom) and the official [Dynamic Zoom Website](https://dynamic-zoom.github.io/home/).
+## The integration problem
 
-<h3>Project Overview and Motivation</h3>  
+A video pipeline captures a frame, selects a region, prepares tensors, runs inference, and renders output. When capture is faster than processing, a queue can grow even if every component works correctly. The viewer then sees old frames. Throughput, model latency, and capture-to-display latency describe different things.
 
-In digital media and real-time applications such as sports analysis, augmented reality, and surveillance, maintaining video quality during zoom operations is essential. Traditional digital zoom methods suffer from quality degradation, resulting in blurred or pixelated images. Dynamic Zoom addresses these challenges by employing **super-resolution** techniques, enhancing visual clarity and preserving detail even during intensive zooming.
+My work connected model execution with side-by-side output so original and enhanced frames could be compared. A correct comparison also needs frame identity: displaying an enhanced version of frame 100 beside source frame 110 confuses motion differences with restoration quality.
 
-<h3>Technical Focus</h3>  
+## A runnable experiment: preserve every frame or preserve freshness?
 
-My focus within the project was on optimizing the **Bicubic++** model for real-time applications, minimizing latency while maintaining high-quality outputs. Specifically, I concentrated on:  
+[demo.py](https://github.com/placenciohid/Resume/blob/main/projects/dynamic-zoom/demo.py) simulates sixty arrivals at 30 frames per second and a fixed 60 ms processing time per frame. It compares two policies under the same simulated load:
 
-- **Reducing Inference Latency**: Achieved inference speeds of approximately **7-8 ms** per frame for 720p to 4K upscaling, ensuring the enhanced video displayed seamlessly without lag.  
-- **Integrating Efficient Pipelines**: Structured the video processing pipeline using **PyTorch** and **CUDA**, optimizing memory management and data handling for smoother processing across large video datasets.  
-- **Real-Time Visualization**: Developed mechanisms to visualize enhanced frames in parallel with the original video stream, making it possible to view the upscaled content in real time.  
+- **FIFO:** retain and process every frame in order.
+- **Latest frame:** retain at most one waiting frame, replacing it when a newer frame arrives.
 
-<h3>Pipeline Architecture</h3>  
+![Capture-to-display latency under two simulated buffering policies](/assets/images/results/dynamic-zoom-latency.png)
 
-The system was built around a modular architecture to ensure high performance and scalability:  
+| Policy | Processed | Dropped | Peak waiting frames | Mean latency | Maximum latency |
+| --- | --- | --- | --- | --- | --- |
+| FIFO | 60 | 0 | 27 | 846.7 ms | 1633.3 ms |
+| LATEST | 34 | 26 | 1 | 73.5 ms | 86.7 ms |
 
-1. **InputStream**: Captured video frames, allowing for real-time ROI (Region of Interest) detection and resizing.  
-2. **FrameBuffer**: Buffered video frames to ensure smooth and parallel processing.  
-3. **ModelExecutor**: Implemented the optimized **Bicubic++** model for rapid upscaling of the frames.  
-4. **OutputStream**: Rendered the enhanced frames in sync with the original video stream, providing a side-by-side comparison.  
+The latest-frame policy substantially reduces latency by dropping 26 frames. It does not make inference faster. For an interactive preview, freshness may matter more than preserving every frame. An offline export usually needs every frame, so FIFO with backpressure—or a slower producer—is the appropriate choice. The right policy follows the product requirement.
 
-This pipeline architecture not only reduced latency but also maximized GPU utilization, making it possible to handle high-resolution video streams efficiently.
+The simulation records every processed frame's capture, start, and completion timestamps, plus every dropped frame ID. Tests verify that every input frame is either processed or dropped exactly once, and that the latest-frame waiting queue remains bounded.
 
-<h3>Key Results</h3>  
+## How to benchmark the actual implementation
 
-The efforts to optimize the upscaling process yielded impressive results:  
+A useful performance report would state the hardware, model weights, precision, input resolution, region size, output resolution, warm-up, and batch size. Capture, preprocessing, host/device transfer, inference, and display should be measured separately, then checked against end-to-end frame latency. GPU timing also needs synchronization because queued GPU work can return control before it completes.
 
-- **High-Quality Output**: The enhanced video maintained sharpness and detail even at high zoom levels.  
-- **Minimal Latency**: Achieved real-time processing speeds of 7-8 ms per frame for 720p to 4K upscaling.  
-- **Scalable Performance**: The pipeline structure allowed for easy scalability across different hardware configurations.
+The earlier project article reports a historical 7–8 ms inference figure. Without a retained hardware fixture and weights, I would describe that as a historical model-stage measurement, rather than convert it into an end-to-end frame-rate claim. The values above are explicitly simulated and reproducible.
 
-<h3>Learning Experience and Future Work</h3>  
+## What to inspect upstream
 
-This project allowed me to apply my computer vision and deep learning knowledge to a real-world problem, gaining hands-on experience with super-resolution techniques and efficient video processing pipelines. The next steps would involve incorporating **temporal-aware models** to handle motion more effectively and **reducing compression artifacts** in lower-quality video inputs.
+The shared project supports region-of-interest configuration, output frame rate, and Bicubic++ and Swift-SRGAN model choices. Those interfaces are documented in the [upstream README](https://github.com/Dynamic-Zoom/Dynamic-Zoom#readme). Model quality, temporal consistency, and pipeline responsiveness need separate evaluation: a sharper individual frame can still flicker when viewed as a sequence.
 
-<h3>Conclusion</h3>  
+## Reproduce
 
-Dynamic Zoom represents a significant advancement in real-time video processing, providing an effective solution to video quality degradation during digital zoom. My contributions to optimizing the upscaling process helped achieve real-time performance without compromising on quality, making this project a rewarding application of advanced computer vision techniques.
+```bash
+python projects/dynamic-zoom/demo.py
+python -m unittest discover -s tests -v
+```
 
-For a detailed walkthrough and implementation guide, check out the [GitHub Repository](https://github.com/Dynamic-Zoom/Dynamic-Zoom) and visit the official [Dynamic Zoom Website](https://dynamic-zoom.github.io/home/).
+Python 3.10+, no GPU or model download required for the queue experiment. [results.json](https://github.com/placenciohid/Resume/blob/main/projects/dynamic-zoom/results.json) contains the timing and frame-accounting trail. The simulator isolates one integration decision; the original collaborative implementation and third-party models remain attributed to their upstream authors.

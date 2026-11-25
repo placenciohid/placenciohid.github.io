@@ -39,9 +39,11 @@ for p in ROOT.rglob('*.html'):
             errors.append(f'{p}: missing topic photograph')
 if errors: print('\n'.join(errors)); sys.exit(1)
 home=(ROOT/'index.html').read_text(encoding='utf-8')
-for required in ['hero-grid','proof-grid','tiles interactive-projects','21%','300K+','$746K','/aboutme.html']:
+for required in ['hero-grid','role-description','tiles interactive-projects','Master’s in Machine Learning','Master’s in Business Analytics','/aboutme.html']:
     if required not in home: errors.append(f'Homepage missing professional presentation element: {required}')
-if home.count('class="tile-cta"') != 6 or home.count('/assets/images/photos/') != 6:
+if 'class="proof-section"' in home or 'Two master' in home:
+    errors.append('Homepage must explain role and degrees without a standalone KPI strip')
+if home.count('class="tile-cta"') != 6 or len(re.findall(r'<img[^>]+src="/assets/images/photos/', home)) != 6:
     errors.append('Homepage must expose six photographic interactive project tiles')
 for name in ['forecasting','knowledge-search','commercial-reporting']:
     html=(ROOT/'work'/f'{name}.html').read_text(encoding='utf-8')

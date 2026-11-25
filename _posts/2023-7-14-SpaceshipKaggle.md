@@ -1,37 +1,55 @@
 ---
 project_id: spaceship
 layout: post
-title: Optimizing Predictive Performance for a Kaggle Competition
-description:
-image: /assets/images/topics/kaggle.svg
+title: "Prediction on unseen passenger groups"
+description: "A new grouped holdout and a reproducible comparison of two tabular baselines."
+summary: "A new grouped holdout and a reproducible comparison of two tabular baselines."
 ---
 
-In the ever-evolving world of data science and machine learning, competitions provide an exciting opportunity to showcase skills and knowledge. Recently, I participated in a Titanic Survival Prediction competition, aiming to develop a robust model that accurately predicts the survival outcome of passengers aboard the ill-fated **Spaceship Titanic**. This article chronicles my journey and the steps I took to optimize the predictive performance of my submission.
+**A split should reflect who the model will be asked to predict, not just produce two random sets of rows.**
 
-To delve deeper into the analysis and explore the complete methodology and results, please visit the accompanying <a href="https://github.com/placenciohid/Resume/blob/main/projects/spaceship-titanic/legacy/Spaceship%20Titanic%20-%20Kaggle.ipynb"><b>Jupyter notebook</b></a>.
+Spaceship Titanic is a Kaggle classification exercise with mixed numeric and categorical passenger records. My original notebooks compare several classifiers, feature engineering, tuning, and ensembles. The maintained analysis focuses on a specific evaluation question: how do two understandable baselines perform on passengers from travel groups absent from training?
 
-<h4>Exploratory Data Analysis (EDA)</h4>
+## Why groups change the problem
 
-The first crucial step was to gain a deep understanding of the dataset through exploratory data analysis. By meticulously examining the provided features, such as passenger origin, destination, age, and various expenditures, I unearthed meaningful insights and potential correlations. This process enabled me to make informed decisions when preprocessing and engineering the data for model training.
+Passenger IDs contain a travel-group prefix. People in a group can share contextual information. If related passengers appear in both training and validation, a model can benefit from group similarity even when the intended application concerns entirely new groups.
 
-<h4>Data Preprocessing and Feature Engineering</h4>
+The new [analysis](https://github.com/placenciohid/Resume/blob/main/projects/spaceship-titanic/analyze.py) holds out 20% of distinct groups with a fixed seed. It uses cabin deck and side, origin, destination, age, spending, VIP, and cryosleep fields. Passenger IDs and names are excluded from the predictors.
 
-To ensure the data was in a suitable format for model training, I embarked on a comprehensive data preprocessing journey. This involved handling missing values, encoding categorical variables, and scaling numerical features. Moreover, I strategically engineered new features, such as total expenditure and family size, to enhance the predictive power of the model.
+## Keep preparation inside the pipeline
 
-<h4>Model Selection and Training</h4>
+The numeric branch imputes training medians and standardizes values. The categorical branch imputes a training-set mode and one-hot encodes known categories, tolerating unseen categories at prediction. Both branches are fitted only on training rows.
 
-With the preprocessed data in hand, I ventured into selecting the most appropriate machine learning models for the task. I experimented with several popular algorithms, including Random Forest, Gradient Boosting, LightGBM, XGBoost, CatBoost, Support Vector Machines (SVM), and a deep Neural Network. Through rigorous evaluation and comparison, I identified the models that exhibited the highest predictive accuracy, precision, recall, and F1 score.
+Two fixed models share this preparation: logistic regression and a random forest with 150 trees, maximum depth ten, and at least three samples per leaf. The comparison does not search hyperparameters against the holdout or generate a new competition submission.
 
-<h4>Hyperparameter Tuning</h4>
+![Comparison on a holdout of unseen passenger groups](/assets/images/results/spaceship-titanic-evaluation.png)
 
-Realizing that fine-tuning the models could potentially yield further improvements, I delved into hyperparameter tuning. Leveraging techniques like `RandomizedSearchCV` and `GridSearchCV`, I explored various combinations of hyperparameters to optimize the performance of the Random Forest, XGBoost, and LightGBM models. This meticulous process led me to discover the best parameter configurations that significantly boosted the accuracy and robustness of my models.
+## Reproduced result
 
-<h4>Stacking Ensemble</h4>
+The split contains **6,930 training passengers and 1,763 held-out passengers**, with **zero group overlap**.
 
-Inspired by the concept of ensemble learning, I decided to combine the strengths of my top-performing models using a **Stacking Classifier**. By aggregating the predictions of the CatBoost, XGBoost, LightGBM, SVM, Neural Network, and Random Forest models, I aimed to create a more robust and accurate final prediction. The ensemble model exhibited excellent accuracy and precision, outperforming individual models.
+| Model | Accuracy | ROC AUC | Brier score (lower is better) |
+| --- | --- | --- | --- |
+| Logistic Regression | 79.35% | 0.8775 | 0.1419 |
+| Random Forest | 80.83% | 0.8919 | 0.1360 |
 
-<h4>Competition Performance</h4>
+The forest makes 338 classification errors on this holdout, versus 364 for logistic regression. Its ROC AUC and Brier score also improve, supporting a nonlinear model under this protocol. This is local validation, not a Kaggle leaderboard score.
 
-My final submission achieved an impressive position of **123 out of 1,603 participants**, placing me in the top **7.7%** of the competition. The ensemble model, which combined the strengths of CatBoost, XGBoost, LightGBM, SVM, Neural Network, and Random Forest, demonstrated exceptional accuracy, scoring **0.80710**. The precision, recall, and F1 scores were also consistently high, reflecting the robustness and effectiveness of the advanced techniques and models used.
+## What the earlier experiments add
 
-Through various stages, including exploratory data analysis, feature engineering, model selection, hyperparameter tuning, and advanced ensemble techniques, I steadily enhanced the predictive performance of the model. Each step brought me closer to unlocking the full potential of the dataset and honing my understanding of the underlying principles. This experience has been invaluable in broadening my knowledge and refining my skills. I look forward to participating in more competitions and furthering my expertise in the field of data science and machine learning.
+The [longer original notebook](https://github.com/placenciohid/Resume/blob/main/projects/spaceship-titanic/legacy/Spaceship%20Titanic%20-%20Kaggle%20Competition.ipynb) explores logistic regression, forests, boosting, neural networks, tuning, and voting. A [second notebook](https://github.com/placenciohid/Resume/blob/main/projects/spaceship-titanic/legacy/Spaceship%20Titanic%20-%20Kaggle.ipynb) evaluates additional boosting and stacking approaches. Their saved results remain useful evidence of experimentation, but use different preprocessing and split protocols.
+
+The original tables also illustrate a common practical issue: model metrics can be copied or overwritten during notebook experimentation. The maintained script computes its summary from each fitted model in one pass, records a source-data hash, and writes a complete JSON result. That makes it easier to trace a claim back to an executable calculation.
+
+## Next question: what is driving the errors?
+
+I would inspect performance by cabin category, age band, missing-data pattern, and travel-group size before adding another ensemble. Repeating the grouped split would show whether the observed advantage depends strongly on which groups were held out. If the deployment question instead concerned an additional member of a known group, I would state that different objective and design the validation accordingly.
+
+## Reproduce
+
+```bash
+python -m pip install -r requirements-analysis.txt
+python projects/spaceship-titanic/analyze.py
+```
+
+The script reads the existing training CSV, leaves the unlabeled competition test data untouched, and prints [these metrics](https://github.com/placenciohid/Resume/blob/main/projects/spaceship-titanic/analysis-results.json). The [Kaggle competition](https://www.kaggle.com/competitions/spaceship-titanic) supplies the original task and data context. No claim is made about deploying a fictional passenger predictor; the transferable work is the data contract, evaluation design, and comparison of model complexity.

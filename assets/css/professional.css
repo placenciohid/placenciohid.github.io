@@ -24,13 +24,13 @@ body.is-loading #banner > .inner { opacity:1; transform:none; filter:none; }
 .role-panel .role-company { font-size:.95rem; color:#d3dceb; margin:0 0 1.3rem; }
 .role-panel ul { margin:0 0 1rem; padding-left:1.1rem; font-size:.95rem; }
 .role-panel .eyebrow { margin-bottom:.7rem; }
-.proof-section { background:#21263e; border-bottom:1px solid var(--line); }
-.proof-grid { display:grid; grid-template-columns:repeat(3,1fr); padding-top:2.2rem!important; padding-bottom:2.2rem!important; gap:2rem; }
-.proof-grid a { border:0; display:block; padding-right:1.5rem; border-right:1px solid var(--line); }
-.proof-grid a:last-child { border-right:0; }
-.proof-grid strong { display:block; color:#b5ede3; font-size:2.5rem; line-height:1.2; font-weight:600; }
-.proof-grid span { display:block; font-size:1rem; font-weight:600; margin:.5rem 0 .2rem; }
-.proof-grid small { font-size:.8rem; color:var(--muted); line-height:1.6; display:block; }
+
+
+
+
+
+
+
 .work-section > .inner,.technical-section > .inner,.research-section > .inner { padding-top:4rem; padding-bottom:4rem; }
 .section-heading { display:grid; grid-template-columns:1.1fr 1fr; gap:3rem; align-items:end; margin-bottom:2rem; }
 .section-heading p { margin-bottom:0; color:var(--muted); }
@@ -108,7 +108,7 @@ header.major > .page-synopsis:after { display:none!important; }
  #banner.professional-hero { padding:5.6rem 0 2.6rem; } #banner .hero-grid { grid-template-columns:1fr; gap:1.5rem; }
  #banner .hero-copy h1 { font-size:2.25rem; max-width:22ch; } #banner .hero-copy .hero-lead { font-size:1.05rem; }
  .hero-actions { gap:1.2rem; } .role-panel { padding:1.1rem; } .role-panel h2 { font-size:1.12rem; } .role-panel ul { display:none; } .role-panel .role-company { margin-bottom:.7rem; }
- .proof-grid { gap:1rem; padding-top:1.7rem!important; padding-bottom:1.7rem!important; } .proof-grid a { padding-right:.7rem; } .proof-grid strong { font-size:1.6rem; } .proof-grid span { font-size:.85rem; line-height:1.5; } .proof-grid small { font-size:.7rem; }
+
  .work-section > .inner,.technical-section > .inner,.research-section > .inner { padding-top:2.6rem; padding-bottom:2.6rem; }
  .section-heading { grid-template-columns:1fr; gap:1rem; } #main .section-heading h2 { font-size:1.55rem; }
  .case-card { display:flex; } .card-copy { padding:1.5rem; } .card-visual img { max-height:220px; }
@@ -119,7 +119,7 @@ header.major > .page-synopsis:after { display:none!important; }
  .archive-grid { grid-template-columns:1fr; } .archive-grid article { grid-template-columns:80px 1fr; gap:1rem; padding:1rem; } .archive-grid img { width:80px; height:85px; }
  .technical-detail { padding:0 1rem 1rem; } .page-synopsis { font-size:1.05rem; }
 }
-@media(max-width:390px) { .proof-grid { gap:.7rem; } .proof-grid strong { font-size:1.4rem; } .hero-actions .button { width:100%; text-align:center; } }
+@media(max-width:390px) {   .hero-actions .button { width:100%; text-align:center; } }
 
 /* Restore Forty's full-width photographic mosaic and interactive color reveals. */
 .work-section > .inner { padding-bottom:1rem; }
@@ -149,3 +149,16 @@ header.major > .page-synopsis:after { display:none!important; }
 @media(max-width:980px) { .tiles.interactive-projects > article { padding:2.5rem; min-height:25rem; } }
 @media(max-width:736px) { .tiles.interactive-projects > article { width:100%!important; min-height:23rem; max-height:none; padding:2.5rem 1.5rem; } }
 @media(prefers-reduced-motion:reduce) { .interactive-projects article,.interactive-projects article:before,.tile-cta span { transition:none!important; } .interactive-projects article.is-transitioning { transform:none; filter:none; opacity:1; } }
+
+/* Put professional context before results; keep results beside the relevant work. */
+#banner.professional-hero { background-image:url('/assets/images/photos/copper-mine.jpg'); background-position:center 55%; }
+#banner.professional-hero:after { background:linear-gradient(90deg,rgba(18,29,47,.92),rgba(18,29,47,.8) 55%,rgba(18,29,47,.48)); }
+#banner .hero-context { margin-bottom:1rem; }
+.hero-education { font-size:.9rem; color:#d6e3ed; line-height:1.7; margin-bottom:1.8rem; }
+.hero-education span { display:block; }
+.role-description { color:#d6e3ed; font-size:.95rem; line-height:1.75; margin-bottom:1.2rem; }
+.article-inner table { font-size:.9rem; }
+.article-inner > p > img { background:#fff; }
+.article-inner h2 { scroll-margin-top:5rem; }
+.article-inner .reading-note { color:var(--muted); font-size:.85rem; }
+@media(max-width:736px) { .hero-education { font-size:.85rem; } .role-description { font-size:.9rem; } .article-inner table { display:block; max-width:100%; overflow-x:auto; } }
