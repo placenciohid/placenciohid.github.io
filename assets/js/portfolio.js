@@ -54,7 +54,7 @@
         });
         filters.forEach(function (filter) { filter.setAttribute('aria-pressed', String(filter.dataset.filter === currentFilter)); });
         document.getElementById('project-count').textContent = count + (count === 1 ? ' project' : ' projects') +
-          (terms.length || currentFilter !== 'all' ? ' match your filters.' : ' across professional work, implementations, and studies.');
+          (terms.length || currentFilter !== 'all' ? (count === 1 ? ' matches your filters.' : ' match your filters.') : ' across professional work, implementations, and studies.');
         document.getElementById('no-projects').hidden = count > 0;
       }
       function clear() { query.value = ''; currentFilter = 'all'; update(); query.focus(); }
