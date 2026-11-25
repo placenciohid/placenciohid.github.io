@@ -1,55 +1,64 @@
 ---
 project_id: scratch-article
 layout: post
-title: Building ML Models from Scratch (Decision Trees, kNN, and Logistic Regression)
-description:
-image: /assets/images/topics/ml-from-scratch.svg
+title: "Three classifiers, three decision boundaries"
+description: "Inspectable implementations, held-out predictions, and the assumptions behind each boundary."
+summary: "Inspectable implementations, held-out predictions, and the assumptions behind each boundary."
 ---
 
-> **Original project article.** The historical implementation and results below are preserved. For a runnable synthetic companion and current limitations, see [the maintained project overview](/projects/ml-from-scratch.html).
+**Implement the learning rule, then explain where its assumptions help or hurt.**
 
-<!-- Content -->
-Implementing machine learning models from scratch is a challenging but rewarding endeavor. This project demonstrates the process of building three foundational ML models: Decision Trees, k-Nearest Neighbors (kNN), and Logistic Regression, using only NumPy and raw Python functions. By understanding the core concepts and manually coding these algorithms, we gain insight into their mechanics, strengths, and limitations. The models are evaluated using synthetic datasets, spam detection data, and visualized to showcase their decision-making process.
+This project implements nearest neighbors, logistic regression, and a decision tree from first principles. The original coursework notebook contains NumPy implementations, email classification experiments, and tree construction. The maintained Python companion makes a smaller comparison reproducible without external data or machine-learning packages.
 
-For a detailed exploration of the methodology and results, please visit the accompanying <a href="https://github.com/placenciohid/Resume/blob/main/projects/ml-from-scratch/legacy/Building%20Machine%20Learning%20Models%20from%20Scratch%20-%20Decision%20Trees%2C%20kNN%2C%20and%20Logistic%20Regression.ipynb"><b>Jupyter notebook</b></a>.
+## What is being compared?
 
-<h3>Understanding the Problem</h3>
+The synthetic task labels points according to `x1 + 0.4*x2 > 0`. A fixed seed generates 240 observations: 180 for training and 60 held out. The same split is used for all three classifiers, and test observations do not enter fitting or threshold selection.
 
-To understand how each model works, we implemented the algorithms step-by-step, starting with a simple 2D synthetic dataset for visual demonstration and gradually moving to more complex spam detection tasks. By implementing these models, we build a solid foundation in understanding the math behind decision boundaries, gradient optimization, and tree structures.
+| Classifier | What it learns or retains | Main assumption |
+| --- | --- | --- |
+| 3-nearest neighbors | All training examples; predicts by local majority | Nearby points have similar labels |
+| Logistic regression | An intercept and two gradient-trained coefficients | A linear score is sufficient for the boundary |
+| Decision stump | One feature, threshold, and direction | A single axis-aligned split is useful |
 
-<h3>1-Nearest Neighbor (1NN) Classifier on a 2D Dataset</h3>
+![Three decision boundaries fitted on the same training data, with held-out points](/assets/images/results/ml-from-scratch-boundaries.png)
 
-The first part of this project involved implementing a basic 1-Nearest Neighbor (1NN) classifier. Using a 2D synthetic dataset, the 1NN algorithm classified test points based on the class of their nearest training neighbor. This simple proximity-based approach helped illustrate the basic concept of distance metrics in classification problems.
+## Results explain the model, not just the ranking
 
-We visualized the decision boundaries created by the 1NN classifier and observed how it partitioned the feature space based on the nearest neighbor’s label. This provided a hands-on experience in understanding decision boundaries and their dependence on Euclidean distance.
+| Model | Correct held-out predictions | Accuracy |
+| --- | ---: | ---: |
+| 3-nearest neighbors | 59 / 60 | 98.33% |
+| Logistic regression | 60 / 60 | 100.00% |
+| Decision stump | 53 / 60 | 88.33% |
 
-<h3>Spam Detection with Logistic Regression and kNN</h3>
+The true boundary is linear, so logistic regression has an appropriate form. Nearest neighbors follows local examples; its result depends on sample density. The stump can only split along one feature, so it cannot represent the tilted boundary exactly. The plot makes those differences easier to understand than the three scores alone.
 
-For the second part, we tackled a binary classification problem: spam detection using word frequency data from emails. We manually implemented two models:
-1. **Logistic Regression**: Built using gradient descent optimization to minimize the cost function. This approach helped us understand the role of gradient steps and convergence in optimization.
-2. **k-Nearest Neighbors (kNN)**: Predicted labels using majority voting among the `k` nearest neighbors. We varied the value of `k` and evaluated the model's performance using cross-validation.
+These are controlled synthetic results on a small, noiseless problem. They establish observable implementation behavior, not expected performance on an operational dataset.
 
-<h3>Evaluating the Models with 5-Fold Cross Validation</h3>
+## Implementation choices that matter
 
-To ensure robustness, we applied 5-fold cross-validation on the email dataset, splitting it into five subsets and evaluating each model on different subsets. The performance was measured using metrics such as Accuracy, Precision, and Recall. Logistic Regression achieved higher accuracy compared to kNN, demonstrating the effectiveness of logistic functions for text-based classification.
+The logistic-regression update averages gradients over the training rows, including the intercept. Its sigmoid clips large inputs to keep exponentiation finite. The objective is binary cross-entropy; using a probability model makes the classification threshold an explicit decision rather than part of the fitting algorithm.
 
-<h3>Decision Tree Classifier from Scratch</h3>
+```python
+error = sigmoid(sum(a*b for a,b in zip(weights, features))) - y
+gradient = [g + error*f for g,f in zip(gradient, features)]
+weights = [w - rate*g/len(xs) for w,g in zip(weights, gradient)]
+```
 
-In the final part, we implemented a Decision Tree classifier. This model uses recursive splitting to construct a tree that optimally partitions the feature space based on entropy and information gain. The decision tree was constructed step-by-step using:
-- **Entropy**: Measured the uncertainty of the target variable.
-- **Information Gain**: Calculated the reduction in entropy for each split.
-- **Gain Ratio**: Used to handle bias towards features with a larger number of distinct values.
+The nearest-neighbor implementation uses squared Euclidean distance, so it avoids a square root that cannot change the ranking. Its brute-force cost grows with the number of stored examples. The stump searches candidate thresholds and both label directions using training error; it is a depth-one tree, while the [original notebook](https://github.com/placenciohid/Resume/blob/main/projects/ml-from-scratch/legacy/Building%20Machine%20Learning%20Models%20from%20Scratch%20-%20Decision%20Trees%2C%20kNN%2C%20and%20Logistic%20Regression.ipynb) explores recursive splits with entropy, information gain, and gain ratio.
 
-The resulting tree structure was printed to visualize the decision-making process, showing the sequence of splits and leaf nodes, which made the model's logic transparent and interpretable.
+## How I would challenge the result
 
-<h3>Visualizing the Decision Boundaries</h3>
+A useful follow-up would change the data rather than celebrate a perfect score: add label noise, rotate the boundary, vary the number of training rows, and change the scale of one feature. kNN is particularly sensitive to feature scale; a deeper tree changes the bias–variance tradeoff; regularization helps logistic regression when the problem is no longer so cleanly separated.
 
-For the 1NN and Decision Tree models, we visualized the decision boundaries to understand how each algorithm partitions the feature space. The visualizations highlight how the proximity-based 1NN algorithm creates boundaries based on Euclidean distance, while the Decision Tree partitions the space using a series of axis-aligned splits.
+For an imbalanced operational task, I would add probability calibration, precision–recall measures, and performance at a chosen review capacity. The [event-prediction project](https://github.com/placenciohid/Resume/tree/main/projects/event-prediction) covers the separate problem of preparing those observations without temporal leakage.
 
-<h3>Conclusion</h3>
+## Reproduce
 
-This project provided a hands-on understanding of how three fundamental machine learning models work: kNN, Logistic Regression, and Decision Trees. Implementing these models from scratch enhanced my comprehension of distance metrics, gradient-based optimization, and tree construction principles.
+```bash
+python projects/ml-from-scratch/demo.py
+python -m unittest discover -s tests -v
+```
 
-By exploring these models manually, we gained a deeper understanding of their strengths and limitations, as well as the nuances in implementing them for different types of data. Such a foundational grasp is crucial for building more complex models and selecting appropriate techniques for various machine learning tasks.
+Python 3.10+, standard library only. [demo.py](https://github.com/placenciohid/Resume/blob/main/projects/ml-from-scratch/demo.py) contains the full fitting and prediction logic; [results.json](https://github.com/placenciohid/Resume/blob/main/projects/ml-from-scratch/results.json) stores the output. Tests use a simple known boundary and extreme sigmoid inputs. The historical notebook requires its original coursework files; the companion provides an immediately runnable way to inspect the core algorithms.
 
-Overall, this exercise serves as a stepping stone to mastering advanced concepts in machine learning, equipping me with the skills needed to tackle real-world problems with confidence.
+[Website article](https://placenciohid.github.io/2023/07/12/MLScratch.html)

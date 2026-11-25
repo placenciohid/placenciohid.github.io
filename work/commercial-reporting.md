@@ -3,40 +3,71 @@ project_id: commercial-reporting
 layout: post
 case_study: true
 title: "Collections reporting & reconciliation"
-description: "A current view of receivables and the exceptions that need action."
-summary: "A current view of receivables and the exceptions that need action."
+description: "Current receivables information backed by clear matching and counting rules."
+summary: "Current receivables information backed by clear matching and counting rules."
 ---
-
 
 {% include case-facts-commercial-reporting.html %}
 
-## Keeping collections information current
+**Make the next action visible without losing control of the numbers underneath it.**
 
-Collectors need to see overdue balances, unapplied payments, customer risk, and follow-up priorities together. Repeated manual SAP extracts make that picture harder to keep current and consistent.
+In Rio Tinto Commercial Services, I delivered collections reporting for Atlantic Aluminium, an hourly accounts-receivable aging feed, and reconciliation views. The work brings overdue balances, unapplied cash, customer risk, and follow-up priorities into a shared reporting workflow. It connects process improvement with the calculation details that make a report reliable.
 
-In Commercial Services, I delivered Atlantic Aluminium’s collections reporting and an **hourly accounts-receivable aging feed**. The collections dashboard brings performance, customer-group trends, and collector assignments into a shared reporting workflow.
+## The operational problem
 
-![Source records feed aging and matching calculations, then a review queue](/assets/images/topics/collections-flow.svg)
+A collector's work is organized around customers, invoices, payments, and exceptions. Those do not all share the same unit of analysis. One customer can have many invoices; one remittance document can reference several invoice lines. A report can look reasonable while overstating throughput if it repeats a document's payment value on each line.
 
-## Making reconciliation easier to review
+The reporting work reduces the need to assemble that picture from recurring SAP extracts. The hourly aging feed keeps the source view current, while the dashboard and reconciliation views support review and follow-up. The published outcome is the delivered reporting workflow; refreshed data and easier review support clearance, but a reporting refresh is not itself evidence of recovered cash.
 
-I also delivered reconciliation views to help users inspect invoice matches, payment differences, and clearance exceptions. A remittance can contain multiple invoice lines, so the review needs to distinguish a fully matched document from a document with unresolved items.
+## The central design decision: define what “cleared” means
 
-The practical focus was to make the next action visible: which customer or invoice needs attention, what differs, and what remains to be cleared. The hourly feed was designed to replace recurring manual report transactions; a refresh schedule alone is not used here as proof of measured labor savings or recovered cash.
+The public companion evaluates **whole remittance documents**. A document is fully matched only when its references exist, its currency agrees, and the payment equals the referenced invoice total within an explicit tolerance. The term `cleared` in this example means this matching condition; actual bank settlement would require a separate confirmed source.
 
-### Controls behind the view
+| Record | Grain | Example fields |
+| --- | --- | --- |
+| Invoice | One open account item | ID, customer, currency, amount, due date, trade/sundry category |
+| Remittance | One payment advice document | ID, currency, payment amount, invoice references |
+| Reconciliation result | One remittance evaluation | Resolved line count, difference, status, missing references |
+| Aging output | Currency × category × age bucket | Open line count and amount at a stated reporting date |
 
-The public example shows the calculation decisions that matter: currency separation, explicit reporting dates, duplicate-reference detection, and document-level payment totals. It counts each payment once rather than repeating its amount across every invoice line.
+The implementation uses `Decimal` for monetary arithmetic. It groups currencies separately and requires a caller-supplied reporting date, making a past aging calculation reproducible.
 
-## Explore the implementation
+## A small example with an important distinction
 
-The GitHub companion contains fictional invoices and remittances, aging calculations, document matching, exception outputs, and focused tests. It demonstrates the logic in a portable implementation rather than exposing internal Power BI models or customer records.
+| Fictional remittance | Referenced lines | Result | Amount |
+| --- | ---: | --- | ---: |
+| R1 | 2 | Fully matched | USD 2,000.00 |
+| R2 | 1 | Payment difference | CAD 850.00 payment against CAD 900.00 invoiced |
+| R3 | 1 unresolved reference | Missing invoice | USD 100.00 remains an exception |
+
+The correct throughput summary is **one matched document, two invoice lines, and USD 2,000.00**. Counting two documents or USD 4,000.00 would confuse the document and line grains. [results.json](https://github.com/placenciohid/Resume/blob/main/projects/commercial-reporting/results.json) preserves the complete reconciliation and open-aging output for this fictional fixture.
+
+### Inspect the rule, not just the total
+
+```python
+status = ('missing_invoice' if missing or not ids else
+          'currency_mismatch' if currencies != {remit['currency']} else
+          'cleared' if abs(difference) <= tolerance else 'payment_difference')
+```
+
+In [demo.py](https://github.com/placenciohid/Resume/blob/main/projects/commercial-reporting/demo.py), duplicate invoice IDs, duplicate remittance IDs, and repeated invoice claims raise errors. The one-cent tolerance is an explicit example parameter. A real implementation needs business-approved matching rules, including treatment of short payments and partial allocations.
+
+## Separate scope before reporting performance
+
+Trade and sundry balances remain separate in the aging output. That makes the effect of scope visible before someone changes a collection KPI. Removing an out-of-scope item from a collections measure changes the denominator; it should be explainable and reproducible rather than achieved by hiding rows.
+
+The same principle applies to adoption and throughput: report the reporting period, exclude development/test usage, distinguish report views from operational activity, and count a remittance amount once. Usage can show that a tool is being used. Document-level processing can show what passed through it. Neither alone proves incremental cash recovery.
 
 <details class="technical-detail" markdown="1">
-<summary>Technical walkthrough <span>Code, sample data, results & reproduction</span></summary>
+<summary>Run and inspect the implementation <span>Source, results & reproduction</span></summary>
 
-{% include technical-commercial-reporting.md %}
+## Reproduce and extend
+
+```bash
+python projects/commercial-reporting/demo.py
+python -m unittest discover -s tests -v
+```
+
+Python 3.10+, standard library only. Tests cover aging boundaries, currency separation, duplicate identities, missing references, and whole-document throughput. The next extension would be an allocation ledger that supports partial settlements and repeated installments while preserving the document-to-line audit trail. That extension belongs in the calculation model before a dashboard presents a larger clearance number.
 
 </details>
-
-<div class="case-next"><a href="/all_posts.html">Explore all projects →</a><a href="mailto:darioplacenciohidalgo@gmail.com">Discuss my work →</a></div>

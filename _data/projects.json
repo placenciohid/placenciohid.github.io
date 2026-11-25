@@ -5,9 +5,9 @@
     "type": "Professional case study · Public code companion",
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/forecasting",
     "image_alt": "Reported production forecast error comparison: baseline index 100, model 79.",
-    "photo": "/assets/images/photos/factory.jpg",
-    "photo_alt": "Cargo conveyors and machinery inside a working factory.",
-    "photo_credit": "Hyundai Motor Group"
+    "photo": "/assets/images/photos/mining-operations.jpg",
+    "photo_alt": "Excavators and haul trucks working at an open-pit mine.",
+    "photo_credit": "Dominik Vanyi"
   },
   "knowledge-search": {
     "path": "projects/knowledge-search",
@@ -35,9 +35,9 @@
     "type": "Runnable reference + original research scripts",
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/event-prediction",
     "image_alt": "Technical diagram illustrating event prediction",
-    "photo": "/assets/images/photos/servers.jpg",
-    "photo_alt": "Racks of equipment in a server room.",
-    "photo_credit": "Kevin Ache"
+    "photo": "/assets/images/photos/mine-trucks.jpg",
+    "photo_alt": "Mining vehicles working in an open-pit quarry.",
+    "photo_credit": "omid roshan"
   },
   "optimization": {
     "path": "projects/optimization",
@@ -45,9 +45,9 @@
     "type": "Runnable reference + original notebooks",
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/optimization",
     "image_alt": "Technical diagram illustrating optimization",
-    "photo": "/assets/images/photos/warehouse.jpg",
-    "photo_alt": "Long aisles of shelves and stock inside a warehouse.",
-    "photo_credit": "Russ Murray"
+    "photo": "/assets/images/photos/operating-room.jpg",
+    "photo_alt": "A surgical team working in an operating room.",
+    "photo_credit": "Navy Medicine / Leticia Hopkins"
   },
   "ml-from-scratch": {
     "path": "projects/ml-from-scratch",
@@ -65,9 +65,9 @@
     "type": "Original research implementation",
     "github": "https://github.com/placenciohid/Resume/blob/main/projects/event-prediction/legacy/GEV-NN-Model.py",
     "image_alt": "Technical diagram illustrating gev nn",
-    "photo": "/assets/images/photos/servers.jpg",
-    "photo_alt": "Racks of equipment in a server room.",
-    "photo_credit": "Kevin Ache"
+    "photo": "/assets/images/photos/mine-trucks.jpg",
+    "photo_alt": "Mining vehicles working in an open-pit quarry.",
+    "photo_credit": "omid roshan"
   },
   "gnn": {
     "path": "projects/event-prediction/legacy/GNN-INCM_with_HSKDM.py",
@@ -75,9 +75,9 @@
     "type": "Original research implementation",
     "github": "https://github.com/placenciohid/Resume/blob/main/projects/event-prediction/legacy/GNN-INCM_with_HSKDM.py",
     "image_alt": "Technical diagram illustrating gnn",
-    "photo": "/assets/images/photos/circuits.jpg",
-    "photo_alt": "Gold connections on a dark blue printed circuit board.",
-    "photo_credit": "Vishnu Mohanan"
+    "photo": "/assets/images/photos/mine-trucks.jpg",
+    "photo_alt": "Mining vehicles working in an open-pit quarry.",
+    "photo_credit": "omid roshan"
   },
   "event-pipeline": {
     "path": "projects/event-prediction",
@@ -85,9 +85,9 @@
     "type": "Original Spark script + repaired Python reference",
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/event-prediction",
     "image_alt": "Technical diagram illustrating event pipeline",
-    "photo": "/assets/images/photos/servers.jpg",
-    "photo_alt": "Racks of equipment in a server room.",
-    "photo_credit": "Kevin Ache"
+    "photo": "/assets/images/photos/mine-trucks.jpg",
+    "photo_alt": "Mining vehicles working in an open-pit quarry.",
+    "photo_credit": "omid roshan"
   },
   "scratch-article": {
     "path": "projects/ml-from-scratch",
@@ -105,14 +105,14 @@
     "type": "Original Julia notebook + scheduling companion",
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/optimization",
     "image_alt": "Technical diagram illustrating julia article",
-    "photo": "/assets/images/photos/warehouse.jpg",
-    "photo_alt": "Long aisles of shelves and stock inside a warehouse.",
-    "photo_credit": "Russ Murray"
+    "photo": "/assets/images/photos/operating-room.jpg",
+    "photo_alt": "A surgical team working in an operating room.",
+    "photo_credit": "Navy Medicine / Leticia Hopkins"
   },
   "play-store": {
     "path": "projects/play-store-reviews",
     "image": "/assets/images/topics/text-analytics.svg",
-    "type": "Original notebook and technical notes",
+    "type": "Maintained real-data analysis · Original notebook",
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/play-store-reviews",
     "image_alt": "Technical diagram illustrating play store",
     "photo": "/assets/images/photos/phone.jpg",
@@ -122,7 +122,7 @@
   "wine": {
     "path": "projects/wine-clustering",
     "image": "/assets/images/topics/clustering.svg",
-    "type": "Original notebook and technical notes",
+    "type": "Maintained real-data analysis · Original notebook",
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/wine-clustering",
     "image_alt": "Technical diagram illustrating wine",
     "photo": "/assets/images/photos/wine.jpg",
@@ -132,7 +132,7 @@
   "spaceship": {
     "path": "projects/spaceship-titanic",
     "image": "/assets/images/topics/kaggle.svg",
-    "type": "Original notebooks and technical notes",
+    "type": "Maintained real-data analysis · Original notebooks",
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/spaceship-titanic",
     "image_alt": "Technical diagram illustrating spaceship",
     "photo": "/assets/images/photos/stars.jpg",
@@ -145,9 +145,9 @@
     "type": "Original notebook and technical notes",
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/clustering-noncompliance",
     "image_alt": "Technical diagram illustrating clustering",
-    "photo": "/assets/images/photos/factory.jpg",
-    "photo_alt": "Cargo conveyors and machinery inside a working factory.",
-    "photo_credit": "Hyundai Motor Group"
+    "photo": "/assets/images/photos/retail.jpg",
+    "photo_alt": "A supermarket aisle, the setting of the grouped-store experiment.",
+    "photo_credit": "Eduardo Soares"
   },
   "dynamic-zoom": {
     "path": "projects/dynamic-zoom",
@@ -155,8 +155,28 @@
     "type": "Contribution notes + upstream implementation",
     "github": "https://github.com/placenciohid/Resume/tree/main/projects/dynamic-zoom",
     "image_alt": "Technical diagram illustrating dynamic zoom",
-    "photo": "/assets/images/photos/circuits.jpg",
-    "photo_alt": "Gold connections on a dark blue printed circuit board.",
-    "photo_credit": "Vishnu Mohanan"
+    "photo": "/assets/images/photos/video-camera.jpg",
+    "photo_alt": "A professional video camera with an attached monitor.",
+    "photo_credit": "Bedirhan Akyüz"
+  },
+  "wine-quality": {
+    "path": "projects/wine-neural-networks",
+    "image": "/assets/images/topics/clustering.svg",
+    "type": "Maintained real-data analysis · Original neural-network notebook",
+    "github": "https://github.com/placenciohid/Resume/tree/main/projects/wine-neural-networks",
+    "image_alt": "Technical diagram illustrating wine",
+    "photo": "/assets/images/photos/wine.jpg",
+    "photo_alt": "Wine bottles stored on a rack.",
+    "photo_credit": "Klara Kulikova"
+  },
+  "restaurant-reviews": {
+    "path": "projects/yelp-reviews",
+    "image": "/assets/images/topics/text-analytics.svg",
+    "type": "Reviewed historical text analysis",
+    "github": "https://github.com/placenciohid/Resume/tree/main/projects/yelp-reviews",
+    "image_alt": "Technical diagram illustrating play store",
+    "photo": "/assets/images/photos/retail.jpg",
+    "photo_alt": "A retail aisle illustrating customer experience and service analysis.",
+    "photo_credit": "Eduardo Soares"
   }
 }

@@ -43,5 +43,35 @@
     "photographer": "Tiago Ferreira",
     "source": "https://unsplash.com/photos/a-night-sky-filled-with-lots-of-stars-Yw35FMpMAtE",
     "license": "https://unsplash.com/license"
+  },
+  "copper-mine": {
+    "photographer": "omid roshan",
+    "source": "https://unsplash.com/photos/brown-rocky-mountain-during-daytime-Btc4MDN0MtU",
+    "license": "https://unsplash.com/license"
+  },
+  "mine-trucks": {
+    "photographer": "omid roshan",
+    "source": "https://unsplash.com/photos/a-few-vehicles-in-a-quarry-jPrYQlp8bJ4",
+    "license": "https://unsplash.com/license"
+  },
+  "mining-operations": {
+    "photographer": "Dominik Vanyi",
+    "source": "https://unsplash.com/photos/photography-of-excavators-at-mining-area-Mk2ls9UBO2E",
+    "license": "https://unsplash.com/license"
+  },
+  "retail": {
+    "photographer": "Eduardo Soares",
+    "source": "https://unsplash.com/photos/text-RTPrTSooj0c",
+    "license": "https://unsplash.com/license"
+  },
+  "operating-room": {
+    "photographer": "Navy Medicine / Leticia Hopkins",
+    "source": "https://unsplash.com/photos/surgeons-performing-a-complex-medical-operation-in-an-operating-room-s2lqoE2V_SM",
+    "license": "https://unsplash.com/license"
+  },
+  "video-camera": {
+    "photographer": "Bedirhan Akyüz",
+    "source": "https://unsplash.com/photos/a-video-camera-sitting-on-top-of-a-white-table-tQ485IWKnos",
+    "license": "https://unsplash.com/license"
   }
 }
