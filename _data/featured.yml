@@ -28,7 +28,7 @@ technical:
     image: /assets/images/photos/mine-trucks.jpg
   - title: Optimization
     category: Operations research · Scheduling
-    description: Eight procedures, two rooms: first-fit allocation versus the exact optimum.
+    description: "Eight procedures, two rooms: first-fit allocation versus the exact optimum."
     url: /projects/optimization.html
     image: /assets/images/photos/operating-room.jpg
   - title: Machine learning from scratch
