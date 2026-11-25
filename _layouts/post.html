@@ -1,38 +1,9 @@
 <!DOCTYPE html>
-<!--
-	Forty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html lang="en">
-
-{% include head.html %}
-
-<body>
-
-    {% include header.html %} 
-    
-    
-<!-- Main -->
-<main id="main" class="alt">
-
-<!-- One -->
-<section id="one">
-	<div class="inner article-inner">
-		<header class="major">
-			<p class="eyebrow">{% if page.case_study %}Professional case study{% elsif page.project_id %}Technical project{% endif %}</p>
-			<h1>{{ page.title }}</h1>
-			{% if page.summary %}<p class="page-synopsis">{{ page.summary }}</p>{% endif %}
-		</header>
-		{% if page.project_id %}{% include project-evidence.html %}{% elsif page.image %}<span class="image main"><img src="{{ page.image | relative_url }}" alt="" /></span>{% endif %}
-		{{ content }}
-	</div>
-</section>
-
-</main>
-
-    {% include footer.html %}
-
-</body>
-
-</html>
+<html lang="en">{% include head.html %}<body>{% include header.html %}
+<main id="main" class="alt"><section id="one"><div class="inner article-inner">
+{% if page.project_id %}<nav class="breadcrumbs" aria-label="Breadcrumb"><a href="{{ '/all_posts.html' | relative_url }}">Work &amp; studies</a><span aria-hidden="true">/</span><span>{% if page.case_study %}Professional work{% else %}Technical study{% endif %}</span></nav>{% endif %}
+<header class="major"><h1>{{ page.title }}</h1>{% if page.summary %}<p class="page-synopsis">{{ page.summary }}</p>{% endif %}</header>
+{% if page.project_id %}{% include project-evidence.html %}<details class="article-contents" hidden><summary>In this article</summary><nav aria-label="Article contents"><ol></ol></nav></details>{% endif %}
+<div class="article-body">{{ content }}</div>
+{% if page.project_id %}<nav class="article-next" aria-label="More work"><a href="{{ '/all_posts.html' | relative_url }}">← All work &amp; studies</a>{% assign evidence = site.data.projects[page.project_id] %}{% assign canonical_id = evidence.canonical_id | default: page.project_id %}{% if canonical_id == 'forecasting' %}<a href="{{ '/work/commercial-reporting.html' | relative_url }}">Collections &amp; reconciliation →</a>{% elsif canonical_id == 'commercial-reporting' %}<a href="{{ '/work/process-improvement.html' | relative_url }}">Process improvement &amp; delivery →</a>{% elsif canonical_id == 'process-improvement' %}<a href="{{ '/work/forecasting.html' | relative_url }}">Forecasting &amp; planning →</a>{% else %}<a href="{{ '/work/forecasting.html' | relative_url }}">Forecasting &amp; planning →</a>{% endif %}</nav>{% endif %}
+</div></section></main>{% include footer.html %}</body></html>

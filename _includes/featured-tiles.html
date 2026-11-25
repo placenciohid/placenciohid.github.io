@@ -1,15 +1,7 @@
-{% assign tiles = site.data.featured.professional | concat: site.data.featured.technical %}
 <section class="tiles interactive-projects" aria-label="Selected projects">
-{% for tile in tiles %}
-  <article>
-    <span class="image"><img src="{{ tile.image | relative_url }}" alt="" loading="lazy" /></span>
-    <header class="major">
-      <p class="tile-category">{% if forloop.index <= 3 %}Professional case study{% else %}Technical implementation{% endif %} · {{ tile.category }}</p>
-      <h3><a href="{{ tile.url | relative_url }}" class="link">{{ tile.title }}</a></h3>
-      <p class="tile-description">{{ tile.description }}</p>
-      {% if tile.result %}<p class="tile-result">{{ tile.result }}</p>{% endif %}
-      <span class="tile-cta">{% if forloop.index <= 3 %}Explore the case study{% else %}Explore the method &amp; code{% endif %} <span aria-hidden="true">→</span></span>
-    </header>
-  </article>
-{% endfor %}
-</section>
+{% for tile in site.data.portfolio %}{% if tile.featured %}
+<article><span class="image"><img src="{{ tile.image | relative_url }}" alt="" /></span><header>
+<p class="tile-category">{{ tile.tags | slice: 0, 2 | join: ' · ' }}</p><h3><a href="{{ tile.url | relative_url }}" class="link">{{ tile.title }}</a></h3>
+<p class="tile-description">{{ tile.summary }}</p>{% if tile.result %}<p class="tile-result">{{ tile.result }}</p>{% endif %}
+<span class="tile-cta">{% if tile.group == 'practice' %}Read about the work{% else %}Method &amp; code{% endif %} <span aria-hidden="true">→</span></span></header></article>
+{% endif %}{% endfor %}</section>
