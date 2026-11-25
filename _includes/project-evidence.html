@@ -1,5 +1,5 @@
 {% assign evidence = site.data.projects[page.project_id] %}
-{% if evidence %}
-<aside class="project-evidence" aria-label="Project source and evidence"><p class="eyebrow">{{ evidence.type }}</p><a href="{{ evidence.github }}" class="button icon fa-github">Project code & notes</a></aside>
-<figure class="project-photo"><img src="{{ evidence.photo | relative_url }}" alt="{{ evidence.photo_alt }}" /><figcaption>Photo: {{ evidence.photo_credit }} / Unsplash · <a href="{{ '/photo-credits.html' | relative_url }}">Photography credits</a></figcaption></figure>
-{% endif %}
+{% assign canonical_id = evidence.canonical_id | default: page.project_id %}
+{% assign project = site.data.portfolio | where: 'project_id', canonical_id | first %}
+{% if evidence %}<aside class="project-evidence" aria-label="Project source"><span>{{ project.kind | default: evidence.type }}</span><a href="{{ evidence.github }}">{% if page.project_id == 'process-improvement' %}Case notes on GitHub{% else %}Code &amp; results on GitHub{% endif %} <span aria-hidden="true">↗</span></a></aside>
+<figure class="project-photo"><img src="{{ evidence.photo | relative_url }}" alt="{{ evidence.photo_alt }}" /><figcaption>Illustrative photo · {{ evidence.photo_credit }} / Unsplash · <a href="{{ '/photo-credits.html' | relative_url }}">Credits</a></figcaption></figure>{% endif %}

@@ -7,7 +7,8 @@
     "image_alt": "Reported production forecast error comparison: baseline index 100, model 79.",
     "photo": "/assets/images/photos/mining-operations.jpg",
     "photo_alt": "Excavators and haul trucks working at an open-pit mine.",
-    "photo_credit": "Dominik Vanyi"
+    "photo_credit": "Dominik Vanyi",
+    "canonical_id": "forecasting"
   },
   "knowledge-search": {
     "path": "projects/knowledge-search",
@@ -17,7 +18,8 @@
     "image_alt": "More than 300,000 documents made searchable across four adopting teams.",
     "photo": "/assets/images/photos/library.jpg",
     "photo_alt": "Rows of books in a library collection.",
-    "photo_credit": "Jamie Taylor"
+    "photo_credit": "Jamie Taylor",
+    "canonical_id": "knowledge-search"
   },
   "commercial-reporting": {
     "path": "projects/commercial-reporting",
@@ -27,7 +29,8 @@
     "image_alt": "Hourly source-to-review collections reporting workflow.",
     "photo": "/assets/images/photos/port.jpg",
     "photo_alt": "Shipping containers and cranes at a commercial port.",
-    "photo_credit": "Haris Illahi"
+    "photo_credit": "Haris Illahi",
+    "canonical_id": "commercial-reporting"
   },
   "event-prediction": {
     "path": "projects/event-prediction",
@@ -37,7 +40,8 @@
     "image_alt": "Technical diagram illustrating event prediction",
     "photo": "/assets/images/photos/mine-trucks.jpg",
     "photo_alt": "Mining vehicles working in an open-pit quarry.",
-    "photo_credit": "omid roshan"
+    "photo_credit": "omid roshan",
+    "canonical_id": "event-prediction"
   },
   "optimization": {
     "path": "projects/optimization",
@@ -47,7 +51,8 @@
     "image_alt": "Technical diagram illustrating optimization",
     "photo": "/assets/images/photos/operating-room.jpg",
     "photo_alt": "A surgical team working in an operating room.",
-    "photo_credit": "Navy Medicine / Leticia Hopkins"
+    "photo_credit": "Navy Medicine / Leticia Hopkins",
+    "canonical_id": "optimization"
   },
   "ml-from-scratch": {
     "path": "projects/ml-from-scratch",
@@ -57,7 +62,8 @@
     "image_alt": "Technical diagram illustrating ml from scratch",
     "photo": "/assets/images/photos/circuits.jpg",
     "photo_alt": "Gold connections on a dark blue printed circuit board.",
-    "photo_credit": "Vishnu Mohanan"
+    "photo_credit": "Vishnu Mohanan",
+    "canonical_id": "ml-from-scratch"
   },
   "gev-nn": {
     "path": "projects/event-prediction/legacy/GEV-NN-Model.py",
@@ -67,7 +73,8 @@
     "image_alt": "Technical diagram illustrating gev nn",
     "photo": "/assets/images/photos/mine-trucks.jpg",
     "photo_alt": "Mining vehicles working in an open-pit quarry.",
-    "photo_credit": "omid roshan"
+    "photo_credit": "omid roshan",
+    "canonical_id": "event-prediction"
   },
   "gnn": {
     "path": "projects/event-prediction/legacy/GNN-INCM_with_HSKDM.py",
@@ -77,7 +84,8 @@
     "image_alt": "Technical diagram illustrating gnn",
     "photo": "/assets/images/photos/mine-trucks.jpg",
     "photo_alt": "Mining vehicles working in an open-pit quarry.",
-    "photo_credit": "omid roshan"
+    "photo_credit": "omid roshan",
+    "canonical_id": "event-prediction"
   },
   "event-pipeline": {
     "path": "projects/event-prediction",
@@ -87,7 +95,8 @@
     "image_alt": "Technical diagram illustrating event pipeline",
     "photo": "/assets/images/photos/mine-trucks.jpg",
     "photo_alt": "Mining vehicles working in an open-pit quarry.",
-    "photo_credit": "omid roshan"
+    "photo_credit": "omid roshan",
+    "canonical_id": "event-prediction"
   },
   "scratch-article": {
     "path": "projects/ml-from-scratch",
@@ -97,7 +106,8 @@
     "image_alt": "Technical diagram illustrating scratch article",
     "photo": "/assets/images/photos/circuits.jpg",
     "photo_alt": "Gold connections on a dark blue printed circuit board.",
-    "photo_credit": "Vishnu Mohanan"
+    "photo_credit": "Vishnu Mohanan",
+    "canonical_id": "ml-from-scratch"
   },
   "julia-article": {
     "path": "projects/optimization",
@@ -107,7 +117,8 @@
     "image_alt": "Technical diagram illustrating julia article",
     "photo": "/assets/images/photos/operating-room.jpg",
     "photo_alt": "A surgical team working in an operating room.",
-    "photo_credit": "Navy Medicine / Leticia Hopkins"
+    "photo_credit": "Navy Medicine / Leticia Hopkins",
+    "canonical_id": "optimization"
   },
   "play-store": {
     "path": "projects/play-store-reviews",
@@ -117,7 +128,8 @@
     "image_alt": "Technical diagram illustrating play store",
     "photo": "/assets/images/photos/phone.jpg",
     "photo_alt": "A hand holding a smartphone.",
-    "photo_credit": "Jakub Żerdzicki"
+    "photo_credit": "Jakub Żerdzicki",
+    "canonical_id": "play-store"
   },
   "wine": {
     "path": "projects/wine-clustering",
@@ -127,7 +139,8 @@
     "image_alt": "Technical diagram illustrating wine",
     "photo": "/assets/images/photos/wine.jpg",
     "photo_alt": "Wine bottles stored on a rack.",
-    "photo_credit": "Klara Kulikova"
+    "photo_credit": "Klara Kulikova",
+    "canonical_id": "wine"
   },
   "spaceship": {
     "path": "projects/spaceship-titanic",
@@ -137,7 +150,8 @@
     "image_alt": "Technical diagram illustrating spaceship",
     "photo": "/assets/images/photos/stars.jpg",
     "photo_alt": "Stars across the night sky.",
-    "photo_credit": "Tiago Ferreira"
+    "photo_credit": "Tiago Ferreira",
+    "canonical_id": "spaceship"
   },
   "clustering": {
     "path": "projects/clustering-noncompliance",
@@ -147,7 +161,8 @@
     "image_alt": "Technical diagram illustrating clustering",
     "photo": "/assets/images/photos/retail.jpg",
     "photo_alt": "A supermarket aisle, the setting of the grouped-store experiment.",
-    "photo_credit": "Eduardo Soares"
+    "photo_credit": "Eduardo Soares",
+    "canonical_id": "clustering"
   },
   "dynamic-zoom": {
     "path": "projects/dynamic-zoom",
@@ -157,7 +172,8 @@
     "image_alt": "Technical diagram illustrating dynamic zoom",
     "photo": "/assets/images/photos/video-camera.jpg",
     "photo_alt": "A professional video camera with an attached monitor.",
-    "photo_credit": "Bedirhan Akyüz"
+    "photo_credit": "Bedirhan Akyüz",
+    "canonical_id": "dynamic-zoom"
   },
   "wine-quality": {
     "path": "projects/wine-neural-networks",
@@ -167,7 +183,8 @@
     "image_alt": "Technical diagram illustrating wine",
     "photo": "/assets/images/photos/wine.jpg",
     "photo_alt": "Wine bottles stored on a rack.",
-    "photo_credit": "Klara Kulikova"
+    "photo_credit": "Klara Kulikova",
+    "canonical_id": "wine-quality"
   },
   "restaurant-reviews": {
     "path": "projects/yelp-reviews",
@@ -177,6 +194,16 @@
     "image_alt": "Technical diagram illustrating play store",
     "photo": "/assets/images/photos/retail.jpg",
     "photo_alt": "A retail aisle illustrating customer experience and service analysis.",
-    "photo_credit": "Eduardo Soares"
+    "photo_credit": "Eduardo Soares",
+    "canonical_id": "restaurant-reviews"
+  },
+  "process-improvement": {
+    "path": "projects/process-improvement",
+    "github": "https://github.com/placenciohid/Resume/tree/main/projects/process-improvement",
+    "type": "Professional process-improvement work",
+    "photo": "/assets/images/photos/mine-trucks.jpg",
+    "photo_alt": "Mining vehicles at an open-pit operation.",
+    "photo_credit": "omid roshan",
+    "canonical_id": "process-improvement"
   }
 }

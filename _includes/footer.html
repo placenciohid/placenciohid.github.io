@@ -1,7 +1,4 @@
-<section id="contact"><div class="inner contact-simple">
-  <section><h2>Contact</h2><p>For roles and projects in operational excellence, analytics, and automation.</p><a class="button" href="mailto:{{ site.email }}">Email me</a></section>
-  <section class="contact-details"><h3>Darío Placencio</h3><p>{{ site.city }}, {{ site.state }}<br /><a href="mailto:{{ site.email }}">{{ site.email }}</a></p><p><a href="{{ site.socials.LinkedIn }}">LinkedIn</a> &nbsp;·&nbsp; <a href="{{ site.socials.GitHub }}">GitHub portfolio</a></p></section>
-</div></section>
+<section id="contact"><div class="inner contact-row"><div><h2>Get in touch</h2><p>For work in data science, process improvement, and automation.</p><a href="mailto:{{ site.email }}">{{ site.email }}</a></div><nav aria-label="Footer navigation"><a href="{{ '/all_posts.html' | relative_url }}">Work</a><a href="{{ '/aboutme.html' | relative_url }}">About</a><a href="{{ site.socials.LinkedIn }}">LinkedIn</a><a href="{{ site.socials.GitHub }}">GitHub</a></nav></div></section>
 <footer id="footer"><div class="inner"><ul class="copyright"><li>&copy; {{ 'now' | date: '%Y' }} Darío Placencio</li><li>Design: <a href="https://html5up.net">HTML5 UP</a> · <a href="https://github.com/andrewbanchich/forty-jekyll-theme">Forty Jekyll theme</a></li><li><a href="{{ '/photo-credits.html' | relative_url }}">Photography credits</a></li></ul></div></footer>
 </div>
 <script src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
@@ -10,3 +7,5 @@
 <script src="{{ '/assets/js/skel.min.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/util.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/main.js' | relative_url }}?v={{ site.time | date:'%s' }}"></script>
+
+<script src="{{ '/assets/js/portfolio.js' | relative_url }}?v={{ site.time | date:'%s' }}" defer></script>

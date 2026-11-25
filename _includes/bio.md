@@ -1,4 +1,4 @@
-I’m an Operational Excellence Adviser at Rio Tinto with experience across data science, process improvement, and transformation in mining and commercial services. I work with teams to improve how work is planned and managed through process analysis, forecasting, and automation. I usually start by asking the people closest to the work to walk me through how it actually runs.
+I’m an Operational Excellence Adviser at Rio Tinto. My background spans data science, process improvement, and delivery work in mining and commercial services. I work with teams to improve how work is planned and managed through process analysis, forecasting, and automation. I usually start by asking the people closest to the work to walk me through how it actually runs.
 
 ## Experience
 

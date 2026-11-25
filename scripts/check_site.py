@@ -38,6 +38,19 @@ for p in ROOT.rglob('*.html'):
         if '/assets/images/photos/' not in html:
             errors.append(f'{p}: missing topic photograph')
 if errors: print('\n'.join(errors)); sys.exit(1)
+catalog=json.loads(Path('_data/portfolio.json').read_text(encoding='utf-8'))
+if len({p['slug'] for p in catalog}) != len(catalog) or len({p['url'] for p in catalog}) != len(catalog):
+    errors.append('Project catalog must have one canonical entry and URL per project')
+index=(ROOT/'all_posts.html').read_text(encoding='utf-8')
+if index.count('class="catalog-item"') != len(catalog):
+    errors.append('Project index must include each canonical project once before JavaScript runs')
+for item in catalog:
+    target=ROOT/item['url'].lstrip('/')
+    if not target.exists() or item['url'] not in index or item['github'] not in index:
+        errors.append(f"Catalog entry is missing its article or source link: {item['slug']}")
+for p in ROOT.rglob('*.html'):
+    if re.search(r'(?i)\btwo (?:undergraduate degrees|undergrads|publications|master.s degrees)',p.read_text(encoding='utf-8')):
+        errors.append(f'{p}: counted credentials must be replaced by named education/publications')
 home=(ROOT/'index.html').read_text(encoding='utf-8')
 for required in ['hero-grid','role-description','tiles interactive-projects','Master’s in Machine Learning','Master’s in Business Analytics','/aboutme.html']:
     if required not in home: errors.append(f'Homepage missing professional presentation element: {required}')

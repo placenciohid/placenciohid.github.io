@@ -1,0 +1,250 @@
+[
+  {
+    "slug": "forecasting",
+    "project_id": "forecasting",
+    "title": "Production forecasting & planning",
+    "group": "practice",
+    "kind": "Professional work",
+    "summary": "A year-ahead production forecast and a Python planning model for Borates Digital.",
+    "url": "/work/forecasting.html",
+    "tags": [
+      "Mining",
+      "Forecasting",
+      "Python"
+    ],
+    "github": "https://github.com/placenciohid/Resume/tree/main/projects/forecasting",
+    "image": "/assets/images/photos/mining-operations.jpg",
+    "alt": "Excavators and haul trucks working at an open-pit mine.",
+    "result": "21% lower forecast error against the prior baseline; $746K in savings identified by the separate planning model.",
+    "featured": true
+  },
+  {
+    "slug": "commercial-reporting",
+    "project_id": "commercial-reporting",
+    "title": "Collections reporting & reconciliation",
+    "group": "practice",
+    "kind": "Professional work",
+    "summary": "A shared view of overdue balances and payment exceptions, supported by an hourly aging feed.",
+    "url": "/work/commercial-reporting.html",
+    "tags": [
+      "Process improvement",
+      "Power BI",
+      "Commercial Services"
+    ],
+    "github": "https://github.com/placenciohid/Resume/tree/main/projects/commercial-reporting",
+    "image": "/assets/images/photos/port.jpg",
+    "alt": "Shipping containers and cranes at a commercial port.",
+    "result": "Delivered collections reporting and an hourly receivables-aging feed.",
+    "featured": true
+  },
+  {
+    "slug": "knowledge-search",
+    "project_id": "knowledge-search",
+    "title": "Search for technical knowledge",
+    "group": "practice",
+    "kind": "Professional work",
+    "summary": "Document extraction and hybrid search for a large technical collection.",
+    "url": "/work/knowledge-search.html",
+    "tags": [
+      "Applied AI",
+      "Information retrieval",
+      "Data engineering"
+    ],
+    "github": "https://github.com/placenciohid/Resume/tree/main/projects/knowledge-search",
+    "image": "/assets/images/photos/library.jpg",
+    "alt": "Rows of books in a library collection.",
+    "result": "Search covering 300,000+ documents, adopted by four teams.",
+    "featured": true
+  },
+  {
+    "slug": "process-improvement",
+    "project_id": "process-improvement",
+    "title": "Process improvement & delivery",
+    "group": "practice",
+    "kind": "Professional work",
+    "summary": "Payroll process diagnosis, an investment case, and coordination of a mining asset-health initiative.",
+    "url": "/work/process-improvement.html",
+    "tags": [
+      "Process analysis",
+      "Business cases",
+      "Delivery"
+    ],
+    "github": "https://github.com/placenciohid/Resume/tree/main/projects/process-improvement",
+    "image": "/assets/images/photos/mine-trucks.jpg",
+    "alt": "Mining vehicles working in an open-pit quarry.",
+    "result": "An opportunity assessment that secured $5M+ in technology funding.",
+    "featured": true
+  },
+  {
+    "slug": "event-prediction",
+    "project_id": "event-prediction",
+    "title": "Preparing data for event prediction",
+    "group": "implementation",
+    "kind": "Reference implementation",
+    "summary": "Separate known history, current state, and future outcomes before training a model.",
+    "url": "/projects/event-prediction.html",
+    "tags": [
+      "Python",
+      "Data engineering",
+      "Time-aware evaluation"
+    ],
+    "github": "https://github.com/placenciohid/Resume/tree/main/projects/event-prediction",
+    "image": "/assets/images/photos/mine-trucks.jpg",
+    "alt": "Mining vehicles working in an open-pit quarry.",
+    "featured": true
+  },
+  {
+    "slug": "ml-from-scratch",
+    "project_id": "ml-from-scratch",
+    "title": "Machine learning from scratch",
+    "group": "implementation",
+    "kind": "Reference implementation",
+    "summary": "Compare nearest neighbors, logistic regression, and a decision stump on the same held-out data.",
+    "url": "/projects/ml-from-scratch.html",
+    "tags": [
+      "Python",
+      "Algorithms",
+      "Evaluation"
+    ],
+    "github": "https://github.com/placenciohid/Resume/tree/main/projects/ml-from-scratch",
+    "image": "/assets/images/photos/circuits.jpg",
+    "alt": "Gold connections on a dark blue printed circuit board.",
+    "featured": true
+  },
+  {
+    "slug": "optimization",
+    "project_id": "optimization",
+    "title": "Capacity-constrained scheduling",
+    "group": "implementation",
+    "kind": "Reference implementation",
+    "summary": "Compare first-fit allocation with an exact optimum under the same room-capacity limits.",
+    "url": "/projects/optimization.html",
+    "tags": [
+      "Optimization",
+      "Python",
+      "Julia / Pyomo"
+    ],
+    "github": "https://github.com/placenciohid/Resume/tree/main/projects/optimization",
+    "image": "/assets/images/photos/operating-room.jpg",
+    "alt": "A surgical team working in an operating room."
+  },
+  {
+    "slug": "play-store-reviews",
+    "project_id": "play-store",
+    "title": "App-review text analysis",
+    "group": "study",
+    "kind": "Reproduced analysis",
+    "summary": "Topic exploration and a text-classification baseline that keeps duplicate reviews together.",
+    "url": "/2023/07/19/PlayStoreAnalytics.html",
+    "tags": [
+      "Natural language processing",
+      "TF-IDF",
+      "Evaluation"
+    ],
+    "github": "https://github.com/placenciohid/Resume/tree/main/projects/play-store-reviews",
+    "image": "/assets/images/photos/phone.jpg",
+    "alt": "A hand holding a smartphone."
+  },
+  {
+    "slug": "wine-neural-networks",
+    "project_id": "wine-quality",
+    "title": "Comparing wine-quality models",
+    "group": "study",
+    "kind": "Reproduced analysis",
+    "summary": "Test whether a small neural network improves on logistic regression using a grouped holdout.",
+    "url": "/projects/wine-quality.html",
+    "tags": [
+      "Neural networks",
+      "Model selection",
+      "Evaluation"
+    ],
+    "github": "https://github.com/placenciohid/Resume/tree/main/projects/wine-neural-networks",
+    "image": "/assets/images/photos/wine.jpg",
+    "alt": "Wine bottles stored on a rack."
+  },
+  {
+    "slug": "wine-clustering",
+    "project_id": "wine",
+    "title": "Exploring wine chemistry",
+    "group": "study",
+    "kind": "Reproduced analysis",
+    "summary": "Examine cluster separation, stability, and PCA while keeping sensory quality out of fitting.",
+    "url": "/2023/07/13/Unsupervised.html",
+    "tags": [
+      "Clustering",
+      "PCA",
+      "Exploratory analysis"
+    ],
+    "github": "https://github.com/placenciohid/Resume/tree/main/projects/wine-clustering",
+    "image": "/assets/images/photos/wine.jpg",
+    "alt": "Wine bottles stored on a rack."
+  },
+  {
+    "slug": "spaceship-titanic",
+    "project_id": "spaceship",
+    "title": "Prediction on new passenger groups",
+    "group": "study",
+    "kind": "Reproduced analysis",
+    "summary": "Compare linear and forest models on travel groups held out of training.",
+    "url": "/2023/07/14/SpaceshipKaggle.html",
+    "tags": [
+      "Tabular learning",
+      "Feature preparation",
+      "Evaluation"
+    ],
+    "github": "https://github.com/placenciohid/Resume/tree/main/projects/spaceship-titanic",
+    "image": "/assets/images/photos/stars.jpg",
+    "alt": "Stars across the night sky."
+  },
+  {
+    "slug": "clustering-noncompliance",
+    "project_id": "clustering",
+    "title": "Evaluating grouped experiments",
+    "group": "study",
+    "kind": "Methods study",
+    "summary": "How the unit of assignment and a comparison denominator affect an intervention estimate.",
+    "url": "/2023/07/12/ClusteringandNC.html",
+    "tags": [
+      "Causal inference",
+      "Process evaluation",
+      "Python"
+    ],
+    "github": "https://github.com/placenciohid/Resume/tree/main/projects/clustering-noncompliance",
+    "image": "/assets/images/photos/retail.jpg",
+    "alt": "A supermarket aisle, the setting of the grouped-store experiment."
+  },
+  {
+    "slug": "dynamic-zoom",
+    "project_id": "dynamic-zoom",
+    "title": "Dynamic Zoom",
+    "group": "study",
+    "kind": "Collaborative project",
+    "summary": "My video-processing contribution, with a simulation of latency and buffering tradeoffs.",
+    "url": "/2024/10/08/DynamicZoom.html",
+    "tags": [
+      "Computer vision",
+      "Systems integration",
+      "Python"
+    ],
+    "github": "https://github.com/placenciohid/Resume/tree/main/projects/dynamic-zoom",
+    "image": "/assets/images/photos/video-camera.jpg",
+    "alt": "A professional video camera with an attached monitor."
+  },
+  {
+    "slug": "yelp-reviews",
+    "project_id": "restaurant-reviews",
+    "title": "Understanding restaurant reviews",
+    "group": "study",
+    "kind": "Historical analysis",
+    "summary": "A review of sampling, word counts, and the difference between restaurant ratings and text sentiment.",
+    "url": "/projects/review-analysis.html",
+    "tags": [
+      "Text analysis",
+      "Interpretation",
+      "Sampling"
+    ],
+    "github": "https://github.com/placenciohid/Resume/tree/main/projects/yelp-reviews",
+    "image": "/assets/images/photos/retail.jpg",
+    "alt": "A retail aisle illustrating customer experience and service analysis."
+  }
+]
